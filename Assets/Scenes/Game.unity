@@ -6209,6 +6209,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8974fdffc83931141a748841e5de4728, type: 2}
   - {fileID: 11400000, guid: 04773038ffb29a14ea889f2e1c3c08fb, type: 2}
   - {fileID: 11400000, guid: bb0b2cefd38a5ec42aa1c4c22d5c8c31, type: 2}
+  - {fileID: 11400000, guid: 530295786fa08064daf3428ba53424e2, type: 2}
   upgradesPanel: {fileID: 951222675}
   upgradeCards:
   - {fileID: 1626485546}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Faster Bullets
   m_EditorClassIdentifier: 
   upgradeName: Heavy Bullets
-  upgradeDescription: Bullets are 20% faster
+  upgradeDescription: Bullets are 30% faster
   upgrade: 3

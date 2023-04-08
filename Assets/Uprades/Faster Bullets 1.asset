@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Faster Bullets 1
   m_EditorClassIdentifier: 
   upgradeName: That's a Lotta Damage
-  upgradeDescription: Bullets deal 20% more damage
+  upgradeDescription: Bullets deal 50% more damage
   upgrade: 2

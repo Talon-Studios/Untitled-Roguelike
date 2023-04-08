@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Faster Movement
   m_EditorClassIdentifier: 
   upgradeName: Run
-  upgradeDescription: Increase movement speed by 20%
+  upgradeDescription: Increase movement speed by 50%
   upgrade: 0
