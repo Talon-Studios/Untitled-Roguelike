@@ -50,7 +50,8 @@ public class PlayerShooting : MonoBehaviour
     private void RotateGun() {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 direction = mousePosition - pivot.position;
-        pivot.rotation = Quaternion.LookRotation(Vector3.forward, Quaternion.identity * direction);
+        Utils.DirectionToRotation(direction, out Quaternion rotation);
+        pivot.rotation = rotation;
 
         if (pivot.eulerAngles.z > 180)
         {
