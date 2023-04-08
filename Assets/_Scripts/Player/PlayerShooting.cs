@@ -18,7 +18,7 @@ public class PlayerShooting : MonoBehaviour
     public Rigidbody2D bulletPrefab;
     public float bulletSpeed;
     public float fireRate;
-    public float randomness = 5;
+    public float spread = 5;
     public float damage = 10;
 
     #region Singleton
@@ -63,7 +63,7 @@ public class PlayerShooting : MonoBehaviour
     }
 
     private void Fire() {
-        Rigidbody2D bulletBody = Instantiate(bulletPrefab, firePoint.position, pivot.rotation * Quaternion.Euler(0, 0, Random.Range(-randomness, randomness)));
+        Rigidbody2D bulletBody = Instantiate(bulletPrefab, firePoint.position, pivot.rotation * Quaternion.Euler(0, 0, Random.Range(-spread, spread)));
         bulletBody.AddRelativeForce(Vector2.up * bulletSpeed, ForceMode2D.Impulse);
         // MousePointer.Instance.Turn(45);
     }

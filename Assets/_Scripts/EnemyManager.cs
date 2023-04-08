@@ -17,6 +17,16 @@ public class EnemyManager : MonoBehaviour
     private float spawnRate;
 
     BoxCollider2D box;
+    
+    #region Singleton
+    
+    static public EnemyManager Instance = null;
+    void Awake() {
+        if (Instance == null) Instance = this;
+        else if (Instance != this) Destroy(gameObject);
+    }
+    
+    #endregion
 
     void Start() {
         box = GetComponent<BoxCollider2D>();
@@ -35,6 +45,10 @@ public class EnemyManager : MonoBehaviour
     private void SpawnRandomEnemy() {
         GetRandomPosition(out float x, out float y);
         Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector2(x, y), Quaternion.identity);
+    }
+
+    public void FasterSpawnRate() {
+        spawnRate += spawnRateIncrement;
     }
 
     private void GetRandomPosition(out float x, out float y) {

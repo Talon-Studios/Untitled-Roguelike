@@ -359,7 +359,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5258355577677769141, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   bulletSpeed: 30
   fireRate: 3
-  randomness: 8
+  spread: 5
   damage: 10
 --- !u!1001 &150123569
 PrefabInstance:
@@ -434,11 +434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6814158070250896306, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 761.95
+      value: 800.05
       objectReference: {fileID: 0}
     - target: {fileID: 6814158070250896306, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -212.8
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 6814158070250896306, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6027,6 +6027,7 @@ GameObject:
   - component: {fileID: 641565174}
   - component: {fileID: 641565173}
   - component: {fileID: 641565177}
+  - component: {fileID: 641565178}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6129,6 +6130,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2ec0bcf3df768409ed7729b7b4a2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &641565178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641565172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a403f87f8aff5074eb7f4e9594a84c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrades:
+  - {fileID: 11400000, guid: 90a49343f3873804383caf089029859b, type: 2}
+  - {fileID: 11400000, guid: 8974fdffc83931141a748841e5de4728, type: 2}
+  - {fileID: 11400000, guid: 04773038ffb29a14ea889f2e1c3c08fb, type: 2}
+  - {fileID: 11400000, guid: bb0b2cefd38a5ec42aa1c4c22d5c8c31, type: 2}
+  upgradesPanel: {fileID: 951222675}
+  upgradeCards:
+  - {fileID: 1626485546}
+  - {fileID: 1221728027}
+  - {fileID: 1929468727}
+  speedPercentIncrease: 20
+  fireRatePercentIncrease: 20
+  damagePercentIncrease: 20
+  bulletSpeedPercentIncrease: 20
+  spreadPercentIncrease: 20
 --- !u!1 &906265797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6171,7 +6199,6 @@ GameObject:
   - component: {fileID: 951222676}
   - component: {fileID: 951222678}
   - component: {fileID: 951222677}
-  - component: {fileID: 951222679}
   - component: {fileID: 951222680}
   m_Layer: 5
   m_Name: Upgrade Panel
@@ -6241,24 +6268,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951222675}
   m_CullTransparentMesh: 1
---- !u!114 &951222679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951222675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a403f87f8aff5074eb7f4e9594a84c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgrades:
-  - {fileID: 11400000, guid: 90a49343f3873804383caf089029859b, type: 2}
-  - {fileID: 11400000, guid: 8974fdffc83931141a748841e5de4728, type: 2}
-  - {fileID: 11400000, guid: 04773038ffb29a14ea889f2e1c3c08fb, type: 2}
-  - {fileID: 11400000, guid: bb0b2cefd38a5ec42aa1c4c22d5c8c31, type: 2}
-  upgradesPanel: {fileID: 951222675}
 --- !u!114 &951222680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6274,12 +6283,12 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 75
+    m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 201.9, y: 275.6}
+  m_CellSize: {x: 240, y: 400}
   m_Spacing: {x: 60.05, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -6328,7 +6337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60482ec96d2a48540b7b37380f161bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSpawnRate: 0.3
+  startingSpawnRate: 0.5
   spawnRateIncrement: 1
   enemyPrefabs:
   - {fileID: 7762370618698933294, guid: 838ef195df6dd0c478e189d57f04d09f, type: 3}
@@ -6435,7 +6444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6814158070250896306, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -212.8
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 6814158070250896306, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6460,6 +6469,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6814158070250896306, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
   m_PrefabInstance: {fileID: 1221728023}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1221728027 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3085821404854815735, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
+  m_PrefabInstance: {fileID: 1221728023}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1872db0530dfcad408d7f576b578e323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1347436395
 GameObject:
   m_ObjectHideFlags: 0
@@ -6682,6 +6702,17 @@ Transform:
   m_Father: {fileID: 517020939}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1626485546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3085821404854815735, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
+  m_PrefabInstance: {fileID: 6814158068881679598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1872db0530dfcad408d7f576b578e323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1660910557
 GameObject:
   m_ObjectHideFlags: 0
@@ -6766,6 +6797,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1929468727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3085821404854815735, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
+  m_PrefabInstance: {fileID: 150123569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1872db0530dfcad408d7f576b578e323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1977537059
 GameObject:
   m_ObjectHideFlags: 0
@@ -6894,8 +6936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c1fb912c367344da14cc5a0e193c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingUpgradeXP: 10
-  upgradeXPIncrement: 10
+  startingUpgradeXP: 5
+  upgradeXPIncrement: 5
   xpStartForce: 10
   xpPrefab: {fileID: 4214348150177475379, guid: f36194f4aa938a64d937304dac7cd755, type: 3}
 --- !u!1 &2032756962
@@ -7114,11 +7156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6814158070250896306, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 238.05
+      value: 199.95001
       objectReference: {fileID: 0}
     - target: {fileID: 6814158070250896306, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -212.8
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 6814158070250896306, guid: 30e6de611dfa268419fa09496d7db2b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

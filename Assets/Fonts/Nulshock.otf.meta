@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23c8bef43804e6a4b89665b518a9a449
+guid: c3c3389cf4b548c4fa8c79038f62801d
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,10 +9,10 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Pixellari
+  - Nulshock
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 2
+  fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

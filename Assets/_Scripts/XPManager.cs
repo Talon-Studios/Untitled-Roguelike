@@ -45,7 +45,9 @@ public class XPManager : MonoBehaviour
         xp += amount;
         if (xp >= upgradeXP)
         {
+            UpgradeManager.Instance.SetupUpgradesPanel();
             upgradeXP += upgradeXPIncrement;
+            xp = 0;
         }
     }
 

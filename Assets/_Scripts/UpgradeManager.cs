@@ -8,7 +8,8 @@ public enum Upgrades
     FasterMovement,
     FireFaster,
     MoreDamage,
-    FasterBullets
+    FasterBullets,
+    MoreSpread
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -18,12 +19,38 @@ public class UpgradeManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject upgradesPanel;
+    [SerializeField] private UpgradeCard[] upgradeCards;
 
-    // [Header("Upgrade Options")]
+    [Header("Upgrade Options")]
+    [SerializeField] private float speedPercentIncrease = 20;
+    [SerializeField] private float fireRatePercentIncrease = 20;
+    [SerializeField] private float damagePercentIncrease = 20;
+    [SerializeField] private float bulletSpeedPercentIncrease = 20;
+    [SerializeField] private float spreadPercentIncrease = 20;
+
+    #region Singleton
+    
+    static public UpgradeManager Instance = null;
+    void Awake() {
+        if (Instance == null) Instance = this;
+        else if (Instance != this) Destroy(gameObject);
+    }
+    
+    #endregion
 
     public void SetupUpgradesPanel() {
         upgradesPanel.SetActive(true);
         Time.timeScale = 0;
+        
+        UpgradeObject[] randomUpgrades = GetRandomUpgrades(3).ToArray();
+        for (int i = 0; i < randomUpgrades.Length; i++)
+        {
+            UpgradeObject randomUpgrade = randomUpgrades[i];
+
+            upgradeCards[i].titleText.text = randomUpgrade.upgradeName;
+            upgradeCards[i].descriptionText.text = randomUpgrade.upgradeDescription;
+            upgradeCards[i].upgrade = randomUpgrade;
+        }
     }
 
     public void CloseUpgradesPanel() {
@@ -35,19 +62,23 @@ public class UpgradeManager : MonoBehaviour
         switch (upgradeObject.upgrade)
         {
             case Upgrades.FasterMovement: { 
-                PlayerMovement.Instance.speed = PercentOf(PlayerMovement.Instance.speed, 120);
+                PlayerMovement.Instance.speed += PercentOf(PlayerMovement.Instance.speed, speedPercentIncrease);
                 break;
             }
             case Upgrades.FireFaster: {
-                PlayerShooting.Instance.fireRate = PercentOf(PlayerShooting.Instance.fireRate, 150);
+                PlayerShooting.Instance.fireRate += PercentOf(PlayerShooting.Instance.fireRate, fireRatePercentIncrease);
                 break;
             }
             case Upgrades.MoreDamage: {
-                PlayerShooting.Instance.damage = PercentOf(PlayerShooting.Instance.damage, 120);
+                PlayerShooting.Instance.damage += PercentOf(PlayerShooting.Instance.damage, damagePercentIncrease);
                 break;
             }
             case Upgrades.FasterBullets: {
-                PlayerShooting.Instance.bulletSpeed = PercentOf(PlayerShooting.Instance.damage, 120);
+                PlayerShooting.Instance.bulletSpeed += PercentOf(PlayerShooting.Instance.bulletSpeed, bulletSpeedPercentIncrease);
+                break;
+            }
+            case Upgrades.MoreSpread: {
+                PlayerShooting.Instance.spread += PercentOf(PlayerShooting.Instance.spread, spreadPercentIncrease);
                 break;
             }
         }
