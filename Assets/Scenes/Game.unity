@@ -6369,7 +6369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingSpawnRate: 0.5
-  spawnRateIncrement: 1
+  spawnRateIncrement: 0.5
   enemyPrefabs:
   - {fileID: 7762370618698933294, guid: 838ef195df6dd0c478e189d57f04d09f, type: 3}
 --- !u!61 &1050262949
