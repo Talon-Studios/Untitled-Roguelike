@@ -244,7 +244,7 @@ Transform:
   - {fileID: 282373419}
   - {fileID: 517020939}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &21466118
 MonoBehaviour:
@@ -5439,7 +5439,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &380208282
 GameObject:
@@ -5603,7 +5603,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517020938
 GameObject:
@@ -6027,7 +6027,6 @@ GameObject:
   - component: {fileID: 641565174}
   - component: {fileID: 641565173}
   - component: {fileID: 641565177}
-  - component: {fileID: 641565178}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6111,7 +6110,7 @@ RectTransform:
   - {fileID: 1421924012}
   - {fileID: 951222676}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6130,33 +6129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2ec0bcf3df768409ed7729b7b4a2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &641565178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641565172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a403f87f8aff5074eb7f4e9594a84c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgrades:
-  - {fileID: 11400000, guid: 90a49343f3873804383caf089029859b, type: 2}
-  - {fileID: 11400000, guid: 8974fdffc83931141a748841e5de4728, type: 2}
-  - {fileID: 11400000, guid: 04773038ffb29a14ea889f2e1c3c08fb, type: 2}
-  - {fileID: 11400000, guid: bb0b2cefd38a5ec42aa1c4c22d5c8c31, type: 2}
-  upgradesPanel: {fileID: 951222675}
-  upgradeCards:
-  - {fileID: 1626485546}
-  - {fileID: 1221728027}
-  - {fileID: 1929468727}
-  speedPercentIncrease: 20
-  fireRatePercentIncrease: 20
-  damagePercentIncrease: 20
-  bulletSpeedPercentIncrease: 20
-  spreadPercentIncrease: 20
 --- !u!1 &906265797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6188,6 +6160,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &915330775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 915330776}
+  - component: {fileID: 915330777}
+  m_Layer: 0
+  m_Name: Upgrade Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &915330776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915330775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &915330777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915330775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a403f87f8aff5074eb7f4e9594a84c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrades:
+  - {fileID: 11400000, guid: 90a49343f3873804383caf089029859b, type: 2}
+  - {fileID: 11400000, guid: 8974fdffc83931141a748841e5de4728, type: 2}
+  - {fileID: 11400000, guid: 04773038ffb29a14ea889f2e1c3c08fb, type: 2}
+  - {fileID: 11400000, guid: bb0b2cefd38a5ec42aa1c4c22d5c8c31, type: 2}
+  upgradesPanel: {fileID: 951222675}
+  upgradeCards:
+  - {fileID: 1626485546}
+  - {fileID: 1221728027}
+  - {fileID: 1929468727}
+  speedPercentIncrease: 50
+  fireRatePercentIncrease: 50
+  damagePercentIncrease: 50
+  bulletSpeedPercentIncrease: 30
+  spreadPercentIncrease: 50
 --- !u!1 &951222675
 GameObject:
   m_ObjectHideFlags: 0

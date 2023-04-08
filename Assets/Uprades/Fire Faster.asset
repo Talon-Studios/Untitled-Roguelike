@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Fire Faster
   m_EditorClassIdentifier: 
   upgradeName: Minigun
-  upgradeDescription: Increase fire speed by 50%
+  upgradeDescription: Increase fire speed by 20%
   upgrade: 1
