@@ -10,6 +10,10 @@ public class EnemyManager : MonoBehaviour
 
     [Tooltip("How much the spawn rate increases per upgrade")]
     [SerializeField] private float spawnRateIncrement;
+
+    [Tooltip("How much enemy speed increases per upgrade")]
+    [HideInInspector] public float enemySpeed = 5;
+    [SerializeField] private float enemySpeedIncrement;
     
     [SerializeField] private Enemy[] enemyPrefabs;
 
@@ -47,8 +51,9 @@ public class EnemyManager : MonoBehaviour
         Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector2(x, y), Quaternion.identity);
     }
 
-    public void FasterSpawnRate() {
+    public void EnemyBuff() {
         spawnRate += spawnRateIncrement;
+        enemySpeed += enemySpeedIncrement;
     }
 
     private void GetRandomPosition(out float x, out float y) {

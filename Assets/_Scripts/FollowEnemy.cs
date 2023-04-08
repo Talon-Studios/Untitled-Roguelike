@@ -7,7 +7,6 @@ public class FollowEnemy : MonoBehaviour
 
     [Tooltip("How fast the enemy looks at the player. Set to 0.01 to 0.5 for best effect")]
     [SerializeField] private float rotationSmoothing = 0.05f;
-    [SerializeField] private float speed = 5;
 
     Transform player;
     Rigidbody2D enemyBody;
@@ -22,7 +21,7 @@ public class FollowEnemy : MonoBehaviour
         Utils.DirectionToRotation(direction, out Quaternion targetRotation);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSmoothing);
 
-        enemyBody.AddRelativeForce(Vector2.up * speed);
+        enemyBody.AddRelativeForce(Vector2.up * EnemyManager.Instance.enemySpeed);
     }
 
 }

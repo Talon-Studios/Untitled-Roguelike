@@ -6370,7 +6370,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingSpawnRate: 0.5
-  spawnRateIncrement: 0.5
+  spawnRateIncrement: 0.3
+  enemySpeed: 5
+  enemySpeedIncrement: 1
   enemyPrefabs:
   - {fileID: 7762370618698933294, guid: 838ef195df6dd0c478e189d57f04d09f, type: 3}
 --- !u!61 &1050262949
@@ -6969,7 +6971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingUpgradeXP: 5
-  upgradeXPIncrement: 5
+  upgradeXPIncrement: 10
   xpStartForce: 10
   xpPrefab: {fileID: 4214348150177475379, guid: f36194f4aa938a64d937304dac7cd755, type: 3}
 --- !u!1 &2032756962

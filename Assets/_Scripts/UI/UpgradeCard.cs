@@ -14,7 +14,7 @@ public class UpgradeCard : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData) {
         UpgradeManager.Instance.ActivateUpgrade(upgrade);
         UpgradeManager.Instance.CloseUpgradesPanel();
-        EnemyManager.Instance.FasterSpawnRate();
+        EnemyManager.Instance.EnemyBuff();
     }
 
 }
