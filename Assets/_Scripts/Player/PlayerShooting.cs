@@ -20,6 +20,7 @@ public class PlayerShooting : MonoBehaviour
     public float fireRate;
     public float spread = 5;
     public float damage = 10;
+    public int projectiles = 1;
 
     #region Singleton
     
@@ -63,9 +64,15 @@ public class PlayerShooting : MonoBehaviour
     }
 
     private void Fire() {
-        Rigidbody2D bulletBody = Instantiate(bulletPrefab, firePoint.position, pivot.rotation * Quaternion.Euler(0, 0, Random.Range(-spread, spread)));
-        bulletBody.AddRelativeForce(Vector2.up * bulletSpeed, ForceMode2D.Impulse);
-        // MousePointer.Instance.Turn(45);
+        float step = spread / (float)projectiles;
+        float halfSpread = spread / 2;
+
+        for (int i = 0; i < projectiles; i++)
+        {
+            Quaternion rotation = pivot.rotation * (Quaternion.Euler(0, 0, (i * step) - (halfSpread - (halfSpread / projectiles))));
+            Rigidbody2D bulletBody = Instantiate(bulletPrefab, firePoint.position, rotation);
+            bulletBody.AddRelativeForce(Vector2.up * bulletSpeed, ForceMode2D.Impulse);
+        }
     }
 
     void OnShoot(InputValue value) {

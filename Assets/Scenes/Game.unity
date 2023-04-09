@@ -360,8 +360,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5258355577677769141, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   bulletSpeed: 30
   fireRate: 3
-  spread: 5
+  spread: 90
   damage: 10
+  projectiles: 1
 --- !u!114 &21466123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5584,9 +5585,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.002057613
     width: 0.99999994
-    height: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -5831,9 +5832,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.002057613
     width: 0.99999994
-    height: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6306,6 +6307,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90a49343f3873804383caf089029859b, type: 2}
   - {fileID: 11400000, guid: 04773038ffb29a14ea889f2e1c3c08fb, type: 2}
   - {fileID: 11400000, guid: bb0b2cefd38a5ec42aa1c4c22d5c8c31, type: 2}
+  - {fileID: 11400000, guid: 1bc5fe9d0228cca4f861f89850611438, type: 2}
   upgradesPanel: {fileID: 951222675}
   upgradeCards:
   - {fileID: 1626485546}

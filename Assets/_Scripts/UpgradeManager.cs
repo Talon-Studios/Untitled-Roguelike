@@ -9,7 +9,8 @@ public enum Upgrades
     FireFaster,
     MoreDamage,
     FasterBullets,
-    MoreSpread
+    MoreSpread,
+    AddProjectile
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -79,6 +80,10 @@ public class UpgradeManager : MonoBehaviour
             }
             case Upgrades.MoreSpread: {
                 PlayerShooting.Instance.spread += PercentOf(PlayerShooting.Instance.spread, spreadPercentIncrease);
+                break;
+            }
+            case Upgrades.AddProjectile: {
+                PlayerShooting.Instance.projectiles++;
                 break;
             }
         }

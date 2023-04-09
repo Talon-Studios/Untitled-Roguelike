@@ -19,9 +19,8 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private void GetHurt() {
-        print("OOF! Health: " + health);
-
         health--;
+        print("OOF! Health: " + health);
         UpdateHearts();
         if (health <= 0) Die();
     }
