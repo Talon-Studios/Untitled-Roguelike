@@ -10,6 +10,8 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Transform pivot;
     [SerializeField] private Transform gun;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject reloadBar;
+    [SerializeField] private Transform reloadMarker;
 
     private bool shootInput;
     private float nextTimeToFire;
@@ -20,7 +22,14 @@ public class PlayerShooting : MonoBehaviour
     public float fireRate;
     public float spread = 5;
     public float damage = 10;
+    public float reloadTime = 2;
+    public float maxMagazine = 6;
     public int projectiles = 1;
+
+    private float magazine;
+    private bool reloading = false;
+
+    Camera cam;
 
     #region Singleton
     
@@ -32,19 +41,24 @@ public class PlayerShooting : MonoBehaviour
     
     #endregion
 
-    Camera cam;
-
     void Start() {
         cam = Camera.main;
+
+        magazine = maxMagazine;
     }
 
     void Update() {
         RotateGun();
 
-        if (shootInput && Time.time >= nextTimeToFire && canShoot)
+        if (shootInput && Time.time >= nextTimeToFire && canShoot && !reloading)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
             Fire();
+        }
+
+        if (reloading)
+        {
+            reloadMarker.localPosition += (1.5f / 2) * reloadTime * Time.deltaTime * Vector3.right;
         }
     }
 
@@ -64,6 +78,12 @@ public class PlayerShooting : MonoBehaviour
     }
 
     private void Fire() {
+        magazine--;
+        if (magazine <= 0)
+        {
+            StartCoroutine(Reload());
+        }
+
         float step = spread / (float)projectiles;
         float halfSpread = spread / 2;
 
@@ -73,6 +93,18 @@ public class PlayerShooting : MonoBehaviour
             Rigidbody2D bulletBody = Instantiate(bulletPrefab, firePoint.position, rotation);
             bulletBody.AddRelativeForce(Vector2.up * bulletSpeed, ForceMode2D.Impulse);
         }
+    }
+
+    private IEnumerator Reload() {
+        reloading = true;
+        reloadBar.SetActive(true);
+        reloadMarker.localPosition = Vector2.right * -1.5f;
+
+        yield return new WaitForSeconds(reloadTime);
+
+        magazine = maxMagazine;
+        reloading = false;
+        reloadBar.SetActive(false);
     }
 
     void OnShoot(InputValue value) {
