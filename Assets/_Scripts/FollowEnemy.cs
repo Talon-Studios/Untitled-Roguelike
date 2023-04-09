@@ -21,7 +21,7 @@ public class FollowEnemy : MonoBehaviour
         Utils.DirectionToRotation(direction, out Quaternion targetRotation);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSmoothing);
 
-        enemyBody.AddRelativeForce(Vector2.up * EnemyManager.Instance.enemySpeed);
+        enemyBody.AddRelativeForce(Vector2.up * EnemyManager.Instance.enemySpeed * Time.timeScale);
     }
 
 }
