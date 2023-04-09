@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
   m_Name: Faster Bullets
   m_EditorClassIdentifier: 
-  upgradeName: Heavy Bullets
+  upgradeName: Ouch
   upgradeDescription: Bullets are 30% faster
   upgrade: 3

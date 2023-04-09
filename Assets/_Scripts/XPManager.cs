@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class XPManager : MonoBehaviour
 {
@@ -16,8 +17,17 @@ public class XPManager : MonoBehaviour
 
     [SerializeField] private Rigidbody2D xpPrefab;
 
+    [Header("UI")]
+    [SerializeField] private Transform xpBarsParent;
+    
+    [Tooltip("How fast the bar fill animation is")]
+    [SerializeField] private float barFillSmoothing = 0.02f;
+
     private int xp = 0;
     private int upgradeXP;
+    private float targetBarFill;
+
+    Image[] xpBars;
 
     #region Singleton
     
@@ -31,6 +41,14 @@ public class XPManager : MonoBehaviour
 
     void Start() {
         upgradeXP = startingUpgradeXP;
+        xpBars = xpBarsParent.GetComponentsInChildren<Image>();
+    }
+
+    void Update() {
+        foreach (Image bar in xpBars)
+        {
+            bar.fillAmount = Mathf.Lerp(bar.fillAmount, targetBarFill, barFillSmoothing);
+        }
     }
 
     public void CreateXP(Vector2 position, int amount = 1) {
@@ -43,12 +61,18 @@ public class XPManager : MonoBehaviour
 
     public void GainXP(int amount) {
         xp += amount;
+        SetXPBars();
         if (xp >= upgradeXP)
         {
             UpgradeManager.Instance.SetupUpgradesPanel();
             upgradeXP += upgradeXPIncrement;
             xp = 0;
+            targetBarFill = 0;
         }
+    }
+
+    private void SetXPBars() {
+        targetBarFill = 0.5f / upgradeXP * xp;
     }
 
 }
