@@ -381,6 +381,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  invincibleTime: 3
+  invincibleFlashSpeed: 0.2
+  graphics: {fileID: 17168016}
   heartParent: {fileID: 468711378}
   heartPrefab: {fileID: 6393547373499236577, guid: 25b9234981d74f044acdbd87165bc546, type: 3}
   health: 0
