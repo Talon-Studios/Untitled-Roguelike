@@ -366,7 +366,7 @@ MonoBehaviour:
   spread: 25
   damage: 10
   reloadTime: 2
-  maxMagazine: 18
+  maxMagazine: Infinity
   projectiles: 1
 --- !u!114 &21466123
 MonoBehaviour:
@@ -7335,7 +7335,7 @@ MonoBehaviour:
   startingSpawnRate: 0.3
   spawnRateIncrement: 0.3
   enemySpeed: 5
-  enemySpeedIncrement: 1
+  enemySpeedIncrement: 0.8
   enemyPrefabs:
   - {fileID: 7762370618698933294, guid: 838ef195df6dd0c478e189d57f04d09f, type: 3}
 --- !u!61 &1050262949
