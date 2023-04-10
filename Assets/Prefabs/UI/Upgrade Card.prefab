@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 6814158070250896304}
   - component: {fileID: 6814158070250896307}
   - component: {fileID: -3085821404854815735}
+  - component: {fileID: -7605729265763434721}
   m_Layer: 5
   m_Name: Upgrade Card
   m_TagString: Untagged
@@ -333,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.233, g: 0.233, b: 0.233, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -364,3 +365,15 @@ MonoBehaviour:
   titleText: {fileID: 6814158068792321723}
   descriptionText: {fileID: 3025482879493435426}
   upgrade: {fileID: 0}
+--- !u!114 &-7605729265763434721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814158070250896309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ac404054277bf4bb17771b87d63a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
