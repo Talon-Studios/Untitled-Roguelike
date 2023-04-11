@@ -32,6 +32,7 @@ public class PlayerShooting : MonoBehaviour
 
     Camera cam;
     Vector3 mousePosition;
+    float reloadMarkerTime;
 
     #region Singleton
     
@@ -60,7 +61,8 @@ public class PlayerShooting : MonoBehaviour
 
         if (reloading)
         {
-            reloadMarker.localPosition += (1.5f / 2) * reloadTime * Time.deltaTime * Vector3.right;
+            reloadMarkerTime += Time.deltaTime / reloadTime;
+            reloadMarker.localPosition = Vector2.Lerp(-1.5f * Vector2.right, 1.5f * Vector2.right, reloadMarkerTime);
         }
     }
 
@@ -100,6 +102,7 @@ public class PlayerShooting : MonoBehaviour
     private IEnumerator Reload() {
         reloading = true;
         reloadBar.SetActive(true);
+        reloadMarkerTime = 0;
         reloadMarker.localPosition = Vector2.right * -1.5f;
 
         yield return new WaitForSeconds(reloadTime);

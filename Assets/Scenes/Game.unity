@@ -366,7 +366,7 @@ MonoBehaviour:
   fireRate: 6
   spread: 25
   damage: 10
-  reloadTime: 2
+  reloadTime: 1
   maxMagazine: 15
   projectiles: 1
 --- !u!114 &21466123
