@@ -9,13 +9,12 @@ public class Enemy : MonoBehaviour
 
     private void GetHurt(float damage) {
         health -= damage;
-        if (health <= 0)
-        {
-            Die();
-        }
+        if (health <= 0) Die();
     }
 
     public void Die() {
+        FollowCam.Instance.ScreenShake(50, Random.insideUnitCircle.normalized);
+        FollowCam.Instance.Hitstop(0.1f);
         XPManager.Instance.CreateXP(transform.position);
         Destroy(gameObject);
     }

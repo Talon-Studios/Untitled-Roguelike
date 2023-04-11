@@ -31,6 +31,7 @@ public class PlayerShooting : MonoBehaviour
     private bool reloading = false;
 
     Camera cam;
+    Vector3 mousePosition;
 
     #region Singleton
     
@@ -64,7 +65,7 @@ public class PlayerShooting : MonoBehaviour
     }
 
     private void RotateGun() {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 direction = mousePosition - pivot.position;
         Utils.DirectionToRotation(direction, out Quaternion rotation);
         pivot.rotation = rotation;
@@ -79,6 +80,8 @@ public class PlayerShooting : MonoBehaviour
     }
 
     private void Fire() {
+        FollowCam.Instance.ScreenShake(10, (mousePosition - pivot.position).normalized);
+
         magazine--;
         if (magazine <= 0) StartCoroutine(Reload());
         if (!isAutomatic) shootInput = false;

@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class FollowCam : MonoBehaviour
 {
+    [SerializeField] private Transform player;
+
 
     [Tooltip("How fast the camera moves to the player. Set to 0.05 to 0.5 for best effect")]
     [SerializeField] private float smoothing = 0.1f;
@@ -12,12 +14,10 @@ public class FollowCam : MonoBehaviour
     [Tooltip("How much the camera looks where you're aiming")]
     [SerializeField] private float dynamicCamera = 5;
     
-    [SerializeField] private Transform player;
+    [Tooltip("How fast the screen shake is. Set to 0.05 to 0.5 for best effect")]
+    [SerializeField] private float screenShakeSmoothing = 0.1f;
 
-    // Screen shake
-    private float shakeDuration = 0f;
-    private float shakeMagnitude = 0.7f;
-    private float dampingSpeed = 1.0f;
+    private Vector3 screenShake;
 
     Camera cam;
 
@@ -36,15 +36,7 @@ public class FollowCam : MonoBehaviour
     }
 
     void Update() {
-        Vector3 initialPosition = transform.localPosition;
-
-        if (shakeDuration > 0) {
-            transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
-            shakeDuration -= Time.unscaledDeltaTime * dampingSpeed;
-        } else {
-            shakeDuration = 0f;
-            transform.localPosition = initialPosition;
-        }
+        screenShake = Vector2.Lerp(screenShake, Vector2.zero, screenShakeSmoothing);
     }
 
     void FixedUpdate() {
@@ -53,13 +45,13 @@ public class FollowCam : MonoBehaviour
         Vector3 direction = mousePosition - targetPos;
         
         targetPos += direction.normalized * dynamicCamera;
+        targetPos += screenShake;
         targetPos.z = -10;
         transform.position = Vector3.Lerp(transform.position, targetPos, smoothing);
     }
 
-    public void ScreenShake(float duration, float magnitude) {
-        shakeDuration = duration;
-        shakeMagnitude = magnitude;
+    public void ScreenShake(float magnitude, Vector2 direction) {
+        screenShake = direction * magnitude;
     }
 
     public void Hitstop(float duration) {
