@@ -361,12 +361,13 @@ MonoBehaviour:
   reloadBar: {fileID: 1143103627}
   reloadMarker: {fileID: 658192099}
   bulletPrefab: {fileID: 5258355577677769141, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
+  isAutomatic: 0
   bulletSpeed: 30
-  fireRate: 3
+  fireRate: 6
   spread: 25
   damage: 10
   reloadTime: 2
-  maxMagazine: Infinity
+  maxMagazine: 15
   projectiles: 1
 --- !u!114 &21466123
 MonoBehaviour:

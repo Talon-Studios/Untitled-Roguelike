@@ -12,12 +12,13 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject reloadBar;
     [SerializeField] private Transform reloadMarker;
+    [SerializeField] private Rigidbody2D bulletPrefab;
 
     private bool shootInput;
     private float nextTimeToFire;
 
     [Header("Stats")]
-    public Rigidbody2D bulletPrefab;
+    public bool isAutomatic = true;
     public float bulletSpeed;
     public float fireRate;
     public float spread = 5;
@@ -79,10 +80,8 @@ public class PlayerShooting : MonoBehaviour
 
     private void Fire() {
         magazine--;
-        if (magazine <= 0)
-        {
-            StartCoroutine(Reload());
-        }
+        if (magazine <= 0) StartCoroutine(Reload());
+        if (!isAutomatic) shootInput = false;
 
         float step = spread / (float)projectiles;
         float halfSpread = spread / 2;
