@@ -15,3 +15,5 @@ MonoBehaviour:
   upgradeName: Yay Bullets
   upgradeDescription: +1 projectile
   upgrade: 5
+  gunExclude:
+  - {fileID: 11400000, guid: ebd9161d1d24542448a1ebbf3eb383ad, type: 2}

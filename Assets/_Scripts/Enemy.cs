@@ -13,8 +13,8 @@ public class Enemy : MonoBehaviour
     }
 
     public void Die() {
-        FollowCam.Instance.ScreenShake(50, Random.insideUnitCircle.normalized);
-        FollowCam.Instance.Hitstop(0.1f);
+        // FollowCam.Instance.Hitstop(0.1f);
+        
         XPManager.Instance.CreateXP(transform.position);
         Destroy(gameObject);
     }

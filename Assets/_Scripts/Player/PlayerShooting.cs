@@ -7,25 +7,19 @@ public class PlayerShooting : MonoBehaviour
 {
 
     public bool canShoot = true;
+    public GunObject gun;
     [SerializeField] private Transform pivot;
-    [SerializeField] private Transform gun;
+    [SerializeField] private Transform gunTransform;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject reloadBar;
     [SerializeField] private Transform reloadMarker;
-    [SerializeField] private Rigidbody2D bulletPrefab;
+
+    [HideInInspector] public bool isAutomatic;
+    [HideInInspector] public float bulletSpeed, fireRate, spread, damage, reloadTime;
+    [HideInInspector] public int projectiles;
 
     private bool shootInput;
     private float nextTimeToFire;
-
-    [Header("Stats")]
-    public bool isAutomatic = true;
-    public float bulletSpeed;
-    public float fireRate;
-    public float spread = 5;
-    public float damage = 10;
-    public float reloadTime = 2;
-    public float maxMagazine = 6;
-    public int projectiles = 1;
 
     private float magazine;
     private bool reloading = false;
@@ -47,7 +41,7 @@ public class PlayerShooting : MonoBehaviour
     void Start() {
         cam = Camera.main;
 
-        magazine = maxMagazine;
+        SetStats();
     }
 
     void Update() {
@@ -74,16 +68,14 @@ public class PlayerShooting : MonoBehaviour
 
         if (pivot.eulerAngles.z > 180)
         {
-            gun.localEulerAngles = new Vector3(0, 0, gun.localEulerAngles.z);
+            gunTransform.localEulerAngles = new Vector3(0, 0, gunTransform.localEulerAngles.z);
         } else
         {
-            gun.localEulerAngles = new Vector3(0, 180, gun.localEulerAngles.z);
+            gunTransform.localEulerAngles = new Vector3(0, 180, gunTransform.localEulerAngles.z);
         }
     }
 
     private void Fire() {
-        FollowCam.Instance.ScreenShake(10, (mousePosition - pivot.position).normalized);
-
         magazine--;
         if (magazine <= 0) StartCoroutine(Reload());
         if (!isAutomatic) shootInput = false;
@@ -93,8 +85,16 @@ public class PlayerShooting : MonoBehaviour
 
         for (int i = 0; i < projectiles; i++)
         {
-            Quaternion rotation = pivot.rotation * (Quaternion.Euler(0, 0, (i * step) - (halfSpread - (halfSpread / projectiles))));
-            Rigidbody2D bulletBody = Instantiate(bulletPrefab, firePoint.position, rotation);
+            Quaternion rotation;
+            if (projectiles > 1)
+            {
+                rotation = pivot.rotation * (Quaternion.Euler(0, 0, (i * step) - (halfSpread - (halfSpread / projectiles))));
+            } else
+            {
+                rotation = pivot.rotation * Quaternion.Euler(0, 0, Random.Range(-spread, spread));
+            }
+
+            Rigidbody2D bulletBody = Instantiate(gun.bulletPrefab, firePoint.position, rotation).GetComponent<Rigidbody2D>();
             bulletBody.AddRelativeForce(Vector2.up * bulletSpeed, ForceMode2D.Impulse);
         }
     }
@@ -107,17 +107,24 @@ public class PlayerShooting : MonoBehaviour
 
         yield return new WaitForSeconds(reloadTime);
 
-        magazine = maxMagazine;
+        magazine = gun.maxMagazine;
         reloading = false;
         reloadBar.SetActive(false);
     }
 
-    void OnShoot(InputValue value) {
-        shootInput = value.Get<float>() > 0 ? true : false;
+    private void SetStats() {
+        isAutomatic = gun.isAutomatic;
+        bulletSpeed = gun.bulletSpeed;
+        fireRate = gun.fireRate;
+        spread = gun.spread;
+        damage = gun.damage;
+        reloadTime = gun.reloadTime;
+        magazine = gun.maxMagazine;
+        projectiles = gun.projectiles;
     }
 
-    public float GetDPS() {
-        return fireRate * damage;
+    void OnShoot(InputValue value) {
+        shootInput = value.Get<float>() > 0 ? true : false;
     }
 
 }

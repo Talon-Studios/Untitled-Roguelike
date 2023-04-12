@@ -355,19 +355,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canShoot: 1
+  gun: {fileID: 11400000, guid: ed330969518582148842c3ee1072abf5, type: 2}
   pivot: {fileID: 517020939}
-  gun: {fileID: 190546410}
+  gunTransform: {fileID: 190546410}
   firePoint: {fileID: 1577755012}
   reloadBar: {fileID: 1143103627}
   reloadMarker: {fileID: 658192099}
-  bulletPrefab: {fileID: 5258355577677769141, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   isAutomatic: 1
   bulletSpeed: 30
   fireRate: 6
   spread: 25
   damage: 10
   reloadTime: 1
-  maxMagazine: 15
   projectiles: 1
 --- !u!114 &21466123
 MonoBehaviour:
@@ -5753,14 +5752,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002057613
+    y: 0
     width: 0.99999994
-    height: 0.9958847
+    height: 0.99999994
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.083333
+  orthographic size: 10.166667
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -5931,7 +5930,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
@@ -6001,14 +5999,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002057613
+    y: 0
     width: 0.99999994
-    height: 0.9958847
+    height: 0.99999994
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.083333
+  orthographic size: 10.166667
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -6065,22 +6063,6 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e5958fcee661e4b8ba562990402cde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 21466117}
-  smoothing: 0.05
-  dynamicCamera: 2
-  screenShakeSmoothing: 1
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7103,7 +7085,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04773038ffb29a14ea889f2e1c3c08fb, type: 2}
   - {fileID: 11400000, guid: bb0b2cefd38a5ec42aa1c4c22d5c8c31, type: 2}
   - {fileID: 11400000, guid: 1bc5fe9d0228cca4f861f89850611438, type: 2}
-  - {fileID: 11400000, guid: 530295786fa08064daf3428ba53424e2, type: 2}
   upgradesPanel: {fileID: 951222675}
   upgradeCards:
   - {fileID: 1626485546}
@@ -8489,6 +8470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012737846}
   - component: {fileID: 2012737845}
+  - component: {fileID: 2012737847}
   m_Layer: 0
   m_Name: Follow Cam
   m_TagString: Untagged
@@ -8550,6 +8532,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2012737847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012737844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e5958fcee661e4b8ba562990402cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2032756962
 GameObject:
   m_ObjectHideFlags: 0
