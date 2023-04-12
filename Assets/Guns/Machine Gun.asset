@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8fa7bb0686d044eb06e70638e68f6d, type: 3}
   m_Name: Machine Gun
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   isAutomatic: 1
-  bulletSpeed: 35
+  bulletSpeed: 45
   fireRate: 10
   spread: 10
   damage: 5
   reloadTime: 1
   maxMagazine: 50
   projectiles: 1
-  bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
+  gunKick: 50
+  gunRotationSmoothing: 0.05
+  screenShakeMagnitude: 0.06
+  screenShakeDuration: 0.1

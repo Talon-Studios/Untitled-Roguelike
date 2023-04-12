@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8fa7bb0686d044eb06e70638e68f6d, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3065601766979065598, guid: 024c8166900968c4db02091c1aed21a5, type: 3}
   isAutomatic: 0
   bulletSpeed: 15
   fireRate: 1
@@ -20,4 +21,7 @@ MonoBehaviour:
   reloadTime: 2
   maxMagazine: 3
   projectiles: 5
-  bulletPrefab: {fileID: 3065601766979065598, guid: 024c8166900968c4db02091c1aed21a5, type: 3}
+  gunKick: 100
+  gunRotationSmoothing: 0.01
+  screenShakeMagnitude: 0.2
+  screenShakeDuration: 0.1

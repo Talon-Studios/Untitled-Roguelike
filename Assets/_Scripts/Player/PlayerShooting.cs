@@ -10,6 +10,7 @@ public class PlayerShooting : MonoBehaviour
     public GunObject gun;
     [SerializeField] private Transform pivot;
     [SerializeField] private Transform gunTransform;
+    [SerializeField] private Transform gunFlip;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject reloadBar;
     [SerializeField] private Transform reloadMarker;
@@ -27,6 +28,7 @@ public class PlayerShooting : MonoBehaviour
     Camera cam;
     Vector3 mousePosition;
     float reloadMarkerTime;
+    float gunTargetRotation;
 
     #region Singleton
     
@@ -58,6 +60,8 @@ public class PlayerShooting : MonoBehaviour
             reloadMarkerTime += Time.deltaTime / reloadTime;
             reloadMarker.localPosition = Vector2.Lerp(-1.5f * Vector2.right, 1.5f * Vector2.right, reloadMarkerTime);
         }
+
+        gunTransform.localRotation = Quaternion.Lerp(gunTransform.localRotation, Quaternion.Euler(0, gunTransform.localRotation.y, 0), gun.gunRotationSmoothing);
     }
 
     private void RotateGun() {
@@ -68,14 +72,18 @@ public class PlayerShooting : MonoBehaviour
 
         if (pivot.eulerAngles.z > 180)
         {
-            gunTransform.localEulerAngles = new Vector3(0, 0, gunTransform.localEulerAngles.z);
+            gunFlip.localEulerAngles = new Vector3(0, 0, gunFlip.localEulerAngles.z);
         } else
         {
-            gunTransform.localEulerAngles = new Vector3(0, 180, gunTransform.localEulerAngles.z);
+            gunFlip.localEulerAngles = new Vector3(0, 180, gunFlip.localEulerAngles.z);
         }
     }
 
     private void Fire() {
+        FollowCam.Instance.ScreenShake(gun.screenShakeDuration, gun.screenShakeMagnitude);
+
+        gunTransform.localRotation *= Quaternion.Euler(0, 0, gun.gunKick);
+
         magazine--;
         if (magazine <= 0) StartCoroutine(Reload());
         if (!isAutomatic) shootInput = false;
@@ -84,7 +92,7 @@ public class PlayerShooting : MonoBehaviour
         float halfSpread = spread / 2;
 
         for (int i = 0; i < projectiles; i++)
-        {
+        {   
             Quaternion rotation;
             if (projectiles > 1)
             {

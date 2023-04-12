@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   isAutomatic: 0
-  bulletSpeed: 30
+  bulletSpeed: 40
   fireRate: 3
   spread: 10
   damage: 10
   reloadTime: 1
   maxMagazine: 20
   projectiles: 1
+  gunKick: 50
+  gunRotationSmoothing: 0.02
   bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
