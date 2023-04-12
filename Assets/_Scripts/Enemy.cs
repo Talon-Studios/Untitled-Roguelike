@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float health = 30;
 
+    [SerializeField] private SpriteGraphics graphics;
+
     private void GetHurt(float damage) {
         health -= damage;
         if (health <= 0) Die();
@@ -23,6 +25,7 @@ public class Enemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D trigger) {
         if (trigger.TryGetComponent<Bullet>(out Bullet bullet))
         {
+            graphics.Flash(0.1f, ColorTheme.Instance.enemyHurt);
             GetHurt(PlayerShooting.Instance.damage);
             Destroy(trigger.gameObject);
         }
