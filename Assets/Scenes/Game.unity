@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d4d0e6442dc5849afc072d7bff4464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 2
   invincibleTime: 3
   invincibleFlashSpeed: 0.2
   graphics: {fileID: 17168016}
@@ -7084,7 +7084,7 @@ MonoBehaviour:
   - {fileID: 1626485546}
   - {fileID: 1221728027}
   - {fileID: 1929468727}
-  speedPercentIncrease: 50
+  speedPercentIncrease: 10
   fireRatePercentIncrease: 50
   damagePercentIncrease: 50
   bulletSpeedPercentIncrease: 30
@@ -7400,7 +7400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60482ec96d2a48540b7b37380f161bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSpawnRate: 0.4
+  startingSpawnRate: 1
   spawnRateIncrement: 0.4
   enemySpeed: 5
   enemySpeedIncrement: 0.5
@@ -8394,7 +8394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d5e046d7fb8a144808cf3d46a90af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {r: 1, g: 1, b: 1, a: 1}
+  enemyHurt: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1995232874
 GameObject:
   m_ObjectHideFlags: 0

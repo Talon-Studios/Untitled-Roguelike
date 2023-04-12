@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die() {
         print("YOU DIEEEEED!!!!!");
+        SceneManager.LoadScene("Die");
     }
 
     private void UpdateHearts() {
