@@ -354,7 +354,7 @@ MonoBehaviour:
   speed: 7
   graphics: {fileID: 17168017}
   tilt: 25
-  tiltSmoothing: 0.05
+  tiltSpeed: 1
 --- !u!114 &21466122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d4d0e6442dc5849afc072d7bff4464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 3
   invincibleTime: 3
   invincibleFlashSpeed: 0.2
   graphics: {fileID: 17168016}
@@ -6088,8 +6088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e5958fcee661e4b8ba562990402cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothing: 0.1
-  dynamicCamera: 2
+  smoothing: 0.15
+  dynamicCamera: 3
   player: {fileID: 21466117}
 --- !u!1 &619394800
 GameObject:
@@ -8349,7 +8349,7 @@ MonoBehaviour:
   xpStartForce: 10
   xpPrefab: {fileID: 4214348150177475379, guid: f36194f4aa938a64d937304dac7cd755, type: 3}
   xpBarsParent: {fileID: 672961199}
-  barFillSmoothing: 0.02
+  barFillSmoothing: 0.2
 --- !u!1 &1993401329
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,7 +54,8 @@ public class FollowCam : MonoBehaviour
         
         targetPos += direction.normalized * dynamicCamera;
         targetPos.z = -10;
-        transform.position = Vector3.Lerp(transform.position, targetPos, smoothing);
+        Vector3 velocity = Vector3.zero;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothing);
     }
 
     public void ScreenShake(float duration, float magnitude) {

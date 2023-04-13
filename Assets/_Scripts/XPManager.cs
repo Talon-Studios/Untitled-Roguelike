@@ -47,7 +47,7 @@ public class XPManager : MonoBehaviour
     void Update() {
         foreach (Image bar in xpBars)
         {
-            bar.fillAmount = Mathf.Lerp(bar.fillAmount, targetBarFill, barFillSmoothing);
+            bar.fillAmount = Mathf.SmoothStep(bar.fillAmount, targetBarFill, barFillSmoothing);
         }
     }
 

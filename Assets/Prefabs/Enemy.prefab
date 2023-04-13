@@ -278,4 +278,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8652a108a15fe9248a887708ab3cad8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSmoothing: 0.05
+  rotationSmoothing: 1

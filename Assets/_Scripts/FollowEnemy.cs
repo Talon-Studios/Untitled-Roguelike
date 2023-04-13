@@ -19,7 +19,7 @@ public class FollowEnemy : MonoBehaviour
     void LateUpdate() {
         Vector2 direction = player.position - transform.position;
         Utils.DirectionToRotation(direction, out Quaternion targetRotation);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSmoothing);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSmoothing);
 
         enemyBody.AddRelativeForce(Vector2.up * EnemyManager.Instance.enemySpeed * Time.timeScale);
     }

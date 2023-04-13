@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animation & Graphics")]
     [SerializeField] private Transform graphics;
     [SerializeField] private float tilt = 15;
-    [SerializeField] private float tiltSmoothing = 0.1f;
+    [SerializeField] private float tiltSpeed = 1;
 
     private Vector2 inputDirection;
     private float targetRotation;
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.velocity = inputDirection * speed;
             targetRotation = -inputDirection.x * tilt;
-            graphics.rotation = Quaternion.Lerp(graphics.rotation, Quaternion.Euler(0, 0, targetRotation), tiltSmoothing);
+            graphics.rotation = Quaternion.RotateTowards(graphics.rotation, Quaternion.Euler(0, 0, targetRotation), tiltSpeed);
         }
     }
 

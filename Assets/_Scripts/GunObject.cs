@@ -25,7 +25,7 @@ public class GunObject : ScriptableObject
     public float gunKick = 50;
 
     [Tooltip("How fast the gun rotates back to the original rotation after firing")]
-    public float gunRotationSmoothing = 0.02f;
+    public float gunRotationSpeed = 1f;
 
     public float screenShakeMagnitude = 0.1f;
     public float screenShakeDuration = 0.1f;
