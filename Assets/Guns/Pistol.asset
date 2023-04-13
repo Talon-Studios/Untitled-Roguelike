@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8fa7bb0686d044eb06e70638e68f6d, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   isAutomatic: 0
   bulletSpeed: 40
   fireRate: 3
@@ -21,5 +22,6 @@ MonoBehaviour:
   maxMagazine: 20
   projectiles: 1
   gunKick: 50
-  gunRotationSmoothing: 0.02
-  bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
+  gunRotationSpeed: 1
+  screenShakeMagnitude: 0.1
+  screenShakeDuration: 0.1

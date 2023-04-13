@@ -8194,7 +8194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimingState: {fileID: 2800000, guid: af552b9a380a87940b96f4a11c5a1a36, type: 3}
-  interactingState: {fileID: 2800000, guid: 569acc177e930f2458e915af05333030, type: 3}
+  interactingState: {fileID: 2800000, guid: 0c77c67da3ed6f44f998a0c8f462a795, type: 3}
 --- !u!114 &1665682757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8350,30 +8350,6 @@ MonoBehaviour:
   xpPrefab: {fileID: 4214348150177475379, guid: f36194f4aa938a64d937304dac7cd755, type: 3}
   xpBarsParent: {fileID: 672961199}
   barFillSmoothing: 0.2
-  barFillCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1993401329
 GameObject:
   m_ObjectHideFlags: 0

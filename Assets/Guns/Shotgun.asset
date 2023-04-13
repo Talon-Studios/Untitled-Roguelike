@@ -22,6 +22,6 @@ MonoBehaviour:
   maxMagazine: 3
   projectiles: 5
   gunKick: 100
-  gunRotationSmoothing: 0.01
+  gunRotationSpeed: 1
   screenShakeMagnitude: 0.2
   screenShakeDuration: 0.1
