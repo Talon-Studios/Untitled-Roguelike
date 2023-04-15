@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
+  hoverSpeed: 1
+  hoverMagnitude: 1
 --- !u!1001 &7343894138451966211
 PrefabInstance:
   m_ObjectHideFlags: 0

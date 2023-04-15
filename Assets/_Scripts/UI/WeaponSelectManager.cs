@@ -6,9 +6,13 @@ using TMPro;
 public class WeaponSelectManager : MonoBehaviour
 {
 
+    [SerializeField] private GunObject[] weapons;
+
     [SerializeField] private TMP_Text weaponName;
     [SerializeField] private TMP_Text weaponDescription;
     [SerializeField] private Transform model;
+
+    private int page = 0;
 
     #region Singleton
     
@@ -20,9 +24,26 @@ public class WeaponSelectManager : MonoBehaviour
     
     #endregion
 
+    void Start() {
+        SetWeaponInfo(weapons[page]);
+    }
+
+    public void NextPage(int direction) {
+        page += direction;
+        if (page > weapons.Length - 1)
+        {
+            page = 0;
+        } else if (page < 0)
+        {
+            page = weapons.Length - 1;
+        }
+
+        SetWeaponInfo(weapons[page]);
+    }
+
     public void SetWeaponInfo(GunObject gunObject) {
         weaponName.text = gunObject.weaponName;
-        weaponDescription.text = gunObject.weaponDescription;
+        weaponDescription.text = "\"" + gunObject.weaponDescription + "\"";
 
         Destroy(model.gameObject);
         model = Instantiate(gunObject.model, model.position, model.rotation).transform;
