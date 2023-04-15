@@ -7400,7 +7400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60482ec96d2a48540b7b37380f161bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSpawnRate: 1
+  startingSpawnRate: 0.4
   spawnRateIncrement: 0.4
   enemySpeed: 5
   enemySpeedIncrement: 0.5

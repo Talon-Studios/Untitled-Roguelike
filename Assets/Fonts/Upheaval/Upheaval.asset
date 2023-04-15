@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Upheaval
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 448981650
   material: {fileID: 6205807400706450218}
-  materialHashCode: 0
+  materialHashCode: -125253646
   m_Version: 1.1.0
   m_SourceFontFileGUID: e1b1f96f7f98f994a9df8a1fdc7b1944
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: e1b1f96f7f98f994a9df8a1fdc7b1944, type: 3}
