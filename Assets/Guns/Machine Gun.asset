@@ -20,8 +20,9 @@ MonoBehaviour:
   damage: 5
   reloadTime: 1
   maxMagazine: 50
+  enemyKnockback: 10
   projectiles: 1
-  gunKick: 50
-  gunRotationSpeed: 1
+  gunKick: 30
+  gunRotationSpeed: 2
   screenShakeMagnitude: 0.06
   screenShakeDuration: 0.1

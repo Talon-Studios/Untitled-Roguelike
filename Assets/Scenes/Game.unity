@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canShoot: 1
-  gun: {fileID: 11400000, guid: 66965d885aab550408b403b6031b29db, type: 2}
+  gun: {fileID: 11400000, guid: ebd9161d1d24542448a1ebbf3eb383ad, type: 2}
   pivot: {fileID: 517020939}
   gunTransform: {fileID: 190546410}
   gunFlip: {fileID: 1976661746}
@@ -381,6 +381,7 @@ MonoBehaviour:
   spread: 25
   damage: 10
   reloadTime: 1
+  enemyKnockback: 0
   projectiles: 1
 --- !u!114 &21466123
 MonoBehaviour:
@@ -8394,7 +8395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d5e046d7fb8a144808cf3d46a90af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHurt: {r: 1, g: 1, b: 1, a: 0}
+  enemyHurt: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1995232874
 GameObject:
   m_ObjectHideFlags: 0

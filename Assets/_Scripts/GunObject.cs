@@ -17,6 +17,7 @@ public class GunObject : ScriptableObject
     public float damage = 10;
     public float reloadTime = 1;
     public float maxMagazine = 20;
+    public float enemyKnockback = 1;
     public int projectiles = 1;
 
     [Header("Animation")]

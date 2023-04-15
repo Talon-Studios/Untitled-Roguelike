@@ -16,7 +16,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Transform reloadMarker;
 
     [HideInInspector] public bool isAutomatic;
-    [HideInInspector] public float bulletSpeed, fireRate, spread, damage, reloadTime;
+    [HideInInspector] public float bulletSpeed, fireRate, spread, damage, reloadTime, enemyKnockback;
     [HideInInspector] public int projectiles;
 
     private bool shootInput;
@@ -128,6 +128,7 @@ public class PlayerShooting : MonoBehaviour
         damage = gun.damage;
         reloadTime = gun.reloadTime;
         magazine = gun.maxMagazine;
+        enemyKnockback = gun.enemyKnockback;
         projectiles = gun.projectiles;
     }
 

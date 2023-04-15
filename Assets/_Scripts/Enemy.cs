@@ -6,8 +6,13 @@ public class Enemy : MonoBehaviour
 {
 
     [SerializeField] private float health = 30;
-
     [SerializeField] private SpriteGraphics graphics;
+
+    Rigidbody2D enemyBody;
+
+    void Start() {
+        enemyBody = GetComponent<Rigidbody2D>();
+    }
 
     private void GetHurt(float damage) {
         health -= damage;
@@ -26,6 +31,7 @@ public class Enemy : MonoBehaviour
         if (trigger.TryGetComponent<Bullet>(out Bullet bullet))
         {
             graphics.Flash(0.1f, ColorTheme.Instance.enemyHurt);
+            enemyBody.AddForce(trigger.GetComponent<Rigidbody2D>().velocity.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
             GetHurt(PlayerShooting.Instance.damage);
             Destroy(trigger.gameObject);
         }

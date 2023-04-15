@@ -17,9 +17,10 @@ MonoBehaviour:
   bulletSpeed: 15
   fireRate: 1
   spread: 45
-  damage: 30
+  damage: 20
   reloadTime: 2
   maxMagazine: 3
+  enemyKnockback: 50
   projectiles: 5
   gunKick: 100
   gunRotationSpeed: 1
