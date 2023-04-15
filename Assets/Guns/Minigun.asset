@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff8fa7bb0686d044eb06e70638e68f6d, type: 3}
-  m_Name: Machine Gun
+  m_Name: Minigun
   m_EditorClassIdentifier: 
+  weaponName: Minigun
+  weaponDescription: An old, battered minigun
   bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   isAutomatic: 1
   bulletSpeed: 45
@@ -26,3 +28,4 @@ MonoBehaviour:
   gunRotationSpeed: 2
   screenShakeMagnitude: 0.06
   screenShakeDuration: 0.1
+  model: {fileID: 931933940919714406, guid: 939e11381c29c0c42a8a2aa8ce49fd87, type: 3}

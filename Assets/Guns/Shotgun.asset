@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8fa7bb0686d044eb06e70638e68f6d, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  weaponName: Shotgun
+  weaponDescription: Rip and tear until it is done
   bulletPrefab: {fileID: 3065601766979065598, guid: 024c8166900968c4db02091c1aed21a5, type: 3}
   isAutomatic: 0
   bulletSpeed: 15
@@ -26,3 +28,4 @@ MonoBehaviour:
   gunRotationSpeed: 1
   screenShakeMagnitude: 0.2
   screenShakeDuration: 0.1
+  model: {fileID: 19897247776557895, guid: fbd6f956cf2e2d24bb105339653ea6e7, type: 3}

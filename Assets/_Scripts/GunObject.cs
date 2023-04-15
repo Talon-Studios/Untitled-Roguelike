@@ -6,6 +6,9 @@ using UnityEngine;
 public class GunObject : ScriptableObject
 {
 
+    public string weaponName;
+    [TextArea] public string weaponDescription;
+
     public Bullet bulletPrefab;
 
     [Header("Stats")]
@@ -30,5 +33,7 @@ public class GunObject : ScriptableObject
 
     public float screenShakeMagnitude = 0.1f;
     public float screenShakeDuration = 0.1f;
+
+    public GameObject model;
 
 }
