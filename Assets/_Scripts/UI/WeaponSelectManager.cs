@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class WeaponSelectManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class WeaponSelectManager : MonoBehaviour
     [SerializeField] private TMP_Text weaponName;
     [SerializeField] private TMP_Text weaponDescription;
     [SerializeField] private Transform model;
+    [SerializeField] private StartObject startObject;
 
     private int page = 0;
 
@@ -49,8 +51,9 @@ public class WeaponSelectManager : MonoBehaviour
         model = Instantiate(gunObject.model, model.position, model.rotation).transform;
     }
 
-    public void SetGameWeapon(GunObject gunObject) {
-        
+    public void SetGameWeapon() {
+        startObject.gun = weapons[page];
+        SceneManager.LoadScene("Game");
     }
 
 }

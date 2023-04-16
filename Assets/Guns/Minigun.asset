@@ -25,7 +25,7 @@ MonoBehaviour:
   enemyKnockback: 10
   projectiles: 1
   gunKick: 30
-  gunRotationSpeed: 2
+  gunRotationSpeed: 2.5
   screenShakeMagnitude: 0.06
   screenShakeDuration: 0.1
   model: {fileID: 931933940919714406, guid: 939e11381c29c0c42a8a2aa8ce49fd87, type: 3}

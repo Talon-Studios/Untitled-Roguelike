@@ -14,6 +14,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject reloadBar;
     [SerializeField] private Transform reloadMarker;
+    [SerializeField] private StartObject startObject;
 
     [HideInInspector] public bool isAutomatic;
     [HideInInspector] public float bulletSpeed, fireRate, spread, damage, reloadTime, enemyKnockback;
@@ -42,6 +43,7 @@ public class PlayerShooting : MonoBehaviour
 
     void Start() {
         cam = Camera.main;
+        gun = startObject.gun;
 
         SetStats();
     }
