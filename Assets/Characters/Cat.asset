@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
-  m_Name: Add Projectile
+  m_Script: {fileID: 11500000, guid: 383519b62e426ae4a9349660e2b46e07, type: 3}
+  m_Name: Cat
   m_EditorClassIdentifier: 
-  upgradeName: Yay Bullets
-  upgradeDescription: +1 projectile
-  upgrade: 5
-  gunExclude:
-  - {fileID: 11400000, guid: ebd9161d1d24542448a1ebbf3eb383ad, type: 2}
+  characterName: Cat
+  characterDescription: It's a cat...
+  model: {fileID: 499605171543494371, guid: 9b3e96462e882f343a2851ae0ef4f1ee, type: 3}

@@ -9,7 +9,7 @@ public class WeaponArrows : MonoBehaviour, IPointerClickHandler
     [SerializeField] private int direction = 1;
 
     public void OnPointerClick(PointerEventData eventData) {
-        WeaponSelectManager.Instance.NextPage(direction);
+        SelectManager.Instance.NextPage(direction);
     }
 
 }

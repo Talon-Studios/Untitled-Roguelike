@@ -7,5 +7,6 @@ public class StartObject : ScriptableObject
 {
 
     public GunObject gun;
+    public CharacterObject character;
 
 }

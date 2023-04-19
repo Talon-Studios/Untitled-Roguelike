@@ -28,4 +28,4 @@ MonoBehaviour:
   gunRotationSpeed: 1
   screenShakeMagnitude: 0.1
   screenShakeDuration: 0.1
-  model: {fileID: 1546413391537161858, guid: 43d5ce517d7ee4d4b891e9f8e16e66cb, type: 3}
+  graphics: {fileID: 2800000, guid: 1a1db111c0395844fa52e326d38acfa9, type: 3}

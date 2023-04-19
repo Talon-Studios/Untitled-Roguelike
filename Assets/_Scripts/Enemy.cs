@@ -15,12 +15,12 @@ public class Enemy : MonoBehaviour
     }
 
     private void GetHurt(float damage) {
-        health -= damage;
+        health -= damage; 
         if (health <= 0) Die();
     }
 
     public void Die() {
-        FollowCam.Instance.Hitstop(0.1f);
+        // FollowCam.Instance.Hitstop(0.1f);
         FollowCam.Instance.ScreenShake(0.1f, 0.1f);
         
         XPManager.Instance.CreateXP(transform.position);

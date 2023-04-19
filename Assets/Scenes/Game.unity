@@ -5768,9 +5768,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.002057613
+    width: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6015,9 +6015,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.002057613
+    width: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -7077,20 +7077,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrades:
-  - {fileID: 11400000, guid: 90a49343f3873804383caf089029859b, type: 2}
-  - {fileID: 11400000, guid: 04773038ffb29a14ea889f2e1c3c08fb, type: 2}
-  - {fileID: 11400000, guid: bb0b2cefd38a5ec42aa1c4c22d5c8c31, type: 2}
   - {fileID: 11400000, guid: 1bc5fe9d0228cca4f861f89850611438, type: 2}
   upgradesPanel: {fileID: 951222675}
   upgradeCards:
   - {fileID: 1626485546}
   - {fileID: 1221728027}
   - {fileID: 1929468727}
-  speedPercentIncrease: 10
-  fireRatePercentIncrease: 50
-  damagePercentIncrease: 50
-  bulletSpeedPercentIncrease: 30
-  spreadPercentIncrease: 50
 --- !u!1 &931473971
 GameObject:
   m_ObjectHideFlags: 0

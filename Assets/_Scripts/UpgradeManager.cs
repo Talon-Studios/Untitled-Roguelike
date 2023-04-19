@@ -5,12 +5,7 @@ using UnityEngine.UI;
 
 public enum Upgrades
 {
-    FasterMovement,
-    FireFaster,
-    MoreDamage,
-    FasterBullets,
-    MoreSpread,
-    AddProjectile
+    Laser
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -21,13 +16,6 @@ public class UpgradeManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject upgradesPanel;
     [SerializeField] private UpgradeCard[] upgradeCards;
-
-    [Header("Upgrade Options")]
-    [SerializeField] private float speedPercentIncrease = 20;
-    [SerializeField] private float fireRatePercentIncrease = 20;
-    [SerializeField] private float damagePercentIncrease = 20;
-    [SerializeField] private float bulletSpeedPercentIncrease = 20;
-    [SerializeField] private float spreadPercentIncrease = 20;
 
     #region Singleton
     
@@ -63,28 +51,8 @@ public class UpgradeManager : MonoBehaviour
     public void ActivateUpgrade(UpgradeObject upgradeObject) {
         switch (upgradeObject.upgrade)
         {
-            case Upgrades.FasterMovement: { 
-                PlayerMovement.Instance.speed += PercentOf(PlayerMovement.Instance.speed, speedPercentIncrease);
-                break;
-            }
-            case Upgrades.FireFaster: {
-                PlayerShooting.Instance.fireRate += PercentOf(PlayerShooting.Instance.fireRate, fireRatePercentIncrease);
-                break;
-            }
-            case Upgrades.MoreDamage: {
-                PlayerShooting.Instance.damage += PercentOf(PlayerShooting.Instance.damage, damagePercentIncrease);
-                break;
-            }
-            case Upgrades.FasterBullets: {
-                PlayerShooting.Instance.bulletSpeed += PercentOf(PlayerShooting.Instance.bulletSpeed, bulletSpeedPercentIncrease);
-                break;
-            }
-            case Upgrades.MoreSpread: {
-                PlayerShooting.Instance.spread += PercentOf(PlayerShooting.Instance.spread, spreadPercentIncrease);
-                break;
-            }
-            case Upgrades.AddProjectile: {
-                PlayerShooting.Instance.projectiles++;
+            case Upgrades.Laser: { 
+                print("Added laser module");
                 break;
             }
         }
@@ -97,7 +65,7 @@ public class UpgradeManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             UpgradeObject randomUpgrade = upgradesPossible[Random.Range(0, upgradesPossible.Count)];
-            upgradesPossible.Remove(randomUpgrade);
+            if (upgrades.Length > 3) upgradesPossible.Remove(randomUpgrade);
             upgradeResults.Add(randomUpgrade);
         }
 

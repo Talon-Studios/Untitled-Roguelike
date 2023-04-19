@@ -34,6 +34,6 @@ public class GunObject : ScriptableObject
     public float screenShakeMagnitude = 0.1f;
     public float screenShakeDuration = 0.1f;
 
-    public GameObject model;
+    public Texture2D graphics;
 
 }
