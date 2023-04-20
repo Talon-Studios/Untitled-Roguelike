@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Pistol
   weaponDescription: Literally nothing unique about this gun
   bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
-  isAutomatic: 0
+  isAutomatic: 1
   bulletSpeed: 40
   fireRate: 3
   spread: 10

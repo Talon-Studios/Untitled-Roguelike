@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour
     }
 
     public void Die() {
-        // FollowCam.Instance.Hitstop(0.1f);
         FollowCam.Instance.ScreenShake(0.1f, 0.1f);
         
         XPManager.Instance.CreateXP(transform.position);
@@ -28,12 +27,11 @@ public class Enemy : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D trigger) {
-        if (trigger.TryGetComponent<Bullet>(out Bullet bullet))
+        if (trigger.CompareTag("Bullet"))
         {
             graphics.Flash(0.1f, ColorTheme.Instance.enemyHurt);
             enemyBody.AddForce(trigger.GetComponent<Rigidbody2D>().velocity.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
             GetHurt(PlayerShooting.Instance.damage);
-            Destroy(trigger.gameObject);
         }
     }
 
