@@ -43,10 +43,10 @@ public class SelectManager : MonoBehaviour
 
         SetCharacter(characters[page]);
 
-        weaponCells[0].selected = !weaponCells[0].selected;
-        weaponCells[0].border.color = weaponCells[0].hoverColor;
+        // weaponCells[0].selected = !weaponCells[0].selected;
+        // weaponCells[0].border.color = weaponCells[0].hoverColor;
 
-        SetWeapon(weaponCells[0]);
+        // SetWeapon(weaponCells[0]);
     }
 
     public void NextPage(int direction) {
