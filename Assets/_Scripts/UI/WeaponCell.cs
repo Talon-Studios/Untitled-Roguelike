@@ -15,7 +15,7 @@ public class WeaponCell : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     [HideInInspector] public Image border;
     [HideInInspector] public Color originalColor;
     
-    void Start() {
+    void Awake() {
         border = GetComponent<Image>();
         originalColor = border.color;
 
