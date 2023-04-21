@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
-  m_Name: Bouncing Ball
+  m_Name: Fireballs
   m_EditorClassIdentifier: 
-  upgradeName: Bouncing ball
-  upgradeDescription: Summon the bouncing ball of death
-  upgrade: 2
+  upgradeName: Fireball
+  upgradeDescription: Very very hot
+  upgrade: 0
+  upgradeChildren: []

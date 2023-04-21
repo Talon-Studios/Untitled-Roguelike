@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public enum Upgrades
 {
-    Laser,
     Fire,
     Ball
 }
@@ -53,21 +52,14 @@ public class UpgradeManager : MonoBehaviour
     public void ActivateUpgrade(UpgradeObject upgradeObject) {
         switch (upgradeObject.upgrade)
         {
-            case Upgrades.Laser: { 
-                print("Added laser module");
-                LaserWeapon.Instance.gameObject.SetActive(true);
-                break;
-            }
             case Upgrades.Fire: {
                 print("Fire");
-                FireWeapon.Instance.gameObject.SetActive(true);
-                FireWeapon.Instance.AddFireball();
+                FireWeapon.Instance.ActivateWeapon();
                 break;
             }
             case Upgrades.Ball: {
                 print("Ball");
-                BallWeapon.Instance.gameObject.SetActive(true);
-                BallWeapon.Instance.AddBall();
+                BallWeapon.Instance.ActivateWeapon();
                 break;
             }
         }

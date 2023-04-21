@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class FireWeapon : MonoBehaviour
 {
 
-    [SerializeField] private float rotationSpeed = 1;
-    [SerializeField] private float distance = 5;
-    [SerializeField] private GameObject fireballPrefab;
-
-    private GameObject[] fireballs = new GameObject[0];
+    [SerializeField] private float spawnDelay = 2;
+    [SerializeField] private float startForce = 2;
+    [SerializeField] private Rigidbody2D fireballPrefab;
 
     #region Singleton
     
@@ -21,19 +20,24 @@ public class FireWeapon : MonoBehaviour
     
     #endregion
 
-    void Update() {
-        transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+    public void ActivateWeapon() {
+        StartCoroutine(SpawnFireballRoutine());
     }
 
-    public void AddFireball() {
-        float fireballNum = fireballs.Length + 1;
-        foreach (GameObject fireball in fireballs) Destroy(fireball);
-
-        for (int i = 0; i < fireballNum; i++)
-        {
-            Vector2 direction = Quaternion.AngleAxis(i * 360 / fireballNum, Vector3.forward) * Vector3.right;
-            Instantiate(fireballPrefab, direction.normalized * distance, Quaternion.identity, transform);
+    private IEnumerator SpawnFireballRoutine() {
+        while (true)
+        {   
+            yield return new WaitForSeconds(spawnDelay);
+            SpawnFireball();
         }
+    }
+
+    private void SpawnFireball() {
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closestEnemy = allEnemies.OrderBy(enemy => (enemy.transform.position - transform.position).sqrMagnitude).FirstOrDefault();
+        Vector2 direction = closestEnemy.transform.position - transform.position;
+        Rigidbody2D fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+        fireball.AddForce(direction.normalized * startForce, ForceMode2D.Impulse);
     }
 
 }

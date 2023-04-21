@@ -9,5 +9,6 @@ public class UpgradeObject : ScriptableObject
     public string upgradeName;
     [TextArea] public string upgradeDescription;
     public Upgrades upgrade;
+    public UpgradeObject[] upgradeChildren;
 
 }

@@ -18,6 +18,10 @@ public class BallWeapon : MonoBehaviour
     
     #endregion
 
+    public void ActivateWeapon() {
+        AddBall();
+    }
+
     public void AddBall() {
         Instantiate(ballPrefab, transform.position, Quaternion.identity).AddForce(Random.insideUnitCircle.normalized * startSpeed, ForceMode2D.Impulse);
     }
