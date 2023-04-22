@@ -6,13 +6,30 @@ public class XP : MonoBehaviour
 {
 
     [SerializeField] private int xpAmount = 1;
+    [SerializeField] private float moveSpeed = 0.5f;
+
+    Transform player;
+
+    void Start() {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void OnTriggerEnter2D(Collider2D trigger) {
         if (trigger.CompareTag("Player"))
         {
-            Destroy(gameObject);
-            XPManager.Instance.GainXP(xpAmount);
+            StartCoroutine(MoveToPlayer());
         }
+    }
+
+    private IEnumerator MoveToPlayer() {
+        while (transform.position != player.position)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed);
+            yield return null;
+        }
+
+        XPManager.Instance.GainXP(xpAmount);
+        Destroy(gameObject);
     }
 
 }
