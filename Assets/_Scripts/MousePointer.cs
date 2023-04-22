@@ -46,6 +46,14 @@ public class MousePointer : MonoBehaviour
         transform.localPosition = Mouse.current.position.ReadValue() - (canvas.sizeDelta / 2);
     }
 
+    void OnApplicationFocus(bool focus) {
+        if (focus)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+    }
+
     public void SetMouseState(MouseState newState) {
         switch (newState)
         {
