@@ -15,4 +15,5 @@ MonoBehaviour:
   upgradeName: Laser
   upgradeDescription: Slice through enemies like butter
   upgrade: 6
-  upgradeChildren: []
+  upgradeChildren:
+  - {fileID: 11400000, guid: a54bcd31125feea4d83f147800c6251c, type: 2}

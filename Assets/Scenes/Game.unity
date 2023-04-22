@@ -5805,9 +5805,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002057613
-    width: 0.99999994
-    height: 0.9958847
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6052,9 +6052,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002057613
-    width: 0.99999994
-    height: 0.9958847
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -7640,7 +7640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cebf7808bedc54fa0c850a8262b45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePercent: 2
+  damagePercent: 1
   laserLine: {fileID: 1802323327}
   boundsLayer:
     serializedVersion: 2

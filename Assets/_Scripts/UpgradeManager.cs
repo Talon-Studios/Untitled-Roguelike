@@ -11,7 +11,8 @@ public enum Upgrades
     Piercing,
     Bomb,
     BombFasterSpawn,
-    Laser
+    Laser,
+    LaserMoreDamage
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -83,7 +84,7 @@ public class UpgradeManager : MonoBehaviour
             }
             case Upgrades.Piercing: {
                 print("Piercing");
-                PlayerShooting.Instance.PiercingBulletChanceIncrease(15);
+                PlayerShooting.Instance.PiercingBulletChanceIncrease(25);
                 break;
             }
             case Upgrades.Bomb: {
@@ -99,6 +100,11 @@ public class UpgradeManager : MonoBehaviour
             case Upgrades.Laser: {
                 print("Laser");
                 LaserWeapon.Instance.ActivateWeapon();
+                break;
+            }
+            case Upgrades.LaserMoreDamage: {
+                print("More laser damage");
+                LaserWeapon.Instance.MoreDamage(5);
                 break;
             }
         }

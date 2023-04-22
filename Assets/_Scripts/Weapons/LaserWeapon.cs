@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class LaserWeapon : MonoBehaviour
 {
 
-    [SerializeField] private float damagePercent = 5;
+    [SerializeField] private float damagePercent = 1;
 
     [SerializeField] private LineRenderer laserLine;
     [SerializeField] private LayerMask boundsLayer;
@@ -53,6 +53,10 @@ public class LaserWeapon : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MoreDamage(float damagePercentage) {
+        damagePercent += damagePercent;
     }
 
 }
