@@ -18,7 +18,7 @@ MonoBehaviour:
   isAutomatic: 1
   bulletSpeed: 40
   fireRate: 3
-  spread: 10
+  spread: 5
   damage: 10
   reloadTime: 1
   maxMagazine: 20

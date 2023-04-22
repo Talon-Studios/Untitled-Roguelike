@@ -10,7 +10,8 @@ public enum Upgrades
     Ball,
     Piercing,
     Bomb,
-    BombFasterSpawn
+    BombFasterSpawn,
+    Laser
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -93,6 +94,11 @@ public class UpgradeManager : MonoBehaviour
             case Upgrades.BombFasterSpawn: {
                 print("More bomb");
                 BombWeapon.Instance.FireFaster(25);
+                break;
+            }
+            case Upgrades.Laser: {
+                print("Laser");
+                LaserWeapon.Instance.ActivateWeapon();
                 break;
             }
         }

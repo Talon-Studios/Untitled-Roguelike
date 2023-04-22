@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9e85f569baf1a45ba53d18a2f8302e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPiercing: 0
 --- !u!1 &7757999034339885246
 GameObject:
   m_ObjectHideFlags: 0
