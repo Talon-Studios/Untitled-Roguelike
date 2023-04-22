@@ -12,7 +12,9 @@ public enum Upgrades
     Bomb,
     BombFasterSpawn,
     Laser,
-    LaserMoreDamage
+    LaserMoreDamage,
+    PoisonTrail,
+    PoisonTrailLonger
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -105,6 +107,16 @@ public class UpgradeManager : MonoBehaviour
             case Upgrades.LaserMoreDamage: {
                 print("More laser damage");
                 LaserWeapon.Instance.MoreDamage(5);
+                break;
+            }
+            case Upgrades.PoisonTrail: {
+                print("Trail");
+                TrailWeapon.Instance.ActiateWeapon();
+                break;
+            }
+            case Upgrades.PoisonTrailLonger: {
+                print("Longer trail");
+                TrailWeapon.Instance.LongerTrail(1);
                 break;
             }
         }

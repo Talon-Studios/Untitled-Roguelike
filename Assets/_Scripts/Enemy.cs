@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D trigger) {
         if (trigger.CompareTag("Bullet"))
         {
-            enemyBody.AddForce(trigger.GetComponent<Rigidbody2D>().velocity.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
+            enemyBody.AddForce(-enemyBody.velocity.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
             GetHurt(PlayerShooting.Instance.damage);
         }
     }

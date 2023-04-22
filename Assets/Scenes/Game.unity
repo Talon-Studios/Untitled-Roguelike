@@ -405,6 +405,54 @@ MonoBehaviour:
   heartParent: {fileID: 468711378}
   heartPrefab: {fileID: 6393547373499236577, guid: 25b9234981d74f044acdbd87165bc546, type: 3}
   health: 0
+--- !u!1 &108694548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108694549}
+  - component: {fileID: 108694550}
+  m_Layer: 0
+  m_Name: Trail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &108694549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108694548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 356180912}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108694550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108694548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d88de002d0b1974ea9db028c332a798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trailBetweenDelay: 0.2
+  trailAutoDestructTime: 2
+  defaultTrail: {fileID: 282373421}
+  trailObject: {fileID: 4049060717964364473, guid: 338633475b5df2e4295c0d371d671f76, type: 3}
 --- !u!1 &149010906
 GameObject:
   m_ObjectHideFlags: 0
@@ -5707,6 +5755,7 @@ Transform:
   - {fileID: 1436374596}
   - {fileID: 1404520613}
   - {fileID: 1137203638}
+  - {fileID: 108694549}
   m_Father: {fileID: 21466117}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5805,9 +5854,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.002057613
+    width: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6052,9 +6101,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.002057613
+    width: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -7167,6 +7216,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1c0c777a2f3909d48a5e97f719e9b54b, type: 2}
   - {fileID: 11400000, guid: 307ac145cada62841a50ab657a32eb62, type: 2}
   - {fileID: 11400000, guid: faf08683b833de24a95b677992ee03f8, type: 2}
+  - {fileID: 11400000, guid: 7af1798c78674154c98c40f3181e2c20, type: 2}
   upgradesPanel: {fileID: 951222675}
   upgradeCards:
   - {fileID: 1626485546}
