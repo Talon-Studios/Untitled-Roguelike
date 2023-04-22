@@ -7212,6 +7212,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrades:
   - {fileID: 11400000, guid: faf08683b833de24a95b677992ee03f8, type: 2}
+  - {fileID: 11400000, guid: 307ac145cada62841a50ab657a32eb62, type: 2}
+  - {fileID: 11400000, guid: 8ea88b3a58266874b90f3f49e6825029, type: 2}
+  - {fileID: 11400000, guid: 1c0c777a2f3909d48a5e97f719e9b54b, type: 2}
+  - {fileID: 11400000, guid: 7af1798c78674154c98c40f3181e2c20, type: 2}
+  - {fileID: 11400000, guid: 5c660f26ce9c7b444b57c61201e68443, type: 2}
   upgradesPanel: {fileID: 951222675}
   upgradeCards:
   - {fileID: 1626485546}
