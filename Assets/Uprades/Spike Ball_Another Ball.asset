@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
   m_Name: Spike Ball_Another Ball
   m_EditorClassIdentifier: 
-  upgradeName: Another Ball
+  upgradeName: Death Ball
   upgradeDescription: Summon another bouncing ball of doom
   upgrade: 2
   upgradeChildren: []

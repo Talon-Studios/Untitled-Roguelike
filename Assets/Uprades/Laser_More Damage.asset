@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
   m_Name: Laser_More Damage
   m_EditorClassIdentifier: 
-  upgradeName: Laser
+  upgradeName: Cat Hazard
   upgradeDescription: +10% more damage from laser
   upgrade: 7
   upgradeChildren: []

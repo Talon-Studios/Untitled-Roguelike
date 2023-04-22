@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class LaserWeapon : MonoBehaviour
 {
 
-    [SerializeField] private float damagePercent = 1;
+    [SerializeField] private float damage = 1;
 
     [SerializeField] private LineRenderer laserLine;
     [SerializeField] private LayerMask boundsLayer;
@@ -49,14 +49,14 @@ public class LaserWeapon : MonoBehaviour
             {
                 if (hit.collider.TryGetComponent<Enemy>(out Enemy enemy))
                 {
-                    enemy.GetHurt(PlayerShooting.Instance.damage / 100 * damagePercent);
+                    enemy.GetHurt(damage * Time.fixedDeltaTime);
                 }
             }
         }
     }
 
-    public void MoreDamage(float damagePercentage) {
-        damagePercent += damagePercent;
+    public void MoreDamage(float damageIncrease) {
+        damage += damageIncrease;
     }
 
 }

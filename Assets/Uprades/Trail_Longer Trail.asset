@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
   m_Name: Trail_Longer Trail
   m_EditorClassIdentifier: 
-  upgradeName: Dangerous Trail
+  upgradeName: Trail Mix
   upgradeDescription: Leave a even longer trail of danger
   upgrade: 9
   upgradeChildren: []

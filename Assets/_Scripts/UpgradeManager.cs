@@ -106,7 +106,7 @@ public class UpgradeManager : MonoBehaviour
             }
             case Upgrades.LaserMoreDamage: {
                 print("More laser damage");
-                LaserWeapon.Instance.MoreDamage(5);
+                LaserWeapon.Instance.MoreDamage(10);
                 break;
             }
             case Upgrades.PoisonTrail: {

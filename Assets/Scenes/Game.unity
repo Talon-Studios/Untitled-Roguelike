@@ -5861,7 +5861,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.166667
+  orthographic size: 10.083333
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -6108,7 +6108,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.166667
+  orthographic size: 10.083333
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -6494,7 +6494,7 @@ MonoBehaviour:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 150, y: 150}
+  m_ReferenceResolution: {x: 640, y: 360}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -7211,12 +7211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrades:
-  - {fileID: 11400000, guid: 8ea88b3a58266874b90f3f49e6825029, type: 2}
-  - {fileID: 11400000, guid: 5c660f26ce9c7b444b57c61201e68443, type: 2}
-  - {fileID: 11400000, guid: 1c0c777a2f3909d48a5e97f719e9b54b, type: 2}
-  - {fileID: 11400000, guid: 307ac145cada62841a50ab657a32eb62, type: 2}
   - {fileID: 11400000, guid: faf08683b833de24a95b677992ee03f8, type: 2}
-  - {fileID: 11400000, guid: 7af1798c78674154c98c40f3181e2c20, type: 2}
   upgradesPanel: {fileID: 951222675}
   upgradeCards:
   - {fileID: 1626485546}
@@ -7690,7 +7685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cebf7808bedc54fa0c850a8262b45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePercent: 1
+  damage: 10
   laserLine: {fileID: 1802323327}
   boundsLayer:
     serializedVersion: 2
@@ -9007,8 +9002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c1fb912c367344da14cc5a0e193c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingUpgradeXP: 1
-  upgradeXPIncrement: 0
+  startingUpgradeXP: 4
+  upgradeXPIncrement: 6
   xpStartForce: 10
   xpPrefab: {fileID: 4214348150177475379, guid: f36194f4aa938a64d937304dac7cd755, type: 3}
   xpBarsParent: {fileID: 672961199}
