@@ -22,7 +22,7 @@ MonoBehaviour:
   damage: 10
   reloadTime: 1
   maxMagazine: 20
-  enemyKnockback: 10
+  enemyKnockback: 15
   projectiles: 1
   gunKick: 50
   gunRotationSpeed: 1

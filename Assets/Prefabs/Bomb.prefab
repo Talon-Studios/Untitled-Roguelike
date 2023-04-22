@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   delay: 2
-  enemyKnockback: 10
+  enemyKnockback: 20
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
