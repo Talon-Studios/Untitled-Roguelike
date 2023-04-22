@@ -24,6 +24,10 @@ public class FireWeapon : MonoBehaviour
         StartCoroutine(SpawnFireballRoutine());
     }
 
+    public void FireFaster(float percentage) {
+        spawnDelay -= spawnDelay / 100 * percentage;
+    }
+
     private IEnumerator SpawnFireballRoutine() {
         while (true)
         {   

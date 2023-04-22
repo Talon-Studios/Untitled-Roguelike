@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
-  m_Name: Spike Ball
+  m_Name: Fireballs_More Fireballs
   m_EditorClassIdentifier: 
-  upgradeName: Spike Ball
-  upgradeDescription: Summon the bouncing ball of doom
-  upgrade: 2
-  upgradeChildren:
-  - {fileID: 11400000, guid: 48c4e04dee19e1440ba5158fb5751df8, type: 2}
+  upgradeName: Superhot
+  upgradeDescription: Fire fireballs +25% faster
+  upgrade: 1
+  upgradeChildren: []

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fireballs
   m_EditorClassIdentifier: 
   upgradeName: Fireball
-  upgradeDescription: Very very hot
+  upgradeDescription: Lob flaming hot fireballs
   upgrade: 0
-  upgradeChildren: []
+  upgradeChildren:
+  - {fileID: 11400000, guid: fa1099d3a46b23d4cb5bb9acbc34e04e, type: 2}

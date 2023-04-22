@@ -6,13 +6,17 @@ using UnityEngine.UI;
 public enum Upgrades
 {
     Fire,
-    Ball
+    FasterFireSpawn,
+    Ball,
+    Piercing,
+    Bomb,
+    BombFasterSpawn
 }
 
 public class UpgradeManager : MonoBehaviour
 {
 
-    [SerializeField] private UpgradeObject[] upgrades;
+    [SerializeField] private List<UpgradeObject> upgrades = new List<UpgradeObject>();
 
     [Header("UI")]
     [SerializeField] private GameObject upgradesPanel;
@@ -50,6 +54,15 @@ public class UpgradeManager : MonoBehaviour
     }
 
     public void ActivateUpgrade(UpgradeObject upgradeObject) {
+        if (upgradeObject.upgradeChildren.Length > 0)
+        {
+            upgrades.Remove(upgradeObject);
+            foreach (UpgradeObject childUpgrade in upgradeObject.upgradeChildren)
+            {
+                upgrades.Add(childUpgrade);
+            }
+        }
+
         switch (upgradeObject.upgrade)
         {
             case Upgrades.Fire: {
@@ -57,9 +70,29 @@ public class UpgradeManager : MonoBehaviour
                 FireWeapon.Instance.ActivateWeapon();
                 break;
             }
+            case Upgrades.FasterFireSpawn: {
+                print("Fire fireballs faster");
+                FireWeapon.Instance.FireFaster(25);
+                break;
+            }
             case Upgrades.Ball: {
                 print("Ball");
                 BallWeapon.Instance.ActivateWeapon();
+                break;
+            }
+            case Upgrades.Piercing: {
+                print("Piercing");
+                PlayerShooting.Instance.PiercingBulletChanceIncrease(15);
+                break;
+            }
+            case Upgrades.Bomb: {
+                print("Bomb");
+                BombWeapon.Instance.ActivateWeapon();
+                break;
+            }
+            case Upgrades.BombFasterSpawn: {
+                print("More bomb");
+                BombWeapon.Instance.FireFaster(25);
                 break;
             }
         }
@@ -72,15 +105,11 @@ public class UpgradeManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             UpgradeObject randomUpgrade = upgradesPossible[Random.Range(0, upgradesPossible.Count)];
-            if (upgrades.Length > 3) upgradesPossible.Remove(randomUpgrade);
+            if (upgrades.Count >= 3) upgradesPossible.Remove(randomUpgrade);
             upgradeResults.Add(randomUpgrade);
         }
 
         return upgradeResults;
-    }
-
-    private float PercentOf(float number, float percentage) {
-        return number / 100 * percentage;
     }
 
 }

@@ -19,6 +19,7 @@ public class PlayerShooting : MonoBehaviour
     [HideInInspector] public bool isAutomatic;
     [HideInInspector] public float bulletSpeed, fireRate, spread, damage, reloadTime, enemyKnockback;
     [HideInInspector] public int projectiles;
+    [HideInInspector] public float piercingBulletChance = 0;
 
     private bool shootInput;
     private float nextTimeToFire;
@@ -107,6 +108,10 @@ public class PlayerShooting : MonoBehaviour
             Rigidbody2D bulletBody = Instantiate(gun.bulletPrefab, firePoint.position, rotation).GetComponent<Rigidbody2D>();
             bulletBody.AddRelativeForce(Vector2.up * bulletSpeed, ForceMode2D.Impulse);
         }
+    }
+
+    public void PiercingBulletChanceIncrease(float percentage) {
+        piercingBulletChance += percentage;
     }
 
     private IEnumerator Reload() {
