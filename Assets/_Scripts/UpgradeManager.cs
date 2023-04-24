@@ -86,7 +86,7 @@ public class UpgradeManager : MonoBehaviour
             }
             case Upgrades.Piercing: {
                 print("Piercing");
-                PlayerShooting.Instance.PiercingBulletChanceIncrease(25);
+                PlayerShooting.Instance.PiercingBulletChanceIncrease(20);
                 break;
             }
             case Upgrades.Bomb: {
@@ -106,7 +106,7 @@ public class UpgradeManager : MonoBehaviour
             }
             case Upgrades.LaserMoreDamage: {
                 print("More laser damage");
-                LaserWeapon.Instance.MoreDamage(10);
+                LaserWeapon.Instance.MoreDamage(15);
                 break;
             }
             case Upgrades.PoisonTrail: {

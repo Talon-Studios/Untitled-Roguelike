@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Laser_More Damage
   m_EditorClassIdentifier: 
   upgradeName: Cat Hazard
-  upgradeDescription: +10% more damage from laser
+  upgradeDescription: +15% more damage from laser
   upgrade: 7
   upgradeChildren: []

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Thorns
   m_EditorClassIdentifier: 
   upgradeName: Thorns
-  upgradeDescription: Bullets have a +25% chance of being piercing
+  upgradeDescription: Bullets have a +20% chance of being piercing
   upgrade: 3
   upgradeChildren: []
