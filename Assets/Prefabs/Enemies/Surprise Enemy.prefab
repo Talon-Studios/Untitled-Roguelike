@@ -297,7 +297,7 @@ MonoBehaviour:
   graphics: {fileID: 7762370617532156505}
   surpriseHealthThreshold: 50
   spinSpeed: 15
-  startForce: 35
+  startForce: 30
   speedMultiplier: 4
   rotationSpeedMultiplier: 4
   spinSpeedMultiplier: 4
