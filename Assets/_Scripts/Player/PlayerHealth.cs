@@ -12,12 +12,17 @@ public class PlayerHealth : MonoBehaviour
     [Tooltip("How long you are invincible after getting hurt")]
     [SerializeField] private float invincibleTime = 3;
     [SerializeField] private float invincibleFlashSpeed = 0.2f;
-    [SerializeField] private GameObject graphics;
+    [SerializeField] private SpriteRenderer graphics;
     [SerializeField] private Transform heartParent;
     [SerializeField] private Transform heartPrefab;
 
+    [Header("UI")]
     [SerializeField] private Texture2D fullHeart;
     [SerializeField] private Texture2D emptyHeart;
+
+    [Header("States")]
+    [SerializeField] private Sprite normalPlayer;
+    [SerializeField] private Sprite hurtPlayer;
 
     [HideInInspector] public int health;
 
@@ -48,16 +53,16 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(invincibleTime);
 
         invincible = false;
-        graphics.SetActive(true);
+        graphics.sprite = normalPlayer;
         StopAllCoroutines();
     }
 
     private IEnumerator Flash() {
         while (true)
         {
-            graphics.SetActive(false);
+            graphics.sprite = hurtPlayer;
             yield return new WaitForSeconds(invincibleFlashSpeed);
-            graphics.SetActive(true);
+            graphics.sprite = normalPlayer;
             yield return new WaitForSeconds(invincibleFlashSpeed);
         }
     }
