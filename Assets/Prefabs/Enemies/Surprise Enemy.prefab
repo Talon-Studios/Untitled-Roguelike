@@ -298,6 +298,6 @@ MonoBehaviour:
   surpriseHealthThreshold: 50
   spinSpeed: 15
   startForce: 35
-  speedMultiplier: 3.5
+  speedMultiplier: 4
   rotationSpeedMultiplier: 4
   spinSpeedMultiplier: 4

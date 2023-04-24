@@ -24,7 +24,7 @@ public class XP : MonoBehaviour
     private IEnumerator MoveToPlayer() {
         while (transform.position != player.position)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
             yield return null;
         }
 

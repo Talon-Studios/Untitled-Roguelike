@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xpAmount: 1
-  moveSpeed: 0.07
+  moveSpeed: 20
 --- !u!1 &7648853531199894756
 GameObject:
   m_ObjectHideFlags: 0
