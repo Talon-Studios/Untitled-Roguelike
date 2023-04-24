@@ -377,6 +377,7 @@ MonoBehaviour:
   reloadBar: {fileID: 1143103627}
   reloadMarker: {fileID: 658192099}
   startObject: {fileID: 11400000, guid: d596bf0646f8a6e4badcde151f283942, type: 2}
+  piercingBulletPrefab: {fileID: 3065601766979065598, guid: 8654bbb9aa241c9409882e75b53fded1, type: 3}
   isAutomatic: 1
   bulletSpeed: 30
   fireRate: 6

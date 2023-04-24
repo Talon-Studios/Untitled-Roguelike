@@ -15,6 +15,9 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private GameObject reloadBar;
     [SerializeField] private Transform reloadMarker;
     [SerializeField] private StartObject startObject;
+    
+    [Header("Special Bullets")]
+    [SerializeField] private Bullet piercingBulletPrefab;
 
     [HideInInspector] public bool isAutomatic;
     [HideInInspector] public float bulletSpeed, fireRate, spread, damage, reloadTime, enemyKnockback;
@@ -105,7 +108,16 @@ public class PlayerShooting : MonoBehaviour
                 rotation = pivot.rotation * Quaternion.Euler(0, 0, Random.Range(-spread, spread));
             }
 
-            Rigidbody2D bulletBody = Instantiate(gun.bulletPrefab, firePoint.position, rotation).GetComponent<Rigidbody2D>();
+            Bullet bulletPrefab;
+            if (Random.Range(0, 100) < PlayerShooting.Instance.piercingBulletChance)
+            {
+                bulletPrefab = piercingBulletPrefab;
+            } else
+            {
+                bulletPrefab = gun.bulletPrefab;
+            }
+
+            Rigidbody2D bulletBody = Instantiate(bulletPrefab, firePoint.position, rotation).GetComponent<Rigidbody2D>();
             bulletBody.AddRelativeForce(Vector2.up * bulletSpeed, ForceMode2D.Impulse);
         }
     }

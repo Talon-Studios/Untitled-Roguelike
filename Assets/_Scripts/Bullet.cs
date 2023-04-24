@@ -7,10 +7,6 @@ public class Bullet : MonoBehaviour
 
     public bool isPiercing = false;
 
-    void Start() {
-        isPiercing = Random.Range(0, 100) < PlayerShooting.Instance.piercingBulletChance ? true : false;
-    }
-
     void OnTriggerEnter2D(Collider2D trigger) {
         if (trigger.CompareTag("Bullet Bounds"))
         {
