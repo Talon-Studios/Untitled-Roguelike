@@ -16,21 +16,28 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Transform heartParent;
     [SerializeField] private Transform heartPrefab;
 
+    [SerializeField] private Texture2D fullHeart;
+    [SerializeField] private Texture2D emptyHeart;
+
     [HideInInspector] public int health;
 
     private bool invincible = false;
 
+    RawImage[] hearts;
+
     void Start() {
         health = maxHealth;
 
-        UpdateHearts();
+        for (int i = 0; i < health; i++) AddHeartContainer();
     }
 
     private void GetHurt() {
         health--;
+
         print("OOF! Health: " + health);
         StartCoroutine(Invincible());
-        UpdateHearts();
+        RemoveHeart();
+
         if (health <= 0) Die();
     }
 
@@ -60,14 +67,17 @@ public class PlayerHealth : MonoBehaviour
         SceneManager.LoadScene("Die");
     }
 
-    private void UpdateHearts() {
-        Transform[] hearts = heartParent.GetComponentsInChildren<Transform>();
-        if (health > hearts.Length)
-        {
-            for (int i = 0; i < health - hearts.Length + 1; i++) Instantiate(heartPrefab, heartParent);
-        } else if (health < hearts.Length) {
-            for (int i = 0; i < hearts.Length - health; i++) Destroy(heartParent.GetChild(0).gameObject);
-        }
+    private void RemoveHeart() {
+        hearts[health].texture = emptyHeart;
+    }
+
+    private void AddHeart() {
+        hearts[health - 1].texture = fullHeart;
+    }
+
+    private void AddHeartContainer() {
+        Instantiate(heartPrefab, heartParent);
+        hearts = heartParent.GetComponentsInChildren<RawImage>();
     }
 
     void OnTriggerEnter2D(Collider2D trigger) {
