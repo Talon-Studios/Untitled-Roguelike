@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 7762370617532156504}
   - component: {fileID: 4076132338374030749}
   m_Layer: 7
-  m_Name: Triangle
+  m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,8 +96,8 @@ Transform:
   m_GameObject: {fileID: 7762370617532156486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7762370618698933293}
   m_RootOrder: 0
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4076132338374030749
 MonoBehaviour:
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 7762370618698933294}
   - component: {fileID: 7762370618698933280}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: Basic Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,9 +194,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7762370618698933290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.66, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7762370617532156505}
   - {fileID: 6224076114990385365}
@@ -228,9 +228,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.024391906, y: 0.53562236}
-      - {x: -0.5350421, y: -0.53023255}
-      - {x: 0.542577, y: -0.5302324}
+    - - {x: 0.00814007, y: 0.7525016}
+      - {x: -0.6434818, y: -0.7145799}
+      - {x: 0.6835487, y: -0.7254237}
 --- !u!50 &7762370618698933295
 Rigidbody2D:
   serializedVersion: 4
@@ -245,7 +245,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 10
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
+  xpDropAmount: 1
   graphics: {fileID: 4076132338374030749}
 --- !u!114 &7762370618698933280
 MonoBehaviour:
@@ -278,4 +279,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8652a108a15fe9248a887708ab3cad8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSmoothing: 1
+  rotationSmoothing: 200
+  speed: 0

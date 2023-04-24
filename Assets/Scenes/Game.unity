@@ -7598,6 +7598,7 @@ MonoBehaviour:
   enemySpeedIncrement: 0.1
   enemyPrefabs:
   - {fileID: 7762370618698933294, guid: 838ef195df6dd0c478e189d57f04d09f, type: 3}
+  - {fileID: 7762370618698933294, guid: 96384bce234aa88418e2a08f6ed16c8f, type: 3}
 --- !u!61 &1050262949
 BoxCollider2D:
   m_ObjectHideFlags: 0

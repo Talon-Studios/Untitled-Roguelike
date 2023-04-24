@@ -5,7 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    [SerializeField] private float health = 30;
+    public float health = 30;
+    [SerializeField] private int xpDropAmount = 1;
     [SerializeField] private SpriteGraphics graphics;
 
     Rigidbody2D enemyBody;
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour
         FollowCam.Instance.ScreenShake(0.1f, 0.1f);
         ParticleManager.Instance.Play(ParticleManager.Instance.explosion, transform.position);
         
-        XPManager.Instance.CreateXP(transform.position);
+        XPManager.Instance.CreateXP(transform.position, xpDropAmount);
         Destroy(gameObject);
     }
 
