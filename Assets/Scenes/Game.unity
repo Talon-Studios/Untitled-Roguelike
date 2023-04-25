@@ -6199,7 +6199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 2
-  rotationMagnitude: 5
+  rotationMagnitude: 2
 --- !u!1 &576658865
 GameObject:
   m_ObjectHideFlags: 0
@@ -7712,7 +7712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cebf7808bedc54fa0c850a8262b45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 15
   laserLine: {fileID: 1802323327}
   boundsLayer:
     serializedVersion: 2
