@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPiercing: 0
   isFreezing: 0
+  speed: 0
 --- !u!1 &7757999034339885246
 GameObject:
   m_ObjectHideFlags: 0

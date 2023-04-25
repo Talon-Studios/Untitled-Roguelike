@@ -22,7 +22,7 @@ public class PlayerShooting : MonoBehaviour
     public float freezingBulletSpeedMultiplier = 0.5f;
 
     [HideInInspector] public bool isAutomatic;
-    [HideInInspector] public float bulletSpeed, fireRate, spread, damage, reloadTime, enemyKnockback;
+    [HideInInspector] public float fireRate, spread, damage, reloadTime, enemyKnockback;
     [HideInInspector] public int projectiles;
     [HideInInspector] public float piercingBulletChance = 0;
     [HideInInspector] public float freezingBulletChance = 0;
@@ -123,8 +123,7 @@ public class PlayerShooting : MonoBehaviour
                 bulletPrefab = gun.bulletPrefab;
             }
 
-            Rigidbody2D bulletBody = Instantiate(bulletPrefab, firePoint.position, rotation).GetComponent<Rigidbody2D>();
-            bulletBody.AddRelativeForce(Vector2.up * bulletSpeed, ForceMode2D.Impulse);
+            Instantiate(bulletPrefab, firePoint.position, rotation);
         }
     }
 
@@ -151,7 +150,6 @@ public class PlayerShooting : MonoBehaviour
 
     private void SetStats() {
         isAutomatic = gun.isAutomatic;
-        bulletSpeed = gun.bulletSpeed;
         fireRate = gun.fireRate;
         spread = gun.spread;
         damage = gun.damage;

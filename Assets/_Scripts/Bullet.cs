@@ -7,6 +7,14 @@ public class Bullet : MonoBehaviour
 
     public bool isPiercing = false;
     public bool isFreezing = false;
+    public float speed = 40;
+
+    Rigidbody2D bulletBody;
+    
+    void Start() {
+        bulletBody = GetComponent<Rigidbody2D>();
+        bulletBody.AddRelativeForce(Vector2.up * speed, ForceMode2D.Impulse);
+    }
 
     void OnTriggerEnter2D(Collider2D trigger) {
         if (trigger.CompareTag("Bullet Bounds"))

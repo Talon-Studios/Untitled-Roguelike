@@ -14,7 +14,6 @@ public class GunObject : ScriptableObject
     [Header("Stats")]
 
     public bool isAutomatic = true;
-    public float bulletSpeed = 40;
     public float fireRate = 3;
     public float spread = 10;
     public float damage = 10;
