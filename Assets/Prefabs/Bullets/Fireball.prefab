@@ -103,7 +103,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
 --- !u!50 &-993215539285068376
 Rigidbody2D:
   serializedVersion: 4
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPiercing: 0
+  isFreezing: 0
 --- !u!1 &7757999034339885246
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +216,7 @@ TrailRenderer:
   m_Time: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.3
     widthCurve:
       serializedVersion: 2
       m_Curve:
