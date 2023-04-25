@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorTheme : MonoBehaviour
+public class DynamicColorManager : MonoBehaviour
 {
 
-    public Color enemyHurt;
+    public Color color;
 
     #region Singleton
     
-    static public ColorTheme Instance = null;
+    static public DynamicColorManager Instance = null;
     void Awake() {
         if (Instance == null) Instance = this;
         else if (Instance != this) Destroy(gameObject);

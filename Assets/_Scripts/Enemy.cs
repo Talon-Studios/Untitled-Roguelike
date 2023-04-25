@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     }
 
     public void GetHurt(float damage) {
-        graphics.Flash(0.1f, ColorTheme.Instance.enemyHurt);
+        graphics.Flash(0.1f, Color.white);
         health -= damage; 
         if (health <= 0) Die();
     }
