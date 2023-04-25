@@ -279,5 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8652a108a15fe9248a887708ab3cad8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSmoothing: 200
+  followMode: 0
+  rotationSmoothing: 100
   speed: 0
+  direction: {x: 0, y: 0}

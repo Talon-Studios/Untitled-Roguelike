@@ -6193,7 +6193,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2a6a77358ba012418454fb8fa426988, type: 3}
   m_Name: 
@@ -7614,6 +7614,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 7762370618698933294, guid: 838ef195df6dd0c478e189d57f04d09f, type: 3}
   - {fileID: 7762370618698933294, guid: 96384bce234aa88418e2a08f6ed16c8f, type: 3}
+  - {fileID: 7762370618698933294, guid: 5770547107816654793bfc3218e699e0, type: 3}
 --- !u!61 &1050262949
 BoxCollider2D:
   m_ObjectHideFlags: 0
