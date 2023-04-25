@@ -301,9 +301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752064207b4a519438fef1b0faf7c1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphics: {fileID: 7762370617532156505, guid: 96384bce234aa88418e2a08f6ed16c8f, type: 3}
+  graphics: {fileID: 7762370617532156505}
   surpriseHealthThreshold: 0
-  spinSpeed: 30
+  spinSpeed: 20
   startForce: 30
   speedMultiplier: 4
   rotationSpeedMultiplier: 4
