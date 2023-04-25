@@ -59,6 +59,11 @@ public class XPManager : MonoBehaviour
         }
     }
 
+    public void ResetXP() {
+        xp = 0;
+        targetBarFill = 0;
+    }
+
     public void GainXP(int amount) {
         xp += amount;
         SetXPBars();
@@ -66,8 +71,7 @@ public class XPManager : MonoBehaviour
         {
             UpgradeManager.Instance.SetupUpgradesPanel();
             upgradeXP += upgradeXPIncrement;
-            xp = 0;
-            targetBarFill = 0;
+            targetBarFill = 1;
         }
     }
 

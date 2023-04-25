@@ -55,6 +55,7 @@ public class UpgradeManager : MonoBehaviour
     public void CloseUpgradesPanel() {
         upgradesPanel.SetActive(false);
         MousePointer.Instance.SetMouseState(MouseState.Aiming);
+        XPManager.Instance.ResetXP();
         Time.timeScale = 1;
     }
 

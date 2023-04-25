@@ -150,4 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPiercing: 0
   isFreezing: 1
-  speed: 20
+  speed: 10

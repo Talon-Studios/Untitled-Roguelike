@@ -41,9 +41,12 @@ public class Enemy : MonoBehaviour
             enemyBody.AddForce(-enemyBody.velocity.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
             GetHurt(PlayerShooting.Instance.damage);
 
-            if (trigger.GetComponent<Bullet>().isFreezing)
+            if (trigger.TryGetComponent<Bullet>(out Bullet bullet))
             {
-                Freeze();
+                if (bullet.isFreezing)
+                {
+                    Freeze();
+                }
             }
         }
     }
