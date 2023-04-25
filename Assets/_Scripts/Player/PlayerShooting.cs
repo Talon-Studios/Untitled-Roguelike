@@ -18,11 +18,14 @@ public class PlayerShooting : MonoBehaviour
     
     [Header("Special Bullets")]
     [SerializeField] private Bullet piercingBulletPrefab;
+    [SerializeField] private Bullet freezingBulletPrefab;
+    public float freezingBulletSpeedMultiplier = 0.5f;
 
     [HideInInspector] public bool isAutomatic;
     [HideInInspector] public float bulletSpeed, fireRate, spread, damage, reloadTime, enemyKnockback;
     [HideInInspector] public int projectiles;
     [HideInInspector] public float piercingBulletChance = 0;
+    [HideInInspector] public float freezingBulletChance = 0;
 
     private bool shootInput;
     private float nextTimeToFire;
@@ -109,7 +112,10 @@ public class PlayerShooting : MonoBehaviour
             }
 
             Bullet bulletPrefab;
-            if (Random.Range(0, 100) < PlayerShooting.Instance.piercingBulletChance)
+            if (Random.Range(0, 100) < PlayerShooting.Instance.freezingBulletChance)
+            {
+                bulletPrefab = freezingBulletPrefab;
+            } else if (Random.Range(0, 100) < PlayerShooting.Instance.piercingBulletChance)
             {
                 bulletPrefab = piercingBulletPrefab;
             } else
@@ -124,6 +130,10 @@ public class PlayerShooting : MonoBehaviour
 
     public void PiercingBulletChanceIncrease(float percentage) {
         piercingBulletChance += percentage;
+    }
+
+    public void FreezingBulletChanceIncrease(float percentage) {
+        freezingBulletChance += percentage;
     }
 
     private IEnumerator Reload() {

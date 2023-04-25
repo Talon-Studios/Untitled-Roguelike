@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     public bool isPiercing = false;
+    public bool isFreezing = false;
 
     void OnTriggerEnter2D(Collider2D trigger) {
         if (trigger.CompareTag("Bullet Bounds"))

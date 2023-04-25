@@ -14,7 +14,8 @@ public enum Upgrades
     Laser,
     LaserMoreDamage,
     PoisonTrail,
-    PoisonTrailLonger
+    PoisonTrailLonger,
+    FreezeBullets
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -117,6 +118,11 @@ public class UpgradeManager : MonoBehaviour
             case Upgrades.PoisonTrailLonger: {
                 print("Longer trail");
                 TrailWeapon.Instance.LongerTrail(1);
+                break;
+            }
+            case Upgrades.FreezeBullets: {
+                print("Freeze bullets");
+                PlayerShooting.Instance.FreezingBulletChanceIncrease(20);
                 break;
             }
         }

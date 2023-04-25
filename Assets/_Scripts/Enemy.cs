@@ -10,15 +10,21 @@ public class Enemy : MonoBehaviour
     [SerializeField] private SpriteGraphics graphics;
 
     Rigidbody2D enemyBody;
+    FollowEnemy followEnemy;
 
     void Start() {
         enemyBody = GetComponent<Rigidbody2D>();
+        followEnemy = GetComponent<FollowEnemy>();
     }
 
     public void GetHurt(float damage) {
         graphics.Flash(0.1f, Color.white);
         health -= damage; 
         if (health <= 0) Die();
+    }
+
+    public void Freeze() {
+        followEnemy.speed *= PlayerShooting.Instance.freezingBulletSpeedMultiplier;
     }
 
     public void Die() {
@@ -34,6 +40,11 @@ public class Enemy : MonoBehaviour
         {
             enemyBody.AddForce(-enemyBody.velocity.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
             GetHurt(PlayerShooting.Instance.damage);
+
+            if (trigger.GetComponent<Bullet>().isFreezing)
+            {
+                Freeze();
+            }
         }
     }
 
