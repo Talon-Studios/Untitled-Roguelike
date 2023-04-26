@@ -24,6 +24,10 @@ public class DynamicColor : MonoBehaviour
         } else if (TryGetComponent<RawImage>(out RawImage rawImage))
         {
             rawImage.color = DynamicColorManager.Instance.color;
+        } else if (TryGetComponent<TrailRenderer>(out TrailRenderer trail))
+        {
+            trail.startColor = DynamicColorManager.Instance.color;
+            trail.endColor = DynamicColorManager.Instance.color;
         }
     }
 
