@@ -23,7 +23,7 @@ public class UpgradeManager : MonoBehaviour
 {
 
     [SerializeField] private List<UpgradeObject> upgrades = new List<UpgradeObject>();
-    [SerializeField] private UpgradeObject onlyUpgrade = null;
+    [SerializeField] private List<UpgradeObject> onlyUpgrades = new List<UpgradeObject>();
 
     [Header("UI")]
     [SerializeField] private GameObject upgradesPanel;
@@ -43,7 +43,7 @@ public class UpgradeManager : MonoBehaviour
         upgradesPanel.SetActive(true);
         Time.timeScale = 0;
         
-        UpgradeObject[] randomUpgrades = GetRandomUpgrades(3).ToArray();
+        UpgradeObject[] randomUpgrades = GetRandomUpgrades().ToArray();
         for (int i = 0; i < randomUpgrades.Length; i++)
         {
             UpgradeObject randomUpgrade = randomUpgrades[i];
@@ -64,10 +64,12 @@ public class UpgradeManager : MonoBehaviour
     public void ActivateUpgrade(UpgradeObject upgradeObject) {
         if (upgradeObject.upgradeChildren.Length > 0)
         {
-            upgrades.Remove(upgradeObject);
+            if (onlyUpgrades.Count > 0) onlyUpgrades.Remove(upgradeObject);  
+            else upgrades.Remove(upgradeObject);
             foreach (UpgradeObject childUpgrade in upgradeObject.upgradeChildren)
             {
-                upgrades.Add(childUpgrade);
+                if (onlyUpgrades.Count > 0) upgrades.Add(childUpgrade);
+                else onlyUpgrades.Add(childUpgrade);
             }
         }
 
@@ -136,26 +138,20 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    private List<UpgradeObject> GetRandomUpgrades(int amount) {
-        if (onlyUpgrade != null)
+    private List<UpgradeObject> GetRandomUpgrades() {
+        List<UpgradeObject> upgradesPossible = new List<UpgradeObject>(onlyUpgrades.Count > 0 ? onlyUpgrades : upgrades);
+        List<UpgradeObject> upgradeResults = new List<UpgradeObject>();
+        
+        for (int i = 0; i < 3; i++)
         {
-            List<UpgradeObject> upgrades = new List<UpgradeObject>();
-            for (int i = 0; i < 3; i++) upgrades.Add(onlyUpgrade);
-            return upgrades;
-        } else
-        {
-            List<UpgradeObject> upgradesPossible = new List<UpgradeObject>(upgrades);
-            List<UpgradeObject> upgradeResults = new List<UpgradeObject>();
+            UpgradeObject randomUpgrade = upgradesPossible[Random.Range(0, upgradesPossible.Count)];
             
-            for (int i = 0; i < amount; i++)
-            {
-                UpgradeObject randomUpgrade = upgradesPossible[Random.Range(0, upgradesPossible.Count)];
-                if (upgrades.Count >= 3) upgradesPossible.Remove(randomUpgrade);
-                upgradeResults.Add(randomUpgrade);
-            }
-
-            return upgradeResults;
+            if (onlyUpgrades.Count <= 0 && upgrades.Count >= 3) upgradesPossible.Remove(randomUpgrade);
+            else if (onlyUpgrades.Count >= 3) upgradesPossible.Remove(randomUpgrade);
+            upgradeResults.Add(randomUpgrade);
         }
+
+        return upgradeResults;
     }
 
 }
