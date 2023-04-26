@@ -10,7 +10,6 @@ public class YoyoRotation : MonoBehaviour
 
     void Update() {
         float rotation = Mathf.Sin(rotationSpeed * Time.unscaledTime) * rotationMagnitude;
-        print(rotation);
         transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
 

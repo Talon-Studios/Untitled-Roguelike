@@ -15,13 +15,15 @@ public enum Upgrades
     LaserMoreDamage,
     PoisonTrail,
     PoisonTrailLonger,
-    FreezeBullets
+    FreezeBullets,
+    Rotating
 }
 
 public class UpgradeManager : MonoBehaviour
 {
 
     [SerializeField] private List<UpgradeObject> upgrades = new List<UpgradeObject>();
+    [SerializeField] private UpgradeObject onlyUpgrade = null;
 
     [Header("UI")]
     [SerializeField] private GameObject upgradesPanel;
@@ -126,21 +128,34 @@ public class UpgradeManager : MonoBehaviour
                 PlayerShooting.Instance.FreezingBulletChanceIncrease(20);
                 break;
             }
+            case Upgrades.Rotating: {
+                print("Rotation");
+                RotatingWeapon.Instance.ActivateWeapon();
+                break;
+            }
         }
     }
 
     private List<UpgradeObject> GetRandomUpgrades(int amount) {
-        List<UpgradeObject> upgradesPossible = new List<UpgradeObject>(upgrades);
-        List<UpgradeObject> upgradeResults = new List<UpgradeObject>();
-        
-        for (int i = 0; i < amount; i++)
+        if (onlyUpgrade != null)
         {
-            UpgradeObject randomUpgrade = upgradesPossible[Random.Range(0, upgradesPossible.Count)];
-            if (upgrades.Count >= 3) upgradesPossible.Remove(randomUpgrade);
-            upgradeResults.Add(randomUpgrade);
-        }
+            List<UpgradeObject> upgrades = new List<UpgradeObject>();
+            for (int i = 0; i < 3; i++) upgrades.Add(onlyUpgrade);
+            return upgrades;
+        } else
+        {
+            List<UpgradeObject> upgradesPossible = new List<UpgradeObject>(upgrades);
+            List<UpgradeObject> upgradeResults = new List<UpgradeObject>();
+            
+            for (int i = 0; i < amount; i++)
+            {
+                UpgradeObject randomUpgrade = upgradesPossible[Random.Range(0, upgradesPossible.Count)];
+                if (upgrades.Count >= 3) upgradesPossible.Remove(randomUpgrade);
+                upgradeResults.Add(randomUpgrade);
+            }
 
-        return upgradeResults;
+            return upgradeResults;
+        }
     }
 
 }

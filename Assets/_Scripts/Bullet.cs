@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     public bool isFreezing = false;
     public float speed = 40;
 
+    [SerializeField] private bool bulletBounds = true;
+
     Rigidbody2D bulletBody;
     
     void Start() {
@@ -17,7 +19,7 @@ public class Bullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D trigger) {
-        if (trigger.CompareTag("Bullet Bounds"))
+        if (trigger.CompareTag("Bullet Bounds") && bulletBounds)
         {
             Destroy(gameObject);
         } else if (!isPiercing && trigger.CompareTag("Enemy"))
