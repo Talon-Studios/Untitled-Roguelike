@@ -48,6 +48,13 @@ public class XPManager : MonoBehaviour
         foreach (Image bar in xpBars)
         {
             bar.fillAmount = Mathf.SmoothStep(bar.fillAmount, targetBarFill, barFillSmoothing);
+            if (xp == upgradeXP)
+            {
+                bar.color = DynamicColorManager.Instance.color;
+            } else
+            {
+                bar.color = Color.white;
+            }
         }
     }
 
@@ -61,7 +68,7 @@ public class XPManager : MonoBehaviour
 
     public void ResetXP() {
         xp = 0;
-        targetBarFill = 0;
+        SetXPBars();
     }
 
     public void GainXP(int amount) {
@@ -71,7 +78,9 @@ public class XPManager : MonoBehaviour
         {
             UpgradeManager.Instance.SetupUpgradesPanel();
             upgradeXP += upgradeXPIncrement;
-            targetBarFill = 1;
+
+            xp = upgradeXP;
+            SetXPBars();
         }
     }
 

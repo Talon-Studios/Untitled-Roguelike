@@ -381,7 +381,6 @@ MonoBehaviour:
   freezingBulletPrefab: {fileID: 3065601766979065598, guid: b6071f03e7f90a24780007433f90605a, type: 3}
   freezingBulletSpeedMultiplier: 0.2
   isAutomatic: 1
-  bulletSpeed: 30
   fireRate: 6
   spread: 25
   damage: 10
@@ -7240,7 +7239,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1c0c777a2f3909d48a5e97f719e9b54b, type: 2}
   - {fileID: 11400000, guid: 7af1798c78674154c98c40f3181e2c20, type: 2}
   - {fileID: 11400000, guid: 5c660f26ce9c7b444b57c61201e68443, type: 2}
-  - {fileID: 11400000, guid: db2c46c037d491449a93557c793c4d1d, type: 2}
   upgradesPanel: {fileID: 951222675}
   upgradeCards:
   - {fileID: 1626485546}
