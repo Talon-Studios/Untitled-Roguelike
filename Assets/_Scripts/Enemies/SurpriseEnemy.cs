@@ -6,6 +6,7 @@ public class SurpriseEnemy : MonoBehaviour
 {
 
     [SerializeField] private Transform graphics;
+    [SerializeField] private ParticleSystem dustParticles;
 
     [SerializeField] private float surpriseHealthThreshold = 20;
     [SerializeField] private float spinSpeed = 5;
@@ -38,6 +39,7 @@ public class SurpriseEnemy : MonoBehaviour
     }
 
     private void BeSurprised() {
+        dustParticles.Play();
         enemyBody.AddForce(followEnemy.direction * startForce, ForceMode2D.Impulse);
 
         followEnemy.speed *= speedMultiplier;
