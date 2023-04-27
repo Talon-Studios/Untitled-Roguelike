@@ -31,8 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start() {
         playerBody = GetComponent<Rigidbody2D>();
-
-        Application.targetFrameRate = 10;
     }
 
     void Update() {

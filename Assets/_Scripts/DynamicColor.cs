@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DynamicColor : MonoBehaviour
 {
 
-    void Awake() {
+    void OnEnable() {
         if (TryGetComponent<SpriteRenderer>(out SpriteRenderer sprite))
         {
             sprite.color = DynamicColorManager.Instance.Color;

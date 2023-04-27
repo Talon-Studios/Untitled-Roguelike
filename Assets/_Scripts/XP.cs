@@ -10,7 +10,7 @@ public class XP : MonoBehaviour
 
     Transform player;
 
-    void Start() {
+    void Awake() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

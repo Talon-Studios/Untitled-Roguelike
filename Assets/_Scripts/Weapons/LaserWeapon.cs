@@ -14,20 +14,17 @@ public class LaserWeapon : MonoBehaviour
 
     Camera cam;
 
-    #region Singleton
-    
     static public LaserWeapon Instance = null;
+
     void Awake() {
         if (Instance == null) Instance = this;
         else if (Instance != this) Destroy(gameObject);
+
+        laserLine.gameObject.SetActive(false);
     }
-    
-    #endregion
 
     void Start() {
         cam = Camera.main;
-
-        laserLine.gameObject.SetActive(false);
     }
 
     public void ActivateWeapon() {
