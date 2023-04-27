@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d4d0e6442dc5849afc072d7bff4464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   invincibleTime: 3
   invincibleFlashSpeed: 0.2
   graphics: {fileID: 17168018}
@@ -7288,7 +7288,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7af1798c78674154c98c40f3181e2c20, type: 2}
   - {fileID: 11400000, guid: 5c660f26ce9c7b444b57c61201e68443, type: 2}
   - {fileID: 11400000, guid: 288186f50ca1c1840961ab36758121ac, type: 2}
-  onlyUpgrades: []
+  onlyUpgrades:
+  - {fileID: 11400000, guid: 288186f50ca1c1840961ab36758121ac, type: 2}
   upgradesPanel: {fileID: 951222675}
   upgradeCards:
   - {fileID: 1626485546}
@@ -9095,7 +9096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingUpgradeXP: 4
-  upgradeXPIncrement: 6
+  upgradeXPIncrement: 4
   xpStartForce: 10
   xpPrefab: {fileID: 4214348150177475379, guid: f36194f4aa938a64d937304dac7cd755, type: 3}
   xpBarsParent: {fileID: 672961199}

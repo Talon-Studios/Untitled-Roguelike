@@ -312,8 +312,8 @@ MonoBehaviour:
   dustParticles: {fileID: 8066062072545996985}
   surpriseHealthThreshold: 50
   spinSpeed: 15
-  startForce: 25
-  speedMultiplier: 6
+  startForce: 20
+  speedMultiplier: 5
   rotationSpeedMultiplier: 4
   spinSpeedMultiplier: 4
 --- !u!1 &8794576183687574053

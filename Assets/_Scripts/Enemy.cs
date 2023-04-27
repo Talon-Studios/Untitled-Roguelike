@@ -9,16 +9,28 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int xpDropAmount = 1;
     [SerializeField] private SpriteGraphics graphics;
 
+    private float hurtScaleSpeed = 8;
+    private float hurtScaleMagnitude = 0.5f;
+
     Rigidbody2D enemyBody;
     FollowEnemy followEnemy;
+    Vector2 originalScale;
 
     void Start() {
         enemyBody = GetComponent<Rigidbody2D>();
         followEnemy = GetComponent<FollowEnemy>();
+
+        originalScale = graphics.transform.localScale;
+    }
+
+    void Update() {
+        graphics.transform.localScale = Vector2.MoveTowards(graphics.transform.localScale, originalScale, hurtScaleSpeed * Time.deltaTime);
     }
 
     public void GetHurt(float damage) {
         graphics.Flash(0.1f, Color.white);
+        graphics.transform.localScale = originalScale + (Vector2.one * hurtScaleMagnitude);
+
         health -= damage; 
         if (health <= 0) Die();
     }
