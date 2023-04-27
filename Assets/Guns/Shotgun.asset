@@ -16,7 +16,6 @@ MonoBehaviour:
   weaponDescription: Rip and tear until it is done
   bulletPrefab: {fileID: 3065601766979065598, guid: 024c8166900968c4db02091c1aed21a5, type: 3}
   isAutomatic: 0
-  bulletSpeed: 15
   fireRate: 1
   spread: 45
   damage: 20
@@ -25,7 +24,7 @@ MonoBehaviour:
   enemyKnockback: 50
   projectiles: 5
   gunKick: 100
-  gunRotationSpeed: 1
+  gunRotationSpeed: 200
   screenShakeMagnitude: 0.2
   screenShakeDuration: 0.1
   graphics: {fileID: 2800000, guid: 1a1db111c0395844fa52e326d38acfa9, type: 3}

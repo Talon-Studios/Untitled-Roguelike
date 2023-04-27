@@ -355,7 +355,7 @@ MonoBehaviour:
   speed: 7
   graphics: {fileID: 17168017}
   tilt: 25
-  tiltSpeed: 1
+  tiltSpeed: 200
 --- !u!114 &21466122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7661,7 +7661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingSpawnRate: 0.4
   spawnRateIncrement: 0.4
-  enemySpeed: 4
+  enemySpeed: 18
   enemySpeedIncrement: 0.1
   enemyPrefabs:
   - {fileID: 7762370618698933294, guid: 838ef195df6dd0c478e189d57f04d09f, type: 3}
@@ -9144,7 +9144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d5e046d7fb8a144808cf3d46a90af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.7395089, g: 0.1843137, b: 0.99607843, a: 1}
   startObject: {fileID: 11400000, guid: d596bf0646f8a6e4badcde151f283942, type: 2}
 --- !u!1 &1994749300
 GameObject:

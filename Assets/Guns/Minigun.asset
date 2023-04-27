@@ -16,7 +16,6 @@ MonoBehaviour:
   weaponDescription: An old, battered minigun
   bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   isAutomatic: 1
-  bulletSpeed: 45
   fireRate: 10
   spread: 10
   damage: 5
@@ -25,7 +24,7 @@ MonoBehaviour:
   enemyKnockback: 10
   projectiles: 1
   gunKick: 30
-  gunRotationSpeed: 2.5
+  gunRotationSpeed: 200
   screenShakeMagnitude: 0.06
   screenShakeDuration: 0.1
   graphics: {fileID: 2800000, guid: 1a1db111c0395844fa52e326d38acfa9, type: 3}

@@ -70,7 +70,7 @@ public class PlayerShooting : MonoBehaviour
             reloadMarker.localPosition = Vector2.Lerp(-1.5f * Vector2.right, 1.5f * Vector2.right, reloadMarkerTime);
         }
 
-        gunTransform.localRotation = Quaternion.RotateTowards(gunTransform.localRotation, Quaternion.Euler(0, gunTransform.localRotation.y, 0), gun.gunRotationSpeed);
+        gunTransform.localRotation = Quaternion.RotateTowards(gunTransform.localRotation, Quaternion.Euler(0, gunTransform.localRotation.y, 0), gun.gunRotationSpeed * Time.deltaTime);
     }
 
     private void RotateGun() {

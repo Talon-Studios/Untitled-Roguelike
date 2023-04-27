@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start() {
         playerBody = GetComponent<Rigidbody2D>();
+
+        Application.targetFrameRate = 10;
     }
 
     void Update() {
@@ -38,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.velocity = inputDirection * speed;
             targetRotation = -inputDirection.x * tilt;
-            graphics.rotation = Quaternion.RotateTowards(graphics.rotation, Quaternion.Euler(0, 0, targetRotation), tiltSpeed);
+            graphics.rotation = Quaternion.RotateTowards(graphics.rotation, Quaternion.Euler(0, 0, targetRotation), tiltSpeed * Time.deltaTime);
         }
     }
 

@@ -16,7 +16,6 @@ MonoBehaviour:
   weaponDescription: Literally nothing unique about this gun
   bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   isAutomatic: 1
-  bulletSpeed: 40
   fireRate: 3
   spread: 5
   damage: 10
@@ -25,7 +24,7 @@ MonoBehaviour:
   enemyKnockback: 15
   projectiles: 1
   gunKick: 50
-  gunRotationSpeed: 1
+  gunRotationSpeed: 200
   screenShakeMagnitude: 0.1
   screenShakeDuration: 0.1
   graphics: {fileID: 2800000, guid: 1a1db111c0395844fa52e326d38acfa9, type: 3}

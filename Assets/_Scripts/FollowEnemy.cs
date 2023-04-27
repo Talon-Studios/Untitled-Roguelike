@@ -28,17 +28,17 @@ public class FollowEnemy : MonoBehaviour
         speed = EnemyManager.Instance.enemySpeed;
     }
 
-    void LateUpdate() {
+    void FixedUpdate() {
         direction = (player.position - transform.position).normalized;
 
         if (followMode == FollowMode.LookAt)
         {
             Utils.DirectionToRotation(direction, out Quaternion targetRotation);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSmoothing * Time.deltaTime);
-            enemyBody.AddRelativeForce(Vector2.up * speed * Time.timeScale);
+            enemyBody.AddRelativeForce(Vector2.up * speed);
         } else
         {
-            enemyBody.AddRelativeForce(direction * speed * Time.timeScale);
+            enemyBody.AddRelativeForce(direction * speed);
         }
     }
 
