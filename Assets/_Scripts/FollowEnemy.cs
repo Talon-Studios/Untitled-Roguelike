@@ -15,8 +15,8 @@ public class FollowEnemy : MonoBehaviour
 
     [Tooltip("How fast the enemy looks at the player. Set to 0.01 to 0.5 for best effect")]
     public float rotationSmoothing = 0.05f;
+    public float speed = 1;
 
-    [HideInInspector] public float speed;
     [HideInInspector] public Vector2 direction;
 
     Transform player;
@@ -25,7 +25,7 @@ public class FollowEnemy : MonoBehaviour
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyBody = GetComponent<Rigidbody2D>();
-        speed = EnemyManager.Instance.enemySpeed;
+        speed *= EnemyManager.Instance.enemySpeed;
     }
 
     void FixedUpdate() {

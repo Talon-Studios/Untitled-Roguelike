@@ -257,7 +257,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 10
+  m_LinearDrag: 2
   m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followMode: 1
   rotationSmoothing: 50
-  speed: 0
+  speed: 0.2
   direction: {x: 0, y: 0}
 --- !u!114 &-2192737098657468287
 MonoBehaviour:
@@ -313,7 +313,7 @@ MonoBehaviour:
   surpriseHealthThreshold: 50
   spinSpeed: 15
   startForce: 25
-  speedMultiplier: 4
+  speedMultiplier: 6
   rotationSpeedMultiplier: 4
   spinSpeedMultiplier: 4
 --- !u!1 &8794576183687574053
