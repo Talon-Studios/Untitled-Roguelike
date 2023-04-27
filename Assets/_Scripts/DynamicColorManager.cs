@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DynamicColorManager : MonoBehaviour
 {
 
-    public Color color;
+    private Color color;
+    public Color Color {
+        get { return color; }
+        set { color = value; OnColorChanged?.Invoke(value); }
+    }
+
+    public delegate void ColorChangedHandler(Color color);
+    public static event ColorChangedHandler OnColorChanged;
 
     [SerializeField] private StartObject startObject;
     

@@ -10,7 +10,7 @@ public class InteractableUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public Image border;
 
     void Start() {
-        border.gameObject.SetActive(false);
+        if (border != null) border.gameObject.SetActive(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData) {

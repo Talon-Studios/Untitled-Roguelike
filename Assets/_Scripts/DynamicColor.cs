@@ -9,25 +9,25 @@ public class DynamicColor : MonoBehaviour
     void Awake() {
         if (TryGetComponent<SpriteRenderer>(out SpriteRenderer sprite))
         {
-            sprite.color = DynamicColorManager.Instance.color;
+            sprite.color = DynamicColorManager.Instance.Color;
         } else if (TryGetComponent<ParticleSystem>(out ParticleSystem particles))
         {
             ParticleSystem.MainModule main =  particles.main;
-            main.startColor = DynamicColorManager.Instance.color;
+            main.startColor = DynamicColorManager.Instance.Color;
         } else if (TryGetComponent<LineRenderer>(out LineRenderer line))
         {
-            line.startColor = DynamicColorManager.Instance.color;
-            line.endColor = DynamicColorManager.Instance.color;
+            line.startColor = DynamicColorManager.Instance.Color;
+            line.endColor = DynamicColorManager.Instance.Color;
         } else if (TryGetComponent<Image>(out Image image))
         {
-            image.color = DynamicColorManager.Instance.color;
+            image.color = DynamicColorManager.Instance.Color;
         } else if (TryGetComponent<RawImage>(out RawImage rawImage))
         {
-            rawImage.color = DynamicColorManager.Instance.color;
+            rawImage.color = DynamicColorManager.Instance.Color;
         } else if (TryGetComponent<TrailRenderer>(out TrailRenderer trail))
         {
-            trail.startColor = DynamicColorManager.Instance.color;
-            trail.endColor = DynamicColorManager.Instance.color;
+            trail.startColor = DynamicColorManager.Instance.Color;
+            trail.endColor = DynamicColorManager.Instance.Color;
         }
     }
 

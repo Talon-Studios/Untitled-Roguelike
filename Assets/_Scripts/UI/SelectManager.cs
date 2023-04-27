@@ -9,6 +9,7 @@ public class SelectManager : MonoBehaviour
 {
 
     [SerializeField] private StartObject startObject;
+    [SerializeField] private Material accentColorMaterial;
 
     [Header("Characters")]
     [SerializeField] private CharacterObject[] characters;
@@ -70,6 +71,9 @@ public class SelectManager : MonoBehaviour
         model = Instantiate(characterObject.model, model.position, model.rotation).transform;
 
         startObject.character = characters[page];
+
+        DynamicColorManager.Instance.Color = characterObject.colorTheme;
+        accentColorMaterial.color = DynamicColorManager.Instance.Color;
     }
 
     public void SetWeapon(WeaponCell weaponCell) {

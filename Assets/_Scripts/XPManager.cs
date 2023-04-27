@@ -50,7 +50,7 @@ public class XPManager : MonoBehaviour
             bar.fillAmount = Mathf.SmoothStep(bar.fillAmount, targetBarFill, barFillSmoothing);
             if (xp == upgradeXP)
             {
-                bar.color = DynamicColorManager.Instance.color;
+                bar.color = DynamicColorManager.Instance.Color;
             } else
             {
                 bar.color = Color.white;
