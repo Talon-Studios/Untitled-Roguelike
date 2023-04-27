@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 383519b62e426ae4a9349660e2b46e07, type: 3}
-  m_Name: Cat 1
+  m_Name: Cat 4
   m_EditorClassIdentifier: 
-  characterName: Cat 1
-  characterDescription: It's a cat...
+  characterName: Cat 4
+  characterDescription: It's another cat...
   model: {fileID: 499605171543494371, guid: 9b3e96462e882f343a2851ae0ef4f1ee, type: 3}
-  colorTheme: {r: 0.99607843, g: 0.18431373, b: 0.42745098, a: 1}
+  colorTheme: {r: 1, g: 0.9811887, b: 0, a: 1}

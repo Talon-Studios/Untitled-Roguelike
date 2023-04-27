@@ -555,7 +555,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450322111
 GameObject:
@@ -1312,8 +1312,11 @@ MonoBehaviour:
   startObject: {fileID: 11400000, guid: d596bf0646f8a6e4badcde151f283942, type: 2}
   accentColorMaterial: {fileID: 2100000, guid: d62e4e5b473cd0842bdc9b99990ead59, type: 2}
   characters:
-  - {fileID: 11400000, guid: 14ed87892f7d8414d9e5644aa8361ff2, type: 2}
+  - {fileID: 11400000, guid: 6cfb3a81a0d71a74db3e138875ab78e1, type: 2}
   - {fileID: 11400000, guid: 7288476942289c042bb83aa61d2dc867, type: 2}
+  - {fileID: 11400000, guid: 14ed87892f7d8414d9e5644aa8361ff2, type: 2}
+  - {fileID: 11400000, guid: 94811faf4961c324aa453959fbc7cbe6, type: 2}
+  - {fileID: 11400000, guid: 0dd755b3dff85eb4d9cc8b0e1ad65a62, type: 2}
   characterName: {fileID: 1101130416}
   characterDescription: {fileID: 301766519}
   model: {fileID: 852223132}
@@ -1484,7 +1487,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &843539396
 MonoBehaviour:
@@ -1512,7 +1515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2229159137282578754, guid: 9b3e96462e882f343a2851ae0ef4f1ee, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2229159137282578754, guid: 9b3e96462e882f343a2851ae0ef4f1ee, type: 3}
       propertyPath: m_LocalPosition.x
