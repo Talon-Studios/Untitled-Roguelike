@@ -7,14 +7,15 @@ public class DynamicColorManager : MonoBehaviour
 
     public Color color;
 
-    #region Singleton
+    [SerializeField] private StartObject startObject;
     
     static public DynamicColorManager Instance = null;
+    
     void Awake() {
         if (Instance == null) Instance = this;
         else if (Instance != this) Destroy(gameObject);
+
+        if (startObject.character != null) color = startObject.character.colorTheme;
     }
-    
-    #endregion
 
 }

@@ -9,5 +9,6 @@ public class CharacterObject : ScriptableObject
     public string characterName;
     [TextArea] public string characterDescription;
     public GameObject model;
+    public Color colorTheme = Color.magenta;
 
 }

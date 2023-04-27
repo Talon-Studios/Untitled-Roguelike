@@ -64,12 +64,16 @@ public class UpgradeManager : MonoBehaviour
     public void ActivateUpgrade(UpgradeObject upgradeObject) {
         if (upgradeObject.upgradeChildren.Length > 0)
         {
-            if (onlyUpgrades.Count > 0) onlyUpgrades.Remove(upgradeObject);  
-            else upgrades.Remove(upgradeObject);
+            bool isOnlyUpgrade = false;
+            if (onlyUpgrades.Count > 0) {
+                onlyUpgrades.Remove(upgradeObject);
+                isOnlyUpgrade = true;
+            } else upgrades.Remove(upgradeObject);
+
             foreach (UpgradeObject childUpgrade in upgradeObject.upgradeChildren)
             {
-                if (onlyUpgrades.Count > 0) upgrades.Add(childUpgrade);
-                else onlyUpgrades.Add(childUpgrade);
+                if (isOnlyUpgrade) onlyUpgrades.Add(childUpgrade);
+                else upgrades.Add(childUpgrade);
             }
         }
 

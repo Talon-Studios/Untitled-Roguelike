@@ -15,3 +15,4 @@ MonoBehaviour:
   characterName: Cat
   characterDescription: It's a cat...
   model: {fileID: 499605171543494371, guid: 9b3e96462e882f343a2851ae0ef4f1ee, type: 3}
+  colorTheme: {r: 1, g: 0.48988962, b: 0, a: 1}

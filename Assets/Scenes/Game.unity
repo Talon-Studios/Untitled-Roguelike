@@ -9095,7 +9095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingUpgradeXP: 4
-  upgradeXPIncrement: 0
+  upgradeXPIncrement: 6
   xpStartForce: 10
   xpPrefab: {fileID: 4214348150177475379, guid: f36194f4aa938a64d937304dac7cd755, type: 3}
   xpBarsParent: {fileID: 672961199}
@@ -9145,6 +9145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0.7395089, g: 0.1843137, b: 0.99607843, a: 1}
+  startObject: {fileID: 11400000, guid: d596bf0646f8a6e4badcde151f283942, type: 2}
 --- !u!1 &1994749300
 GameObject:
   m_ObjectHideFlags: 0
