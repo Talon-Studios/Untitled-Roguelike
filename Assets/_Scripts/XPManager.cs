@@ -76,7 +76,7 @@ public class XPManager : MonoBehaviour
         SetXPBars();
         if (xp >= upgradeXP)
         {
-            UpgradeManager.Instance.SetupUpgradesPanel();
+            StartCoroutine(UpgradeManager.Instance.SetupUpgradesPanel());
             upgradeXP += upgradeXPIncrement;
 
             xp = upgradeXP;

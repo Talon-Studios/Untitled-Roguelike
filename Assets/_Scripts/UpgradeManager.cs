@@ -29,6 +29,11 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private GameObject upgradesPanel;
     [SerializeField] private UpgradeCard[] upgradeCards;
 
+    [Header("Slow-Mo")]
+    [SerializeField] private float slowmoSmoothing = 1;
+
+    private float targetTimeScale = 1;
+
     #region Singleton
     
     static public UpgradeManager Instance = null;
@@ -39,9 +44,17 @@ public class UpgradeManager : MonoBehaviour
     
     #endregion
 
-    public void SetupUpgradesPanel() {
-        upgradesPanel.SetActive(true);
+    void Update() {
+        // Time.timeScale = Mathf.MoveTowards(Time.timeScale, targetTimeScale, slowmoSmoothing * Time.fixedUnscaledDeltaTime);
+    }
+
+    public IEnumerator SetupUpgradesPanel() {
         Time.timeScale = 0;
+
+        // yield return new WaitForSecondsRealtime(slowmoSmoothing / Time.fixedUnscaledDeltaTime);
+        yield return null;
+
+        upgradesPanel.SetActive(true);
         
         UpgradeObject[] randomUpgrades = GetRandomUpgrades().ToArray();
         for (int i = 0; i < randomUpgrades.Length; i++)
@@ -56,9 +69,9 @@ public class UpgradeManager : MonoBehaviour
 
     public void CloseUpgradesPanel() {
         upgradesPanel.SetActive(false);
+        targetTimeScale = 1;
         MousePointer.Instance.SetMouseState(MouseState.Aiming);
         XPManager.Instance.ResetXP();
-        Time.timeScale = 1;
     }
 
     public void ActivateUpgrade(UpgradeObject upgradeObject) {

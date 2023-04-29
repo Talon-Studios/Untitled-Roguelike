@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 7762370617532156504}
   - component: {fileID: 4076132338374030749}
   - component: {fileID: 526891179988053121}
+  - component: {fileID: 4016331050495745673}
   m_Layer: 7
   m_Name: Graphics
   m_TagString: Untagged
@@ -179,6 +180,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1874de328099462459e436d27d6730c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4016331050495745673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762370617532156486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e62d208970a424ea1f7cafeaa52655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0.2, y: -0.2}
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7762370618698933290
 GameObject:
   m_ObjectHideFlags: 0

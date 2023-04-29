@@ -149,3 +149,4 @@ MonoBehaviour:
   isPiercing: 0
   isFreezing: 0
   speed: 30
+  bulletBounds: 1

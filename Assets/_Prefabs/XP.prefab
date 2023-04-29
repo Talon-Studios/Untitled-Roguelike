@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8837554777298808252}
   - component: {fileID: 4214348150177475379}
   - component: {fileID: 7648853530089431229}
+  - component: {fileID: 8986487362250399162}
   m_Layer: 0
   m_Name: XP
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 989180015
   m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 37652253bae3b904d82b7f7311a7f14d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -139,6 +140,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xpAmount: 1
   moveSpeed: 20
+--- !u!114 &8986487362250399162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648853530089431230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e62d208970a424ea1f7cafeaa52655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0.2
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7648853531199894756
 GameObject:
   m_ObjectHideFlags: 0

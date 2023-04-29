@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -6470317902275588709}
   - component: {fileID: -3899186096353341488}
   - component: {fileID: 1672599055545185430}
+  - component: {fileID: 7999755184549948368}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -125,3 +126,17 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &7999755184549948368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6523885741082215623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e62d208970a424ea1f7cafeaa52655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0.2
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}

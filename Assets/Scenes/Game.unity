@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 17168017}
   - component: {fileID: 17168018}
   - component: {fileID: 17168019}
+  - component: {fileID: 17168020}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -220,6 +221,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0aa6846b565f34ebc0d2f24a9a0269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &17168020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17168016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e62d208970a424ea1f7cafeaa52655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0.2
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &21466116
 GameObject:
   m_ObjectHideFlags: 0
@@ -7294,6 +7309,7 @@ MonoBehaviour:
   - {fileID: 1626485546}
   - {fileID: 1221728027}
   - {fileID: 1929468727}
+  slowmoSmoothing: 0.1
 --- !u!1 &931473971
 GameObject:
   m_ObjectHideFlags: 0
