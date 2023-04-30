@@ -12,12 +12,16 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animation & Graphics")]
     [SerializeField] private Transform graphics;
     [SerializeField] private float tilt = 15;
-    [SerializeField] private float tiltSpeed = 1;
+    [SerializeField] private float turnSpeed = 400;
+    [SerializeField] private float squashAndStretchSpeed = 200;
+    [SerializeField] private Vector2 squashAndStretch = new Vector2(-0.5f, 0.5f);
 
     private Vector2 inputDirection;
-    private float targetRotation;
+    private Quaternion targetRotation;
+    private Vector2 targetScale;
 
     Rigidbody2D playerBody;
+    Vector2 originalScale;
 
     #region Singleton
     
@@ -31,19 +35,30 @@ public class PlayerMovement : MonoBehaviour
 
     void Start() {
         playerBody = GetComponent<Rigidbody2D>();
+
+        originalScale = graphics.localScale;
+        targetScale = originalScale;
     }
 
     void Update() {
         if (canMove)
         {
             playerBody.velocity = inputDirection * speed;
-            targetRotation = -inputDirection.x * tilt;
-            graphics.rotation = Quaternion.RotateTowards(graphics.rotation, Quaternion.Euler(0, 0, targetRotation), tiltSpeed * Time.deltaTime);
+            graphics.rotation = Quaternion.RotateTowards(graphics.rotation, targetRotation, turnSpeed * Time.deltaTime);
+            graphics.localScale = Vector2.MoveTowards(graphics.localScale, targetScale, squashAndStretchSpeed * Time.deltaTime);
         }
     }
 
     void OnMovement(InputValue value) {
         inputDirection = value.Get<Vector2>();
+        if (inputDirection != Vector2.zero)
+        {
+            Utils.DirectionToRotation(inputDirection, out targetRotation);
+            targetScale = originalScale +  squashAndStretch;
+        } else
+        {
+            targetScale = originalScale;
+        }
     }
 
 }
