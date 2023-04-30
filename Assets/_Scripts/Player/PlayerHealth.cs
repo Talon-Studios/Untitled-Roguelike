@@ -38,8 +38,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void GetHurt() {
         health--;
-
+        
         print("OOF! Health: " + health);
+        FollowCam.Instance.ScreenShake(0.2f, 0.5f);
+        FollowCam.Instance.Hitstop(0.2f);
         StartCoroutine(Invincible());
         RemoveHeart();
 
