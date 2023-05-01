@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     }
 
     public void GetHurt(float damage) {
+        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.enemyHurt);
         graphics.Flash(0.1f, Color.white);
         graphics.transform.localScale = originalScale + (Vector2.one * hurtScaleMagnitude);
 
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
     public void Die() {
         FollowCam.Instance.ScreenShake(0.1f, 0.1f);
         ParticleManager.Instance.Play(ParticleManager.Instance.explosion, transform.position);
+        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.explosion, 0.4f, 1.4f);
         
         XPManager.Instance.CreateXP(transform.position, xpDropAmount);
         Destroy(gameObject);

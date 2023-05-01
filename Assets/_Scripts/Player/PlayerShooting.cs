@@ -102,6 +102,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Fire() {
         FollowCam.Instance.ScreenShake(gun.screenShakeDuration, gun.screenShakeMagnitude);
+        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.fire, 0.6f, 1.4f);
 
         gunTransform.localRotation *= Quaternion.Euler(0, 0, gun.gunKick);
 

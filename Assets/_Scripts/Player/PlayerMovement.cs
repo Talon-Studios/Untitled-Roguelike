@@ -41,11 +41,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() {
+        graphics.rotation = Quaternion.RotateTowards(graphics.rotation, targetRotation, turnSpeed * Time.deltaTime);
+        graphics.localScale = Vector2.MoveTowards(graphics.localScale, targetScale, squashAndStretchSpeed * Time.deltaTime);
+    }
+
+    void FixedUpdate() {
         if (canMove && Time.timeScale > 0)
         {
             playerBody.AddForce(inputDirection * speed);
-            graphics.rotation = Quaternion.RotateTowards(graphics.rotation, targetRotation, turnSpeed * Time.deltaTime);
-            graphics.localScale = Vector2.MoveTowards(graphics.localScale, targetScale, squashAndStretchSpeed * Time.deltaTime);
         }
     }
 

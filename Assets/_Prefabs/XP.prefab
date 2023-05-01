@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e62d208970a424ea1f7cafeaa52655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0.2
   shadowColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7648853531199894756
 GameObject:
@@ -231,7 +230,7 @@ TrailRenderer:
   m_Time: 0.5
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.5
+    widthMultiplier: 0.7
     widthCurve:
       serializedVersion: 2
       m_Curve:

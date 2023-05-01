@@ -29,6 +29,7 @@ public class XP : MonoBehaviour
         }
 
         XPManager.Instance.GainXP(xpAmount);
+        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.xp);
         Destroy(gameObject);
     }
 
