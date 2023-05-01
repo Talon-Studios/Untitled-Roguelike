@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
 
     [HideInInspector] public int health;
 
-    private bool invincible = false;
+    public bool invincible = false;
 
     RawImage[] hearts;
 

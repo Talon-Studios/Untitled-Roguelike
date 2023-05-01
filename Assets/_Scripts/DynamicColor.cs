@@ -12,8 +12,8 @@ public class DynamicColor : MonoBehaviour
             sprite.color = DynamicColorManager.Instance.Color;
         } else if (TryGetComponent<ParticleSystem>(out ParticleSystem particles))
         {
-            ParticleSystem.MainModule main =  particles.main;
-            main.startColor = DynamicColorManager.Instance.Color;
+            ParticleSystem.MainModule main = particles.main;
+            main.startColor = new ParticleSystem.MinMaxGradient(DynamicColorManager.Instance.Color);
         } else if (TryGetComponent<LineRenderer>(out LineRenderer line))
         {
             line.startColor = DynamicColorManager.Instance.Color;

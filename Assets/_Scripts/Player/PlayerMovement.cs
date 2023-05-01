@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform graphics;
     [SerializeField] private float turnSpeed = 400;
     [SerializeField] private float squashAndStretchSpeed = 200;
-    [SerializeField] private Vector2 squashAndStretch = new Vector2(-0.5f, 0.5f);
+    [SerializeField] private Vector2 squashAndStretch = new Vector2(-0.2f, 0.2f);
+    [SerializeField] private Vector2 dashingSquashAndStretch = new Vector2(-0.5f, 0.5f);
 
     private Vector2 inputDirection;
     private Quaternion targetRotation;
@@ -48,12 +49,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void DashAnimation() {
+        targetScale = originalScale + dashingSquashAndStretch;
+    }
+
     void OnMovement(InputValue value) {
         inputDirection = value.Get<Vector2>();
         if (inputDirection != Vector2.zero)
         {
             Utils.DirectionToRotation(inputDirection, out targetRotation);
-            targetScale = originalScale +  squashAndStretch;
+            targetScale = originalScale + squashAndStretch;
         } else
         {
             targetScale = originalScale;
