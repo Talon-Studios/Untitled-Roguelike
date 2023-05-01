@@ -38,8 +38,7 @@ public class DashAbility : MonoBehaviour
         dashParticles.Stop();
     }
 
-    void OnAbility() {
-        print("Activate");
+    public void Activate() {
         StartCoroutine(Dash());
     }
 

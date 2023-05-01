@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public enum Ability
 {
@@ -8,31 +9,33 @@ public enum Ability
     Stomp
 }
 
-public class CharacterManager : MonoBehaviour
+public class PlayerAbility : MonoBehaviour
 {
 
     [SerializeField] private StartObject startObject;
 
     [Header("Abilities")]
     [SerializeField] private DashAbility dashAbility;
+    [SerializeField] private StompAbility stompAbility;
 
-    GameObject player;
-
-    void Start() {
-        player = GameObject.FindGameObjectWithTag("Player");
-
-        AddAbilityScript();
-    }
-
-    private void AddAbilityScript() {
+    private void ActivateAbility() {
         switch (startObject.character.ability)
         {
             case Ability.Dash: {
                 print("Dash Ability");
-                dashAbility.enabled = true;
+                dashAbility.Activate();
+                break;
+            }
+            case Ability.Stomp: {
+                print("Stomp Ability");
+                stompAbility.Activate();
                 break;
             }
         }
+    }
+
+    void OnAbility() {
+        ActivateAbility();
     }
 
 }

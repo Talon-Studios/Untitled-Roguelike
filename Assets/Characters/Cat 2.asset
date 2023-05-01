@@ -16,3 +16,4 @@ MonoBehaviour:
   characterDescription: It's a another cat...
   model: {fileID: 499605171543494371, guid: 9b3e96462e882f343a2851ae0ef4f1ee, type: 3}
   colorTheme: {r: 0, g: 1, b: 0.5003059, a: 1}
+  ability: 1

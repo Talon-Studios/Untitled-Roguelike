@@ -50,7 +50,8 @@ public class Enemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D trigger) {
         if (trigger.CompareTag("Bullet"))
         {
-            enemyBody.AddForce(-enemyBody.velocity.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
+            Vector2 direction = transform.position - PlayerMovement.Instance.transform.position;
+            enemyBody.AddForce(direction.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
             GetHurt(PlayerShooting.Instance.damage);
 
             if (trigger.TryGetComponent<Bullet>(out Bullet bullet))
