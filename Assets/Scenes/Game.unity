@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canShoot: 1
-  gun: {fileID: 11400000, guid: ed330969518582148842c3ee1072abf5, type: 2}
+  gun: {fileID: 11400000, guid: 66965d885aab550408b403b6031b29db, type: 2}
   pivot: {fileID: 517020939}
   gunTransform: {fileID: 190546410}
   gunFlip: {fileID: 1976661746}
