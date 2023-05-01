@@ -5980,9 +5980,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002057613
-    width: 0.99999994
-    height: 0.9958847
+    y: 0
+    width: 1.4938271
+    height: 0.80658436
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6228,9 +6228,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002057613
-    width: 0.99999994
-    height: 0.9958847
+    y: 0
+    width: 1.4938271
+    height: 0.80658436
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -7730,7 +7730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60482ec96d2a48540b7b37380f161bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSpawnRate: 10
+  startingSpawnRate: 0.4
   spawnRateIncrement: 0.4
   enemySpeed: 18
   enemySpeedIncrement: 0.1
