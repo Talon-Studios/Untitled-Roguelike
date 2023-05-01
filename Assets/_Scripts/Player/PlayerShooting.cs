@@ -22,19 +22,21 @@ public class PlayerShooting : MonoBehaviour
     public float freezingBulletSpeedMultiplier = 0.5f;
 
     [HideInInspector] public bool isAutomatic;
-    [HideInInspector] public float fireRate, spread, damage, reloadTime, enemyKnockback;
+    [HideInInspector] public float fireRate, spread, damage, reloadTime, enemyKnockback, knockback;
     [HideInInspector] public int projectiles;
     [HideInInspector] public float piercingBulletChance = 0;
     [HideInInspector] public float freezingBulletChance = 0;
 
     private bool shootInput;
     private float nextTimeToFire;
+    private Vector2 direction;
 
     private float magazine;
     private bool reloading = false;
 
     Camera cam;
     Vector3 mousePosition;
+    Rigidbody2D playerBody;
     float reloadMarkerTime;
     float gunTargetRotation;
 
@@ -49,8 +51,9 @@ public class PlayerShooting : MonoBehaviour
     #endregion
 
     void Start() {
+        playerBody = GetComponent<Rigidbody2D>();
         cam = Camera.main;
-        gun = startObject.gun;
+        // gun = startObject.gun;
 
         SetStats();
     }
@@ -75,7 +78,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void RotateGun() {
         mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        Vector2 direction = mousePosition - pivot.position;
+        direction = mousePosition - pivot.position;
         Utils.DirectionToRotation(direction, out Quaternion rotation);
         pivot.rotation = rotation;
 
@@ -92,6 +95,8 @@ public class PlayerShooting : MonoBehaviour
         FollowCam.Instance.ScreenShake(gun.screenShakeDuration, gun.screenShakeMagnitude);
 
         gunTransform.localRotation *= Quaternion.Euler(0, 0, gun.gunKick);
+
+        playerBody.AddForce(-direction.normalized * knockback, ForceMode2D.Impulse);
 
         magazine--;
         if (magazine <= 0) StartCoroutine(Reload());
@@ -157,6 +162,7 @@ public class PlayerShooting : MonoBehaviour
         magazine = gun.maxMagazine;
         enemyKnockback = gun.enemyKnockback;
         projectiles = gun.projectiles;
+        knockback = gun.knockback;
     }
 
     void OnShoot(InputValue value) {

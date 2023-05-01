@@ -345,7 +345,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 15
   m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -366,9 +366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  speed: 7
+  speed: 60
   graphics: {fileID: 17168017}
-  tilt: 25
   turnSpeed: 600
   squashAndStretchSpeed: 5
   squashAndStretch: {x: -0.2, y: 0.2}
@@ -385,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canShoot: 1
-  gun: {fileID: 11400000, guid: ebd9161d1d24542448a1ebbf3eb383ad, type: 2}
+  gun: {fileID: 11400000, guid: ed330969518582148842c3ee1072abf5, type: 2}
   pivot: {fileID: 517020939}
   gunTransform: {fileID: 190546410}
   gunFlip: {fileID: 1976661746}
@@ -402,6 +401,7 @@ MonoBehaviour:
   damage: 10
   reloadTime: 1
   enemyKnockback: 0
+  knockback: 0
   projectiles: 1
   piercingBulletChance: 0
   freezingBulletChance: 0

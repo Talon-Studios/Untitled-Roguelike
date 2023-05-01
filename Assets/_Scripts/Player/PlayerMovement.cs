@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Animation & Graphics")]
     [SerializeField] private Transform graphics;
-    [SerializeField] private float tilt = 15;
     [SerializeField] private float turnSpeed = 400;
     [SerializeField] private float squashAndStretchSpeed = 200;
     [SerializeField] private Vector2 squashAndStretch = new Vector2(-0.5f, 0.5f);
@@ -41,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() {
-        if (canMove)
+        if (canMove && Time.timeScale > 0)
         {
-            playerBody.velocity = inputDirection * speed;
+            playerBody.AddForce(inputDirection * speed);
             graphics.rotation = Quaternion.RotateTowards(graphics.rotation, targetRotation, turnSpeed * Time.deltaTime);
             graphics.localScale = Vector2.MoveTowards(graphics.localScale, targetScale, squashAndStretchSpeed * Time.deltaTime);
         }

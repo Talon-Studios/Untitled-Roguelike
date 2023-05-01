@@ -21,6 +21,7 @@ public class GunObject : ScriptableObject
     public float maxMagazine = 20;
     public float enemyKnockback = 1;
     public int projectiles = 1;
+    public float knockback = 10;
 
     [Header("Animation")]
 
