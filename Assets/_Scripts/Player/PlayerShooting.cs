@@ -8,13 +8,18 @@ public class PlayerShooting : MonoBehaviour
 
     public bool canShoot = true;
     public GunObject gun;
+    [SerializeField] private StartObject startObject;
+
+    [Header("Transforms")]
     [SerializeField] private Transform pivot;
     [SerializeField] private Transform gunTransform;
     [SerializeField] private Transform gunFlip;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private float pivotFollowSpeed = 200;
+
+    [Header("Reload UI")]
     [SerializeField] private GameObject reloadBar;
     [SerializeField] private Transform reloadMarker;
-    [SerializeField] private StartObject startObject;
     
     [Header("Special Bullets")]
     [SerializeField] private Bullet piercingBulletPrefab;
@@ -53,13 +58,13 @@ public class PlayerShooting : MonoBehaviour
     void Start() {
         playerBody = GetComponent<Rigidbody2D>();
         cam = Camera.main;
-        // gun = startObject.gun;
 
         SetStats();
     }
 
     void Update() {
         RotateGun();
+        PivotFollowPlayer();
 
         if (shootInput && Time.time >= nextTimeToFire && canShoot && !reloading)
         {
@@ -89,6 +94,10 @@ public class PlayerShooting : MonoBehaviour
         {
             gunFlip.localEulerAngles = new Vector3(0, 180, gunFlip.localEulerAngles.z);
         }
+    }
+
+    private void PivotFollowPlayer() {
+        pivot.transform.position = Vector2.Lerp(pivot.transform.position, transform.position, pivotFollowSpeed * Time.deltaTime);
     }
 
     private void Fire() {
