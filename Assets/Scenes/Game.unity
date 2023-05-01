@@ -461,9 +461,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515721ff65ad92b459c535a10a870a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 10
+  range: 10
   enemyKnockback: 30
   cantMoveTime: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &21466126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7726,7 +7730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60482ec96d2a48540b7b37380f161bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSpawnRate: 0.4
+  startingSpawnRate: 10
   spawnRateIncrement: 0.4
   enemySpeed: 18
   enemySpeedIncrement: 0.1

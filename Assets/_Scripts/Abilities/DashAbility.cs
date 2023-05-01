@@ -39,7 +39,10 @@ public class DashAbility : MonoBehaviour
     }
 
     public void Activate() {
-        StartCoroutine(Dash());
+        if (Time.timeScale > 0)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
 }

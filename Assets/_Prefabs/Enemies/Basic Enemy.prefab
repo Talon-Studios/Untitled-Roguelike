@@ -46,9 +46,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.8
 --- !u!250 &5314752106384064584
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -192,7 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e62d208970a424ea1f7cafeaa52655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0.2, y: -0.2}
   shadowColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7762370618698933290
 GameObject:

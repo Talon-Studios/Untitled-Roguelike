@@ -7,8 +7,10 @@ public class StompAbility : MonoBehaviour
 {
 
     [SerializeField] private float damage = 3;
+    [SerializeField] private float range = 5;
     [SerializeField] private float enemyKnockback = 5;
     [SerializeField] private float cantMoveTime = 1;
+    [SerializeField] private LayerMask enemyLayer;
 
     PlayerMovement playerMovement;
 
@@ -17,20 +19,27 @@ public class StompAbility : MonoBehaviour
     }
 
     public void Activate() {
-        StartCoroutine(Stomp());
+        if (Time.timeScale > 0)
+        {
+            StartCoroutine(Stomp());
+        }
     }
 
     private IEnumerator Stomp() {
-        FollowCam.Instance.ScreenShake(0.5f, 0.5f);
+        FollowCam.Instance.ScreenShake(0.2f, 0.5f);
+        FollowCam.Instance.Hitstop(0.1f);
 
-        Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
-        foreach (Enemy enemy in allEnemies)
+        Collider2D[] allEnemies = Physics2D.OverlapCircleAll(transform.position, range, enemyLayer);
+        foreach (Collider2D enemyCollider in allEnemies)
         {
-            enemy.GetHurt(damage);
-            
-            Vector2 direction = enemy.transform.position - transform.position;
-            Rigidbody2D enemyBody = enemy.GetComponent<Rigidbody2D>();
-            enemyBody.AddForce(direction.normalized * enemyKnockback, ForceMode2D.Impulse);
+            if (enemyCollider.TryGetComponent<Enemy>(out Enemy enemy))
+            {
+                enemy.GetHurt(damage);
+                
+                Vector2 direction = enemy.transform.position - transform.position;
+                Rigidbody2D enemyBody = enemy.GetComponent<Rigidbody2D>();
+                enemyBody.AddForce(direction.normalized * enemyKnockback, ForceMode2D.Impulse);
+            }
         }
 
         playerMovement.canMove = false;
@@ -38,6 +47,11 @@ public class StompAbility : MonoBehaviour
         yield return new WaitForSecondsRealtime(cantMoveTime);
 
         playerMovement.canMove = true;
+    }
+
+    void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 
 }
