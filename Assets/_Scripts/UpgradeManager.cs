@@ -64,9 +64,11 @@ public class UpgradeManager : MonoBehaviour
     public void CloseUpgradesPanel() {
         upgradesPanel.SetActive(false);
         Time.timeScale = 1;
+        
         MousePointer.Instance.SetMouseState(MouseState.Aiming);
         XPManager.Instance.ResetXP();
         NextLevel();
+        EnemyManager.Instance.CheckEnemyTypes();
     }
 
     public void ActivateUpgrade(UpgradeObject upgradeObject) {

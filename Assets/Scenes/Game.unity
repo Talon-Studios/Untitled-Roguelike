@@ -394,7 +394,6 @@ MonoBehaviour:
   gunFlip: {fileID: 1976661746}
   firePoint: {fileID: 1577755012}
   pivotFollowSpeed: 180
-  gunKickSpeed: 1
   reloadBar: {fileID: 1143103627}
   reloadMarker: {fileID: 658192099}
   piercingBulletPrefab: {fileID: 3065601766979065598, guid: 8654bbb9aa241c9409882e75b53fded1, type: 3}
@@ -7957,11 +7956,11 @@ MonoBehaviour:
   spawnRateIncrement: 0.25
   enemySpeed: 18
   enemySpeedIncrement: 0.1
-  enemyPrefabs:
-  - {fileID: 7762370618698933290, guid: 838ef195df6dd0c478e189d57f04d09f, type: 3}
-  - {fileID: 7762370618698933290, guid: 5770547107816654793bfc3218e699e0, type: 3}
-  - {fileID: 7762370618698933290, guid: 96384bce234aa88418e2a08f6ed16c8f, type: 3}
-  - {fileID: 6842029065328146732, guid: 6ea110951a583f94dabc910e1e047d27, type: 3}
+  enemyTypes:
+  - {fileID: 11400000, guid: 486ba6bc2f7a90d4aae379d65ec451db, type: 2}
+  - {fileID: 11400000, guid: c1c7cf426a9a13641883259d0344ce6d, type: 2}
+  - {fileID: 11400000, guid: 21b9fc8298ecabd43919482523bf1693, type: 2}
+  - {fileID: 11400000, guid: c3d1710a56bcfe64cb07dafed2a47ccf, type: 2}
 --- !u!61 &1050262949
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8393,7 +8392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cebf7808bedc54fa0c850a8262b45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
   laserLine: {fileID: 1802323327}
   boundsLayer:
     serializedVersion: 2

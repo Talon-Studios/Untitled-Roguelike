@@ -16,7 +16,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Transform gunFlip;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float pivotFollowSpeed = 200;
-    [SerializeField] private float gunKickSpeed = 1;
+    // [SerializeField] private float gunKickSpeed = 1;
 
     [Header("Reload UI")]
     [SerializeField] private GameObject reloadBar;

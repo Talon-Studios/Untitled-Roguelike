@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -16,10 +17,11 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("How much enemy speed increases per upgrade")]
     [SerializeField] private float enemySpeedIncrement;
     
-    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private EnemyObject[] enemyTypes;
 
     private float nextTimeToSpawn;
     private float spawnRate;
+    private List<EnemyObject> enemies = new List<EnemyObject>();
 
     BoxCollider2D box;
     
@@ -35,6 +37,7 @@ public class EnemyManager : MonoBehaviour
 
     void Start() {
         box = GetComponent<BoxCollider2D>();
+        CheckEnemyTypes();
 
         spawnRate = startingSpawnRate;
     }
@@ -48,13 +51,41 @@ public class EnemyManager : MonoBehaviour
     }
 
     private void SpawnRandomEnemy() {
+        float totalChance = 0;
+        foreach (EnemyObject enemy in enemies) totalChance += enemy.chance;
+
+        float randomChance = Random.Range(0, totalChance);
+        EnemyObject randomEnemy = enemies[0];
+        float lastChanceSum = 0;
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            float lastChance = i > 0 ? enemies[i - 1].chance : 0;
+            if (randomChance >= lastChance && randomChance < enemies[i].chance + lastChanceSum)
+            {
+                randomEnemy = enemies[i];
+                break;
+            }
+
+            lastChanceSum += enemies[i].chance;
+        }
+
         GetRandomPosition(out float x, out float y);
-        Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector2(x, y), Quaternion.identity);
+        Instantiate(randomEnemy.prefab, new Vector2(x, y), Quaternion.identity);
     }
 
     public void EnemyBuff() {
         spawnRate += spawnRateIncrement;
         enemySpeed += enemySpeedIncrement;
+    }
+
+    public void CheckEnemyTypes() {
+        foreach (EnemyObject enemy in enemyTypes)
+        {
+            if (UpgradeManager.Instance.level >= enemy.level && !enemies.Contains(enemy))
+            {
+                enemies.Add(enemy);
+            }
+        }
     }
 
     private void GetRandomPosition(out float x, out float y) {
