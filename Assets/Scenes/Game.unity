@@ -6366,7 +6366,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.083333
+  orthographic size: 12.1
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -6413,7 +6413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 12
+  m_AssetsPPU: 10
   m_RefResolutionX: 320
   m_RefResolutionY: 180
   m_CropFrame: 0
@@ -6764,7 +6764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 12
+  m_ReferencePixelsPerUnit: 10
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 640, y: 360}
   m_ScreenMatchMode: 0
@@ -7865,7 +7865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingSpawnRate: 0.4
-  spawnRateIncrement: 0.4
+  spawnRateIncrement: 0.25
   enemySpeed: 18
   enemySpeedIncrement: 0.1
   enemyPrefabs:
