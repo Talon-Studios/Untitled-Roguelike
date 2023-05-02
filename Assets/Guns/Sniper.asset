@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8fa7bb0686d044eb06e70638e68f6d, type: 3}
+  m_Name: Sniper
+  m_EditorClassIdentifier: 
+  weaponName: Sniper
+  weaponDescription: OH WOW ACCURACY WOW
+  bulletPrefab: {fileID: 3065601766979065598, guid: 24ed38eec52fa4842afc81e1355b9de9, type: 3}
+  isAutomatic: 1
+  fireRate: 1
+  spread: 0
+  damage: 30
+  reloadTime: 1
+  maxMagazine: 20
+  enemyKnockback: 50
+  projectiles: 1
+  knockback: 50
+  gunKickRotation: 50
+  gunRotationSpeed: 200
+  screenShakeMagnitude: 0.1
+  screenShakeDuration: 0.3
+  graphics: {fileID: 2800000, guid: 1a1db111c0395844fa52e326d38acfa9, type: 3}

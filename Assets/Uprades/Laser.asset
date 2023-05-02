@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
   m_Name: Laser
   m_EditorClassIdentifier: 
-  upgradeName: Laser
+  upgradeName: Beacon Of Death
   upgradeDescription: Slice through enemies like butter
   upgrade: 6
   upgradeChildren:

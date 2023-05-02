@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
   m_Name: Fireballs_More Fireballs
   m_EditorClassIdentifier: 
-  upgradeName: Superhot
+  upgradeName: Blazing
   upgradeDescription: Fire fireballs +25% faster
   upgrade: 1
   upgradeChildren: []

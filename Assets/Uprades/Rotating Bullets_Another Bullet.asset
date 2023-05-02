@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
   m_Name: Rotating Bullets_Another Bullet
   m_EditorClassIdentifier: 
-  upgradeName: Rotating Damage
-  upgradeDescription: Summon another bullet
+  upgradeName: Merry-Go-Round
+  upgradeDescription: Summon an extra bullet
   upgrade: 11
   upgradeChildren: []

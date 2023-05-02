@@ -12,5 +12,6 @@ public class CharacterObject : ScriptableObject
     public Color colorTheme = Color.magenta;
     public GunObject gun;
     public Ability ability = Ability.Dash;
+    public UpgradeObject[] upgrades;
 
 }

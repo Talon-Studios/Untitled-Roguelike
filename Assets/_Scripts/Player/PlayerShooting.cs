@@ -152,6 +152,10 @@ public class PlayerShooting : MonoBehaviour
         freezingBulletChance += percentage;
     }
 
+    public void IncreaseSpread(float percentage) {
+        spread += spread / 100 * percentage;
+    }
+
     private IEnumerator Reload() {
         reloading = true;
         reloadBar.SetActive(true);

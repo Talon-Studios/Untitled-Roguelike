@@ -17,13 +17,16 @@ public enum Upgrades
     PoisonTrail,
     PoisonTrailLonger,
     FreezeBullets,
-    Rotating
+    Rotating,
+    MageAddProjectile,
+    MageIncreaseSpread
 }
 
 public class UpgradeManager : MonoBehaviour
 {
 
     public int level = 1;
+    [SerializeField] private StartObject startObject;
 
     [SerializeField] private List<UpgradeObject> upgrades = new List<UpgradeObject>();
     [SerializeField] private List<UpgradeObject> onlyUpgrades = new List<UpgradeObject>();
@@ -42,6 +45,13 @@ public class UpgradeManager : MonoBehaviour
     }
     
     #endregion
+
+    void Start() {
+        foreach (UpgradeObject upgrade in startObject.character.upgrades)
+        {
+            upgrades.Add(upgrade);
+        }
+    }
 
     public IEnumerator SetupUpgradesPanel() {
         Time.timeScale = 0;
@@ -147,6 +157,16 @@ public class UpgradeManager : MonoBehaviour
             case Upgrades.Rotating: {
                 print("Rotation");
                 RotatingWeapon.Instance.ActivateWeapon();
+                break;
+            }
+            case Upgrades.MageAddProjectile: {
+                print("Mage add projectile");
+                PlayerShooting.Instance.projectiles++;
+                break;
+            }
+            case Upgrades.MageIncreaseSpread: {
+                print("Mage increase spread");
+                PlayerShooting.Instance.IncreaseSpread(30);
                 break;
             }
         }

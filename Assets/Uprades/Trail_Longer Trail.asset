@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Trail_Longer Trail
   m_EditorClassIdentifier: 
   upgradeName: Trail Mix
-  upgradeDescription: Leave a even longer trail of danger
+  upgradeDescription: Leave a longer trail of bullets
   upgrade: 9
   upgradeChildren: []
