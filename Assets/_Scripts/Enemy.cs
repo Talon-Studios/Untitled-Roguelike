@@ -28,7 +28,6 @@ public class Enemy : MonoBehaviour
     }
 
     public void GetHurt(float damage) {
-        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.enemyHurt);
         graphics.Flash(0.1f, Color.white);
         graphics.transform.localScale = originalScale + (Vector2.one * hurtScaleMagnitude);
 
@@ -52,6 +51,7 @@ public class Enemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D trigger) {
         if (trigger.CompareTag("Bullet"))
         {
+            AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.enemyHurt);
             Vector2 direction = transform.position - PlayerMovement.Instance.transform.position;
             enemyBody.AddForce(direction.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
             GetHurt(PlayerShooting.Instance.damage);
