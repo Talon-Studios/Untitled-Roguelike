@@ -8,19 +8,28 @@ public class InteractableUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 {
 
     public Image border;
+    public bool hovered = false;
+
+    private bool usingBorder;
 
     void Start() {
-        if (border != null) border.gameObject.SetActive(false);
+        usingBorder = border != null;
+        
+        if (usingBorder) border.gameObject.SetActive(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
+        hovered = true;
+
         MousePointer.Instance.SetMouseState(MouseState.Interacting);
-        if (border != null) border.gameObject.SetActive(true);
+        if (usingBorder) border.gameObject.SetActive(hovered);
     }
 
     public void OnPointerExit(PointerEventData eventData) {
+        hovered = false;
+
         MousePointer.Instance.SetMouseState(MouseState.Aiming);
-        if (border != null) border.gameObject.SetActive(false);
+        if (usingBorder) border.gameObject.SetActive(hovered);
     }
 
 }
