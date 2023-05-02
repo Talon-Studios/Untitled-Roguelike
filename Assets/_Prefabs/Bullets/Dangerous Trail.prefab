@@ -102,7 +102,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.8
 --- !u!50 &1141324123902544910
 Rigidbody2D:
   serializedVersion: 4
@@ -139,3 +139,4 @@ MonoBehaviour:
   isPiercing: 0
   isFreezing: 0
   speed: 0
+  bulletBounds: 1

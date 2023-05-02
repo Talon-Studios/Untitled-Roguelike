@@ -48,7 +48,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.35
+  m_Radius: 1.6
 --- !u!250 &5314752106384064584
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -246,7 +246,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.8
 --- !u!50 &7762370618698933295
 Rigidbody2D:
   serializedVersion: 4

@@ -1314,9 +1314,6 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: 6cfb3a81a0d71a74db3e138875ab78e1, type: 2}
   - {fileID: 11400000, guid: 7288476942289c042bb83aa61d2dc867, type: 2}
-  - {fileID: 11400000, guid: 14ed87892f7d8414d9e5644aa8361ff2, type: 2}
-  - {fileID: 11400000, guid: 94811faf4961c324aa453959fbc7cbe6, type: 2}
-  - {fileID: 11400000, guid: 0dd755b3dff85eb4d9cc8b0e1ad65a62, type: 2}
   characterName: {fileID: 1101130416}
   characterDescription: {fileID: 301766519}
   model: {fileID: 852223132}
