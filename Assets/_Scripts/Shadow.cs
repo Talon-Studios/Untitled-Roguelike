@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shadow : MonoBehaviour
 {
@@ -10,31 +11,56 @@ public class Shadow : MonoBehaviour
 
     private Vector3 direction = new Vector3(1, -1);
     
-    SpriteRenderer graphics;
-    SpriteRenderer shadow;
+    Transform shadow;
+    SpriteRenderer sprite;
+    RawImage image;
+    Camera cam;
 
     void Start() {
-        graphics = GetComponent<SpriteRenderer>();
+        cam = Camera.main;
 
-        shadow = new GameObject("Shadow").AddComponent<SpriteRenderer>();
-        shadow.transform.parent = transform;
-        shadow.transform.localPosition = direction * offset;
-        shadow.transform.localScale = Vector3.one;
-        
-        shadow.sprite = graphics.sprite;
-        shadow.color = shadowColor;
-        shadow.sortingLayerName = "Background";
-        shadow.sortingOrder = 1;
-
-        if (graphics.drawMode == SpriteDrawMode.Sliced)
+        if (TryGetComponent<SpriteRenderer>(out sprite))
         {
-            shadow.drawMode = SpriteDrawMode.Sliced;
-            shadow.size = graphics.size;
+            SpriteRenderer shadowSprite = new GameObject("Shadow").AddComponent<SpriteRenderer>();
+            shadow = shadowSprite.transform;
+
+            shadowSprite.sprite = sprite.sprite;
+            shadowSprite.color = shadowColor;
+            shadowSprite.sortingLayerName = "Background";
+            shadowSprite.sortingOrder = 1;
+
+            
+            shadow.parent = transform;
+            shadow.localPosition = direction * offset;
+            shadow.localScale = Vector3.one;
+
+            if (sprite.drawMode == SpriteDrawMode.Sliced)
+            {
+                shadowSprite.drawMode = SpriteDrawMode.Sliced;
+                shadowSprite.size = sprite.size;
+            }
+        } else if (TryGetComponent<RawImage>(out image))
+        {
+            RawImage shadowImage = new GameObject("Shadow").AddComponent<RawImage>();
+            shadow = shadowImage.transform;
+
+            shadowImage.texture = image.texture;
+            shadowImage.color = shadowColor;
+            shadowImage.SetNativeSize();
+
+            shadow.SetParent(transform.parent, false);
+            shadow.SetAsFirstSibling();
         }
     }
 
     void LateUpdate() {
-        shadow.transform.localPosition = transform.InverseTransformDirection(direction * offset);
+        if (sprite != null)
+        {
+            shadow.transform.localPosition = transform.InverseTransformDirection(direction * offset);
+        } else if (image != null)
+        {
+            shadow.transform.localPosition = transform.InverseTransformDirection(cam.WorldToViewportPoint(direction * offset));
+        }
     }
 
 }

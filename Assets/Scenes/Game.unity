@@ -6233,7 +6233,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 25
+  m_Spacing: 30
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -7969,7 +7969,7 @@ MonoBehaviour:
   fire: {fileID: 8300000, guid: abc1ace8e9d9a2549a0e12ba9ae6d760, type: 3}
   enemyHurt: {fileID: 8300000, guid: fb63098f32e6c364eb7c606525c1a1a4, type: 3}
   explosion: {fileID: 8300000, guid: da9cdb372bde06f45b923ad26e83a662, type: 3}
-  playerHurt: {fileID: 0}
+  playerHurt: {fileID: 8300000, guid: d4abec6674f405740bfcd1b91fd63abc, type: 3}
   randomPitchsource: {fileID: 1055763360}
   source: {fileID: 1055763359}
 --- !u!82 &1055763359
