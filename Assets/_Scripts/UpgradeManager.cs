@@ -27,6 +27,9 @@ public class UpgradeManager : MonoBehaviour
 
     public int level = 1;
     [SerializeField] private StartObject startObject;
+    [SerializeField] private Transform upgradeCardParent;
+    [SerializeField] private UpgradeCard upgradeCardPrefab;
+    [SerializeField] private UpgradeCard characterUpgradeCardPrefab;
 
     [SerializeField] private List<UpgradeObject> upgrades = new List<UpgradeObject>();
     [SerializeField] private List<UpgradeObject> onlyUpgrades = new List<UpgradeObject>();
@@ -34,7 +37,7 @@ public class UpgradeManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TMP_Text levelCounterText;
     [SerializeField] private GameObject upgradesPanel;
-    [SerializeField] private UpgradeCard[] upgradeCards;
+    // [SerializeField] private UpgradeCard[] upgradeCards;
 
     #region Singleton
     
@@ -59,15 +62,22 @@ public class UpgradeManager : MonoBehaviour
         yield return null;
 
         upgradesPanel.SetActive(true);
+
+        foreach (Transform card in upgradeCardParent) Destroy(card.gameObject);
         
         UpgradeObject[] randomUpgrades = GetRandomUpgrades().ToArray();
         for (int i = 0; i < randomUpgrades.Length; i++)
         {
             UpgradeObject randomUpgrade = randomUpgrades[i];
+            UpgradeCard card = Instantiate(randomUpgrade.characterSpecific ? characterUpgradeCardPrefab : upgradeCardPrefab, upgradeCardParent);
 
-            upgradeCards[i].titleText.text = randomUpgrade.upgradeName;
-            upgradeCards[i].descriptionText.text = randomUpgrade.upgradeDescription;
-            upgradeCards[i].upgrade = randomUpgrade;
+            card.titleText.text = randomUpgrade.upgradeName;
+            card.descriptionText.text = randomUpgrade.upgradeDescription;
+            card.upgrade = randomUpgrade;
+            if (card.characterNameText != null)
+            {
+                card.characterNameText.text = "-" + randomUpgrade.character.ToString() + "-";
+            }
         }
     }
 

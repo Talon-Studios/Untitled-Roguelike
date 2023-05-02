@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
   m_Name: Trail
   m_EditorClassIdentifier: 
-  upgradeName: Trailhead
+  upgradeName: Trail Head
   upgradeDescription: Leave a trail of bullets
   upgrade: 8
   upgradeChildren:
   - {fileID: 11400000, guid: 25bdd0c98b909e546b06efa72e550dc9, type: 2}
+  characterSpecific: 0

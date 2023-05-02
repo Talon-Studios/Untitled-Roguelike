@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 8-Bit Wonder
+  m_Name: Dogica
   m_Shader: {fileID: 10101, guid: 0000000000000000e000000000000000, type: 0}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5b8a03f498a00da449d5d642cc7eb6b0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2c3b65c873db7a64d829c82cdf9b4435, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []

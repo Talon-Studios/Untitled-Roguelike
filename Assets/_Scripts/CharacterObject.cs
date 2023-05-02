@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Character
+{
+    Rogue,
+    Ninja,
+    Fighter,
+    Mage,
+    Engineer
+}
+
 [CreateAssetMenu(menuName = "Character", fileName = "New Character")]
 public class CharacterObject : ScriptableObject
 {

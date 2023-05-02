@@ -16,3 +16,5 @@ MonoBehaviour:
   upgradeDescription: +1 projectile
   upgrade: 12
   upgradeChildren: []
+  characterSpecific: 1
+  character: 3

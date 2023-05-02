@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DynamicColor : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class DynamicColor : MonoBehaviour
         {
             trail.startColor = DynamicColorManager.Instance.Color;
             trail.endColor = DynamicColorManager.Instance.Color;
+        } else if (TryGetComponent<TMP_Text>(out TMP_Text text))
+        {
+            text.color = DynamicColorManager.Instance.Color;
         }
     }
 

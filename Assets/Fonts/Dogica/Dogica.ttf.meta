@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: edc8cf91db0b8c1478cd5ce3b75f3044
+guid: 63e77117528079e4b8c53119a3a53441
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,10 +9,10 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - 8BIT WONDER
+  - Dogica
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 1
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

@@ -10,5 +10,7 @@ public class UpgradeObject : ScriptableObject
     [TextArea] public string upgradeDescription;
     public Upgrades upgrade;
     public UpgradeObject[] upgradeChildren;
+    public bool characterSpecific = false;
+    public Character character;
 
 }
