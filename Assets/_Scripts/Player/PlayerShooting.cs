@@ -7,7 +7,6 @@ public class PlayerShooting : MonoBehaviour
 {
 
     public bool canShoot = true;
-    public GunObject gun;
     [SerializeField] private StartObject startObject;
 
     [Header("Transforms")]
@@ -36,6 +35,7 @@ public class PlayerShooting : MonoBehaviour
     private bool shootInput;
     private float nextTimeToFire;
     private Vector2 direction;
+    private GunObject gun;
 
     private float magazine;
     private bool reloading = false;
@@ -59,6 +59,7 @@ public class PlayerShooting : MonoBehaviour
     void Start() {
         playerBody = GetComponent<Rigidbody2D>();
         cam = Camera.main;
+        gun = startObject.character.gun;
 
         SetStats();
     }

@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff8fa7bb0686d044eb06e70638e68f6d, type: 3}
-  m_Name: Minigun
+  m_Name: Machine Gun
   m_EditorClassIdentifier: 
-  weaponName: Minigun
-  weaponDescription: An old, battered minigun
+  weaponName: Machine Gun
+  weaponDescription: SO MANY BULLETS AHHH
   bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   isAutomatic: 1
   fireRate: 10
   spread: 10
-  damage: 5
+  damage: 4
   reloadTime: 1
   maxMagazine: 50
   enemyKnockback: 10
   projectiles: 1
-  knockback: 10
-  gunKick: 30
+  knockback: 5
+  gunKickRotation: 20
   gunRotationSpeed: 200
-  screenShakeMagnitude: 0.06
+  screenShakeMagnitude: 0.1
   screenShakeDuration: 0.1
   graphics: {fileID: 2800000, guid: 1a1db111c0395844fa52e326d38acfa9, type: 3}

@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   weaponName: Shotgun
-  weaponDescription: Rip and tear until it is done
+  weaponDescription: OMG SO POWER
   bulletPrefab: {fileID: 3065601766979065598, guid: 30e34a08a87d950448ba84887d818cd4, type: 3}
   isAutomatic: 1
-  fireRate: 0.8
-  spread: 30
-  damage: 20
+  fireRate: 0.5
+  spread: 70
+  damage: 10
   reloadTime: 2
   maxMagazine: 3
-  enemyKnockback: 50
+  enemyKnockback: 30
   projectiles: 5
-  knockback: 10
-  gunKick: 100
+  knockback: 40
+  gunKickRotation: 50
   gunRotationSpeed: 200
   screenShakeMagnitude: 0.2
-  screenShakeDuration: 0.1
+  screenShakeDuration: 0.3
   graphics: {fileID: 2800000, guid: 1a1db111c0395844fa52e326d38acfa9, type: 3}

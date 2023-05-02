@@ -792,9 +792,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.002057613
+    width: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1315,6 +1315,7 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: 6cfb3a81a0d71a74db3e138875ab78e1, type: 2}
   - {fileID: 11400000, guid: 7288476942289c042bb83aa61d2dc867, type: 2}
+  - {fileID: 11400000, guid: 56e706dc9db933a479f83684cab89cfe, type: 2}
   characterName: {fileID: 1101130416}
   characterDescription: {fileID: 301766519}
   model: {fileID: 852223132}
@@ -1347,7 +1348,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 8e847eeb-68cd-455e-b00a-814f72987ec7
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &678436272

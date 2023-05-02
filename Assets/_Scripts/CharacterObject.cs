@@ -10,6 +10,7 @@ public class CharacterObject : ScriptableObject
     [TextArea] public string characterDescription;
     public GameObject model;
     public Color colorTheme = Color.magenta;
+    public GunObject gun;
     public Ability ability = Ability.Dash;
 
 }
