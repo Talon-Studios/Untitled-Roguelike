@@ -394,6 +394,7 @@ MonoBehaviour:
   gunFlip: {fileID: 1976661746}
   firePoint: {fileID: 1577755012}
   pivotFollowSpeed: 18
+  gunKickSpeed: 1
   reloadBar: {fileID: 1143103627}
   reloadMarker: {fileID: 658192099}
   piercingBulletPrefab: {fileID: 3065601766979065598, guid: 8654bbb9aa241c9409882e75b53fded1, type: 3}
@@ -750,7 +751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &190546410
 Transform:
   m_ObjectHideFlags: 0
@@ -5980,9 +5981,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.002057613
+    width: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6356,9 +6357,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.002057613
+    width: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -7968,6 +7969,7 @@ MonoBehaviour:
   fire: {fileID: 8300000, guid: abc1ace8e9d9a2549a0e12ba9ae6d760, type: 3}
   enemyHurt: {fileID: 8300000, guid: fb63098f32e6c364eb7c606525c1a1a4, type: 3}
   explosion: {fileID: 8300000, guid: da9cdb372bde06f45b923ad26e83a662, type: 3}
+  playerHurt: {fileID: 0}
   randomPitchsource: {fileID: 1055763360}
   source: {fileID: 1055763359}
 --- !u!82 &1055763359
@@ -13882,7 +13884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577755011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.741, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

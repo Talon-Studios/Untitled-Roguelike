@@ -16,6 +16,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Transform gunFlip;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float pivotFollowSpeed = 200;
+    [SerializeField] private float gunKickSpeed = 1;
 
     [Header("Reload UI")]
     [SerializeField] private GameObject reloadBar;
@@ -97,14 +98,14 @@ public class PlayerShooting : MonoBehaviour
     }
 
     private void PivotFollowPlayer() {
-        pivot.transform.position = Vector2.Lerp(pivot.transform.position, transform.position, pivotFollowSpeed * Time.deltaTime);
+        pivot.position = Vector2.Lerp(pivot.transform.position, transform.position, pivotFollowSpeed * Time.deltaTime);
     }
 
     private void Fire() {
         FollowCam.Instance.ScreenShake(gun.screenShakeDuration, gun.screenShakeMagnitude);
         AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.fire, 0.6f, 1.4f);
 
-        gunTransform.localRotation *= Quaternion.Euler(0, 0, gun.gunKick);
+        gunTransform.localRotation *= Quaternion.Euler(0, 0, gun.gunKickRotation);
 
         playerBody.AddForce(-direction.normalized * knockback, ForceMode2D.Impulse);
 

@@ -26,7 +26,7 @@ public class GunObject : ScriptableObject
     [Header("Animation")]
 
     [Tooltip("How much the gun rotates when fired")]
-    public float gunKick = 50;
+    public float gunKickRotation = 50;
 
     [Tooltip("How fast the gun rotates back to the original rotation after firing")]
     public float gunRotationSpeed = 1f;
