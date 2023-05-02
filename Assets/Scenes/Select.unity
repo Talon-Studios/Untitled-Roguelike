@@ -792,10 +792,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1.4938271
-    height: 0.80658436
+    x: 0.0010266941
+    y: 0.0020533882
+    width: 0.9979466
+    height: 0.99383986
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1318,6 +1318,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7288476942289c042bb83aa61d2dc867, type: 2}
   - {fileID: 11400000, guid: 56e706dc9db933a479f83684cab89cfe, type: 2}
   - {fileID: 11400000, guid: 0bb935874e0590649a7d683be34b851d, type: 2}
+  - {fileID: 11400000, guid: d0524fd9ae0ef994194d7207e654af68, type: 2}
   characterName: {fileID: 1101130416}
   characterDescription: {fileID: 301766519}
   model: {fileID: 852223132}
