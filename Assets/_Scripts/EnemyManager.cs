@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("How much enemy speed increases per upgrade")]
     [SerializeField] private float enemySpeedIncrement;
     
-    [SerializeField] private Enemy[] enemyPrefabs;
+    [SerializeField] private GameObject[] enemyPrefabs;
 
     private float nextTimeToSpawn;
     private float spawnRate;

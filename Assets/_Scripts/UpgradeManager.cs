@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public enum Upgrades
 {
@@ -22,10 +23,13 @@ public enum Upgrades
 public class UpgradeManager : MonoBehaviour
 {
 
+    public int level = 1;
+
     [SerializeField] private List<UpgradeObject> upgrades = new List<UpgradeObject>();
     [SerializeField] private List<UpgradeObject> onlyUpgrades = new List<UpgradeObject>();
 
     [Header("UI")]
+    [SerializeField] private TMP_Text levelCounterText;
     [SerializeField] private GameObject upgradesPanel;
     [SerializeField] private UpgradeCard[] upgradeCards;
 
@@ -62,6 +66,7 @@ public class UpgradeManager : MonoBehaviour
         Time.timeScale = 1;
         MousePointer.Instance.SetMouseState(MouseState.Aiming);
         XPManager.Instance.ResetXP();
+        NextLevel();
     }
 
     public void ActivateUpgrade(UpgradeObject upgradeObject) {
@@ -143,6 +148,11 @@ public class UpgradeManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    private void NextLevel() {
+        level++;
+        levelCounterText.text = "Level " + level;
     }
 
     private List<UpgradeObject> GetRandomUpgrades() {
