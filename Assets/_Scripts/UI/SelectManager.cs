@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class SelectManager : MonoBehaviour
 {
@@ -91,6 +92,14 @@ public class SelectManager : MonoBehaviour
 
     public void Go() {
         SceneManager.LoadScene("Game");
+    }
+
+    void OnUIMovement(InputValue value) {
+        NextPage((int)value.Get<float>());
+    }
+
+    void OnUISelect() {
+        Go();
     }
 
 }
