@@ -393,7 +393,7 @@ MonoBehaviour:
   gunTransform: {fileID: 190546410}
   gunFlip: {fileID: 1976661746}
   firePoint: {fileID: 1577755012}
-  pivotFollowSpeed: 18
+  pivotFollowSpeed: 180
   gunKickSpeed: 1
   reloadBar: {fileID: 1143103627}
   reloadMarker: {fileID: 658192099}
@@ -482,6 +482,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startObject: {fileID: 11400000, guid: d596bf0646f8a6e4badcde151f283942, type: 2}
+  cooldown: 3
+  dustParticles: {fileID: 282373421}
   dashAbility: {fileID: 21466124}
   stompAbility: {fileID: 21466125}
 --- !u!1 &65905620
