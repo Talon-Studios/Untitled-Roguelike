@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public enum Ability
 {
     Dash,
-    Stomp
+    Stomp,
+    Bombs
 }
 
 public class PlayerAbility : MonoBehaviour
@@ -19,6 +20,7 @@ public class PlayerAbility : MonoBehaviour
     [Header("Abilities")]
     [SerializeField] private DashAbility dashAbility;
     [SerializeField] private StompAbility stompAbility;
+    [SerializeField] private BombsAbility bombsAbility;
 
     private float cooldownTimer = 0;
     private bool abilityIsReady = true;
@@ -57,6 +59,11 @@ public class PlayerAbility : MonoBehaviour
                 case Ability.Stomp: {
                     print("Stomp Ability");
                     stompAbility.Activate();
+                    break;
+                }
+                case Ability.Bombs: {
+                    print("Bombs ability");
+                    bombsAbility.Activate();
                     break;
                 }
             }

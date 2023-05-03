@@ -19,7 +19,7 @@ MonoBehaviour:
   fireRate: 4
   spread: 360
   damage: 10
-  reloadTime: 1
+  reloadTime: 2
   maxMagazine: 2
   enemyKnockback: 30
   projectiles: 9

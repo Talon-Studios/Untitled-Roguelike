@@ -5,12 +5,23 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
 
+    public float startForceMin = 8;
+    public float startForceMax = 12;
     [SerializeField] private float radius = 5;
     [SerializeField] private float delay = 2;
+    [SerializeField] private float spin = 10;
     [SerializeField] private float enemyKnockback = 10;
     [SerializeField] private LayerMask enemyLayer;
 
+    Rigidbody2D bombBody;
+
     void Start() {
+        bombBody = GetComponent<Rigidbody2D>();
+
+        float randomStartForce = Random.Range(startForceMin, startForceMax);
+        bombBody.AddForce(Random.insideUnitCircle.normalized * randomStartForce, ForceMode2D.Impulse);
+        bombBody.AddTorque(spin, ForceMode2D.Impulse);
+
         StartCoroutine(ExplodeRoutine());
     }
 

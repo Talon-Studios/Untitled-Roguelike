@@ -20,7 +20,11 @@ public enum Upgrades
     Rotating,
     MageAddProjectile,
     MageIncreaseSpread,
-    RogueQuickDraw
+    RogueQuickDraw,
+    ArtificerMoreBombs,
+    ArtificerIncreaseBombSpread,
+    FighterStompRange,
+    FighterMorePower
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -110,6 +114,7 @@ public class UpgradeManager : MonoBehaviour
 
         switch (upgradeObject.upgrade)
         {
+            // Basic Upgrades
             case Upgrades.Fire: {
                 print("Fire");
                 FireWeapon.Instance.ActivateWeapon();
@@ -170,6 +175,8 @@ public class UpgradeManager : MonoBehaviour
                 RotatingWeapon.Instance.ActivateWeapon();
                 break;
             }
+
+            // Character Upgrades
             case Upgrades.MageAddProjectile: {
                 print("Mage add projectile");
                 PlayerShooting.Instance.projectiles++;
@@ -183,6 +190,24 @@ public class UpgradeManager : MonoBehaviour
             case Upgrades.RogueQuickDraw: {
                 print("Rogue quick draw");
                 PlayerShooting.Instance.QuickDraw(20, 20);
+                break;
+            }
+            case Upgrades.ArtificerMoreBombs: {
+                print("Artificer another bomb");
+                BombsAbility.Instance.MoreBombs();
+                break;
+            }
+            case Upgrades.ArtificerIncreaseBombSpread: {
+                BombsAbility.Instance.bombPrefab.startForceMin += 5;
+                BombsAbility.Instance.bombPrefab.startForceMax += 5;
+                break;
+            }
+            case Upgrades.FighterStompRange: {
+                StompAbility.Instance.BiggerRange();
+                break;
+            }
+            case Upgrades.FighterMorePower: {
+                StompAbility.Instance.MorePower();
                 break;
             }
         }

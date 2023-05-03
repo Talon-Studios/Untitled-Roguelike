@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 21466126}
   - component: {fileID: 21466124}
   - component: {fileID: 21466125}
+  - component: {fileID: 21466127}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -463,7 +464,7 @@ MonoBehaviour:
   damage: 5
   range: 8
   enemyKnockback: 40
-  cantMoveTime: 0
+  cantMoveTime: 0.2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -480,10 +481,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startObject: {fileID: 11400000, guid: d596bf0646f8a6e4badcde151f283942, type: 2}
-  cooldown: 3
+  cooldown: 5
   dustParticles: {fileID: 282373421}
   dashAbility: {fileID: 21466124}
   stompAbility: {fileID: 21466125}
+  bombsAbility: {fileID: 21466127}
+--- !u!114 &21466127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21466116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbfaca1e5053fbb439f68941635fca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 1672599055545185430, guid: 1d8a4e53c562eba44b816d5b330e9002, type: 3}
+  bombCount: 3
 --- !u!1 &65905620
 GameObject:
   m_ObjectHideFlags: 0
@@ -13636,11 +13652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4b92e4bc31101408d71ab45dac512c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombSpin: 10
-  bombStartForceMin: 8
-  bombStartForceMax: 12
   spawnDelay: 3
-  bombPrefab: {fileID: -3899186096353341488, guid: 1d8a4e53c562eba44b816d5b330e9002, type: 3}
+  bombPrefab: {fileID: 1672599055545185430, guid: 1d8a4e53c562eba44b816d5b330e9002, type: 3}
 --- !u!1 &1421924009
 GameObject:
   m_ObjectHideFlags: 0

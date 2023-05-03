@@ -14,6 +14,16 @@ public class StompAbility : MonoBehaviour
 
     PlayerMovement playerMovement;
 
+    #region Singleton
+    
+    static public StompAbility Instance = null;
+    void Awake() {
+        if (Instance == null) Instance = this;
+        else if (Instance != this) Destroy(gameObject);
+    }
+    
+    #endregion
+
     void Start() {
         playerMovement = GetComponent<PlayerMovement>();
     }
@@ -47,6 +57,15 @@ public class StompAbility : MonoBehaviour
         yield return new WaitForSecondsRealtime(cantMoveTime);
 
         playerMovement.canMove = true;
+    }
+
+    public void BiggerRange() {
+        range += 2;
+    }
+
+    public void MorePower() {
+        damage += 5;
+        enemyKnockback += 15;
     }
 
     void OnDrawGizmos() {
