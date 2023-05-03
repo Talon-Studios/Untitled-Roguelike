@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 383519b62e426ae4a9349660e2b46e07, type: 3}
-  m_Name: Ninja
+  m_Name: Ranger
   m_EditorClassIdentifier: 
-  characterName: Ninja
-  characterDescription: A stealthy mercenary
-  model: {fileID: 499605171543494371, guid: b9b580443ebbae8478274ff2ce54aad1, type: 3}
-  colorTheme: {r: 0.1843137, g: 0.4285826, b: 0.99607843, a: 1}
+  characterName: Ranger
+  characterDescription: A stealthy archer
+  model: {fileID: 499605171543494371, guid: 9b3e96462e882f343a2851ae0ef4f1ee, type: 3}
+  colorTheme: {r: 0, g: 1, b: 0.39541388, a: 1}
   gun: {fileID: 11400000, guid: 77ccfebf9be0b8d44b44882efb013226, type: 2}
   ability: 0
   upgrades: []

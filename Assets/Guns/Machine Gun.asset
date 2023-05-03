@@ -18,7 +18,7 @@ MonoBehaviour:
   isAutomatic: 1
   fireRate: 10
   spread: 10
-  damage: 4
+  damage: 5
   reloadTime: 1
   maxMagazine: 50
   enemyKnockback: 10

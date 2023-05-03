@@ -19,7 +19,8 @@ public enum Upgrades
     FreezeBullets,
     Rotating,
     MageAddProjectile,
-    MageIncreaseSpread
+    MageIncreaseSpread,
+    RogueQuickDraw
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -177,6 +178,11 @@ public class UpgradeManager : MonoBehaviour
             case Upgrades.MageIncreaseSpread: {
                 print("Mage increase spread");
                 PlayerShooting.Instance.IncreaseSpread(30);
+                break;
+            }
+            case Upgrades.RogueQuickDraw: {
+                print("Rogue quick draw");
+                PlayerShooting.Instance.QuickDraw(20, 20);
                 break;
             }
         }

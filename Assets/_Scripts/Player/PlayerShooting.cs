@@ -156,6 +156,11 @@ public class PlayerShooting : MonoBehaviour
         spread += spread / 100 * percentage;
     }
 
+    public void QuickDraw(float fireRatePercentage, float reloadTimePercentage) {
+        fireRate += fireRate / 100 * fireRatePercentage;
+        reloadTime -= reloadTime / 100 * reloadTimePercentage;
+    }
+
     private IEnumerator Reload() {
         reloading = true;
         reloadBar.SetActive(true);
