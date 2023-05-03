@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Ranger
   characterDescription: A stealthy archer
-  model: {fileID: 499605171543494371, guid: 9b3e96462e882f343a2851ae0ef4f1ee, type: 3}
+  model: {fileID: 499605171543494371, guid: b36f2f019cdcdd947ad0a3b7453aeb12, type: 3}
   colorTheme: {r: 0, g: 1, b: 0.39541388, a: 1}
   gun: {fileID: 11400000, guid: 77ccfebf9be0b8d44b44882efb013226, type: 2}
   ability: 0
