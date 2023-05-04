@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
 {
 
     [SerializeField] private int maxHealth = 3;
+    [SerializeField] private float deathSlowmo = 0.2f;
+    [SerializeField] private float deathDelay = 3;
+    [SerializeField] private int cameraZoom = 5;
 
     [Tooltip("How long you are invincible after getting hurt")]
     [SerializeField] private float invincibleTime = 3;
@@ -27,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     [HideInInspector] public int health;
 
     public bool invincible = false;
+    public bool isDead = false;
 
     RawImage[] hearts;
 
@@ -49,6 +53,8 @@ public class PlayerHealth : MonoBehaviour
     private void GetHurt() {
         health--;
 
+        if (health <= 0) StartCoroutine(Die());
+
         if (PlayerShooting.Instance.isFurious) PlayerShooting.Instance.StartFury();
         
         FollowCam.Instance.ScreenShake(0.2f, 0.5f);
@@ -57,8 +63,6 @@ public class PlayerHealth : MonoBehaviour
         
         StartCoroutine(Invincible());
         RemoveHeart();
-
-        if (health <= 0) Die();
     }
 
     private IEnumerator Invincible() {
@@ -82,8 +86,18 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void Die() {
+    private IEnumerator Die() {
         print("YOU DIEEEEED!!!!!");
+        isDead = true;
+        PlayerMovement.Instance.canMove = false;
+        graphics.gameObject.SetActive(false);
+        FollowCam.Instance.targetCameraSize = cameraZoom;
+        Time.timeScale = deathSlowmo;
+        FollowCam.Instance.ScreenShake(0.2f, 1f);
+        ParticleManager.Instance.Play(ParticleManager.Instance.bigExplosion, transform.position);
+        
+        yield return new WaitForSecondsRealtime(deathDelay);
+
         SceneManager.LoadScene("Die");
     }
 

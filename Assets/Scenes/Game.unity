@@ -409,6 +409,10 @@ MonoBehaviour:
   projectiles: 1
   piercingBulletChance: 0
   freezingBulletChance: 0
+  isFurious: 0
+  furiousTime: 5
+  rangerPiercingDamage: 0
+  rangerDoublePiercingBullets: 0
 --- !u!114 &21466123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d4d0e6442dc5849afc072d7bff4464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 1
+  deathSlowmo: 0.2
+  deathDelay: 3
+  cameraZoom: 18
   invincibleTime: 3
   invincibleFlashSpeed: 0.2
   graphics: {fileID: 17168018}
@@ -433,6 +440,7 @@ MonoBehaviour:
   hurtPlayer: {fileID: 21300000, guid: 1d2e898b4e9b28845b9e2a879834f0e4, type: 3}
   health: 0
   invincible: 0
+  isDead: 0
 --- !u!114 &21466124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +472,6 @@ MonoBehaviour:
   damage: 5
   range: 8
   enemyKnockback: 40
-  cantMoveTime: 0.2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -5813,7 +5820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 12
+  m_AssetsPPU: 10
   m_RefResolutionX: 320
   m_RefResolutionY: 180
   m_CropFrame: 0
@@ -5876,14 +5883,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.002057613
+    width: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.083333
+  orthographic size: 12.1
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -5986,7 +5993,7 @@ AudioSource:
   m_GameObject: {fileID: 463133828}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: ba5f107f2fe26384aaf90bd9e79cd43a, type: 2}
+  OutputAudioMixerGroup: {fileID: 7413858929838435703, guid: ba5f107f2fe26384aaf90bd9e79cd43a, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5330eaab82844154ea575abd12614c99, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.62
@@ -6252,9 +6259,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.002057613
+    width: 0.99999994
+    height: 0.9958847
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6328,6 +6335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e5958fcee661e4b8ba562990402cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetCameraSize: 10
+  cameraZoomSpeed: 100
   smoothing: 0.1
   dynamicCamera: 1
   player: {fileID: 21466117}
@@ -6338,12 +6347,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2a6a77358ba012418454fb8fa426988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 2
+  rotationSpeed: 1
   rotationMagnitude: 2
 --- !u!1 &576658865
 GameObject:

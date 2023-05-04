@@ -12,6 +12,8 @@ public class StartSceneManager : MonoBehaviour
     [SerializeField] private GameObject startOptions;
     [SerializeField] private GameObject settingsOptions;
 
+    [SerializeField] private float allAudioVolume = 0.5f;
+
     [Header("Settings")]
     [SerializeField] private TMP_Text masterVolumeText;
     [SerializeField] private TMP_Text musicVolumeText;
@@ -24,6 +26,8 @@ public class StartSceneManager : MonoBehaviour
 
     void Start() {
         StartOptions();
+
+        AudioListener.volume = allAudioVolume;
 
         SetVolume(ref masterVolume, ref masterVolumeText, "MasterVolume", "Master Volume", PlayerPrefs.GetFloat("Master Volume", 100));
         SetVolume(ref musicVolume, ref musicVolumeText, "MusicVolume", "Music Volume", PlayerPrefs.GetFloat("Music Volume", 100));

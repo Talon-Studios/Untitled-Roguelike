@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class FollowCam : MonoBehaviour
 {
+
+    public int targetCameraSize = 10;
+    [SerializeField] private float cameraZoomSpeed = 1;
 
     [Tooltip("How fast the camera moves to the player. Set to 0.05 to 0.5 for best effect")]
     [SerializeField] private float smoothing = 0.1f;
@@ -20,6 +24,7 @@ public class FollowCam : MonoBehaviour
     private float dampingSpeed = 1.0f;
 
     Camera cam;
+    PixelPerfectCamera pixelCam;
 
     #region Singleton
     
@@ -33,6 +38,7 @@ public class FollowCam : MonoBehaviour
 
     void Start() {
         cam = Camera.main;
+        pixelCam = cam.GetComponent<PixelPerfectCamera>();
     }
 
     void Update() {
@@ -45,6 +51,8 @@ public class FollowCam : MonoBehaviour
             shakeDuration = 0f;
             transform.localPosition = initialPosition;
         }
+
+        pixelCam.assetsPPU = (int)Mathf.MoveTowards(pixelCam.assetsPPU, targetCameraSize, cameraZoomSpeed * Time.unscaledDeltaTime);
     }
 
     void FixedUpdate() {
@@ -69,9 +77,12 @@ public class FollowCam : MonoBehaviour
     }
 
     private IEnumerator HitstopRoutine(float duration) {
-        Time.timeScale = 0;
-        yield return new WaitForSecondsRealtime(duration);
-        Time.timeScale = 1;
+        if (!PlayerHealth.Instance.isDead)
+        {
+            Time.timeScale = 0;
+            yield return new WaitForSecondsRealtime(duration);
+            Time.timeScale = 1;
+        }
     }
 
 }

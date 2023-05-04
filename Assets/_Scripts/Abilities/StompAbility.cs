@@ -9,7 +9,6 @@ public class StompAbility : MonoBehaviour
     [SerializeField] private float damage = 3;
     [SerializeField] private float range = 5;
     [SerializeField] private float enemyKnockback = 5;
-    [SerializeField] private float cantMoveTime = 1;
     [SerializeField] private LayerMask enemyLayer;
 
     PlayerMovement playerMovement;
@@ -31,11 +30,11 @@ public class StompAbility : MonoBehaviour
     public void Activate() {
         if (Time.timeScale > 0)
         {
-            StartCoroutine(Stomp());
+            Stomp();
         }
     }
 
-    private IEnumerator Stomp() {
+    private void Stomp() {
         FollowCam.Instance.ScreenShake(0.2f, 0.5f);
         FollowCam.Instance.Hitstop(0.1f);
 
@@ -51,12 +50,6 @@ public class StompAbility : MonoBehaviour
                 enemyBody.AddForce(direction.normalized * enemyKnockback, ForceMode2D.Impulse);
             }
         }
-
-        playerMovement.canMove = false;
-
-        yield return new WaitForSecondsRealtime(cantMoveTime);
-
-        playerMovement.canMove = true;
     }
 
     public void BiggerRange() {

@@ -561,6 +561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e5958fcee661e4b8ba562990402cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetCameraSize: 12
+  cameraZoomSpeed: 1
   smoothing: 0.1
   dynamicCamera: 0.5
   player: {fileID: 641565176}
