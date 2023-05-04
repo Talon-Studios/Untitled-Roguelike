@@ -98,6 +98,10 @@ public class SelectManager : MonoBehaviour
         NextPage((int)value.Get<float>());
     }
 
+    public void Back() {
+        SceneManager.LoadScene("Start");
+    }
+
     void OnUISelect() {
         Go();
     }

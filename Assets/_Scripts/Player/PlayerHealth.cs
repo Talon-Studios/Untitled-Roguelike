@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float deathSlowmo = 0.2f;
     [SerializeField] private float deathDelay = 3;
     [SerializeField] private int cameraZoom = 5;
+    [SerializeField] private EndObject endObject;
 
     [Tooltip("How long you are invincible after getting hurt")]
     [SerializeField] private float invincibleTime = 3;
@@ -95,7 +96,9 @@ public class PlayerHealth : MonoBehaviour
         Time.timeScale = deathSlowmo;
         FollowCam.Instance.ScreenShake(0.2f, 1f);
         ParticleManager.Instance.Play(ParticleManager.Instance.bigExplosion, transform.position);
-        
+
+        endObject.level = UpgradeManager.Instance.level;
+
         yield return new WaitForSecondsRealtime(deathDelay);
 
         SceneManager.LoadScene("Die");

@@ -429,6 +429,7 @@ MonoBehaviour:
   deathSlowmo: 0.2
   deathDelay: 3
   cameraZoom: 18
+  endObject: {fileID: 11400000, guid: a17300a1749176f4d9f386a14185265b, type: 2}
   invincibleTime: 3
   invincibleFlashSpeed: 0.2
   graphics: {fileID: 17168018}
