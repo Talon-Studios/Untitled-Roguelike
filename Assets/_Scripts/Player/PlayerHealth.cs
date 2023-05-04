@@ -30,6 +30,16 @@ public class PlayerHealth : MonoBehaviour
 
     RawImage[] hearts;
 
+    #region Singleton
+    
+    static public PlayerHealth Instance = null;
+    void Awake() {
+        if (Instance == null) Instance = this;
+        else if (Instance != this) Destroy(gameObject);
+    }
+    
+    #endregion
+
     void Start() {
         health = maxHealth;
 
@@ -38,6 +48,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void GetHurt() {
         health--;
+
+        if (PlayerShooting.Instance.isFurious) PlayerShooting.Instance.StartFury();
         
         FollowCam.Instance.ScreenShake(0.2f, 0.5f);
         FollowCam.Instance.Hitstop(0.2f);
@@ -51,8 +63,8 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator Invincible() {
         invincible = true;
-        StartCoroutine(Flash());
 
+        StartCoroutine(Flash());
         yield return new WaitForSeconds(invincibleTime);
 
         invincible = false;
@@ -86,6 +98,20 @@ public class PlayerHealth : MonoBehaviour
     private void AddHeartContainer() {
         Instantiate(heartPrefab, heartParent);
         hearts = heartParent.GetComponentsInChildren<RawImage>();
+    }
+
+    public void Heal() {
+        if (health < maxHealth)
+        {
+            health++;
+            AddHeart();
+        } else
+        {
+            maxHealth++;
+            health++;
+            AddHeartContainer();
+            AddHeart();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D trigger) {

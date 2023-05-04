@@ -20,11 +20,18 @@ public enum Upgrades
     Rotating,
     MageAddProjectile,
     MageIncreaseSpread,
+    MageHeal,
     RogueQuickDraw,
+    RogueDashFarther,
     ArtificerMoreBombs,
     ArtificerIncreaseBombSpread,
     FighterStompRange,
-    FighterMorePower
+    FighterMorePower,
+    FighterFury,
+    FighterIncreaseFuryTime,
+    RangerPiercingDamage,
+    RangerDoublePiercingBullets,
+    RangerMorePiercingChance
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -208,6 +215,42 @@ public class UpgradeManager : MonoBehaviour
             }
             case Upgrades.FighterMorePower: {
                 StompAbility.Instance.MorePower();
+                break;
+            }
+            case Upgrades.FighterFury: {
+                print("Fighter fury");
+                PlayerShooting.Instance.SetFury(10);
+                break;
+            }
+            case Upgrades.FighterIncreaseFuryTime: {
+                print("Fighter increase fury time");
+                PlayerShooting.Instance.SetFury(PlayerShooting.Instance.furiousTime * 2);
+                break;
+            }
+            case Upgrades.MageHeal: {
+                print("Mage heal");
+                PlayerHealth.Instance.Heal();
+                break;
+            }
+            case Upgrades.RogueDashFarther: {
+                print("Rogue dash farther");
+                DashAbility.Instance.DashFarther(50, 0.15f);
+                break;
+            }
+            case Upgrades.RangerPiercingDamage: {
+                print("Ranger piercing double damage");
+                PlayerShooting.Instance.rangerPiercingDamage = true;
+                break;
+            }
+            case Upgrades.RangerDoublePiercingBullets: {
+                print("Ranger double piercing bullets");
+                PlayerShooting.Instance.rangerDoublePiercingBullets++;
+                PlayerShooting.Instance.spread = 30;
+                break;
+            }
+            case Upgrades.RangerMorePiercingChance: {
+                print("Ranger more piercing chance");
+                PlayerShooting.Instance.PiercingBulletChanceIncrease(40);
                 break;
             }
         }

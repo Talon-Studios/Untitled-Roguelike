@@ -15,6 +15,16 @@ public class DashAbility : MonoBehaviour
     PlayerMovement playerMovement;
     PlayerHealth playerHealth;
 
+    #region Singleton
+    
+    static public DashAbility Instance = null;
+    void Awake() {
+        if (Instance == null) Instance = this;
+        else if (Instance != this) Destroy(gameObject);
+    }
+    
+    #endregion
+
     void Start() {
         playerBody = GetComponent<Rigidbody2D>();
         playerMovement = GetComponent<PlayerMovement>();
@@ -43,6 +53,11 @@ public class DashAbility : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+    }
+
+    public void DashFarther(float forceIncrease, float invincibleTimeIncrease) {
+        force += forceIncrease;
+        invincibleTime += invincibleTimeIncrease;
     }
 
 }

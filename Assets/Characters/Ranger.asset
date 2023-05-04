@@ -18,4 +18,7 @@ MonoBehaviour:
   colorTheme: {r: 0, g: 1, b: 0.39541388, a: 1}
   gun: {fileID: 11400000, guid: 77ccfebf9be0b8d44b44882efb013226, type: 2}
   ability: 0
-  upgrades: []
+  upgrades:
+  - {fileID: 11400000, guid: 69fc0167f8041e64ca50503424738126, type: 2}
+  - {fileID: 11400000, guid: f9931b2cf4416b147bb78419c18cb001, type: 2}
+  - {fileID: 11400000, guid: ba32bd31466533b46b610bc3bf6e9cff, type: 2}

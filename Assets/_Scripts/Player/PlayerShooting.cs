@@ -39,6 +39,10 @@ public class PlayerShooting : MonoBehaviour
 
     private float magazine;
     private bool reloading = false;
+    public bool isFurious = false;
+    public float furiousTime = 5;
+    public bool rangerPiercingDamage = false;
+    public int rangerDoublePiercingBullets = 0;
 
     Camera cam;
     Vector3 mousePosition;
@@ -114,30 +118,35 @@ public class PlayerShooting : MonoBehaviour
         if (magazine <= 0) StartCoroutine(Reload());
         if (!isAutomatic) shootInput = false;
 
-        float step = spread / (float)projectiles;
+        Bullet bulletPrefab;
+        int fireProjectiles = projectiles;
+        if (Random.Range(0, 100) < PlayerShooting.Instance.freezingBulletChance)
+        {
+            bulletPrefab = freezingBulletPrefab;
+        } else if (Random.Range(0, 100) < PlayerShooting.Instance.piercingBulletChance)
+        {
+            bulletPrefab = piercingBulletPrefab;
+            if (rangerDoublePiercingBullets > 0)
+            {
+                fireProjectiles += rangerDoublePiercingBullets;
+            }
+        } else
+        {
+            bulletPrefab = gun.bulletPrefab;
+        }
+
+        float step = spread / (float)fireProjectiles;
         float halfSpread = spread / 2;
 
-        for (int i = 0; i < projectiles; i++)
-        {   
+        for (int i = 0; i < fireProjectiles; i++)
+        {
             Quaternion rotation;
-            if (projectiles > 1)
+            if (fireProjectiles > 1)
             {
-                rotation = pivot.rotation * (Quaternion.Euler(0, 0, (i * step) - (halfSpread - (halfSpread / projectiles))));
+                rotation = pivot.rotation * (Quaternion.Euler(0, 0, (i * step) - (halfSpread - (halfSpread / fireProjectiles))));
             } else
             {
                 rotation = pivot.rotation * Quaternion.Euler(0, 0, Random.Range(-spread, spread));
-            }
-
-            Bullet bulletPrefab;
-            if (Random.Range(0, 100) < PlayerShooting.Instance.freezingBulletChance)
-            {
-                bulletPrefab = freezingBulletPrefab;
-            } else if (Random.Range(0, 100) < PlayerShooting.Instance.piercingBulletChance)
-            {
-                bulletPrefab = piercingBulletPrefab;
-            } else
-            {
-                bulletPrefab = gun.bulletPrefab;
             }
 
             Instantiate(bulletPrefab, firePoint.position, rotation);
@@ -159,6 +168,33 @@ public class PlayerShooting : MonoBehaviour
     public void QuickDraw(float fireRatePercentage, float reloadTimePercentage) {
         fireRate += fireRate / 100 * fireRatePercentage;
         reloadTime -= reloadTime / 100 * reloadTimePercentage;
+    }
+
+    public void SetFury(float time) {
+        furiousTime = time;
+        isFurious = true;
+    }
+
+    public void ActivateFury(bool fury, float damageMultiplier, float fireRateMultiplier) {
+        if (fury)
+        {
+            damage *= damageMultiplier;
+            fireRate *= fireRateMultiplier;
+        } else
+        {
+            damage /= damageMultiplier;
+            fireRate /= fireRateMultiplier;
+        }
+    }
+
+    public IEnumerator Fury() {
+        ActivateFury(true, 2, 2);
+        yield return new WaitForSeconds(furiousTime);
+        ActivateFury(false, 2, 2);
+    }
+
+    public void StartFury() {
+        StartCoroutine(Fury());
     }
 
     private IEnumerator Reload() {

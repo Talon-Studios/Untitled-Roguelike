@@ -54,13 +54,20 @@ public class Enemy : MonoBehaviour
             AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.enemyHurt);
             Vector2 direction = transform.position - PlayerMovement.Instance.transform.position;
             enemyBody.AddForce(direction.normalized * PlayerShooting.Instance.enemyKnockback, ForceMode2D.Impulse);
-            GetHurt(PlayerShooting.Instance.damage);
 
             if (trigger.TryGetComponent<Bullet>(out Bullet bullet))
             {
                 if (bullet.isFreezing)
                 {
                     Freeze();
+                }
+
+                if (bullet.isPiercing && PlayerShooting.Instance.rangerPiercingDamage)
+                {
+                    GetHurt(PlayerShooting.Instance.damage * 2);
+                } else
+                {
+                    GetHurt(PlayerShooting.Instance.damage);
                 }
             }
         }

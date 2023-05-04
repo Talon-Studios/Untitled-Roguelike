@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
-  m_Name: Artificer_Bomb Spread
+  m_Name: Barbed Bullets
   m_EditorClassIdentifier: 
-  upgradeName: Bombs Fan Out
-  upgradeDescription: All bombs go farther
-  upgrade: 16
+  upgradeName: Barbed Bullets
+  upgradeDescription: Bullets +20% chance of being piercing
+  upgrade: 3
   upgradeChildren: []
-  characterSpecific: 1
-  character: 4
+  characterSpecific: 0
+  character: 0

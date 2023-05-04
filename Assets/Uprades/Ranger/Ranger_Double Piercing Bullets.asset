@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
-  m_Name: Artificer_Bomb Spread
+  m_Name: Ranger_Double Piercing Bullets
   m_EditorClassIdentifier: 
-  upgradeName: Bombs Fan Out
-  upgradeDescription: All bombs go farther
-  upgrade: 16
-  upgradeChildren: []
+  upgradeName: Double the Trouble
+  upgradeDescription: Piercing bullets are shot twice
+  upgrade: 24
+  upgradeChildren:
+  - {fileID: 11400000, guid: cca5c3dc50afd2743a6bfa5d0fa5d908, type: 2}
   characterSpecific: 1
-  character: 4
+  character: 1

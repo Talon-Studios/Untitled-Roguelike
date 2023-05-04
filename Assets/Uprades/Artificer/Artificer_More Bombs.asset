@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Artificer_More Bombs
   m_EditorClassIdentifier: 
   upgradeName: Satchet of Bombs
-  upgradeDescription: +1 bomb to artificer ability
+  upgradeDescription: +1 bomb to artificers ability
   upgrade: 15
   upgradeChildren: []
   characterSpecific: 1

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
-  m_Name: Thorns
+  m_Name: Ranger_More Piercing Chance
   m_EditorClassIdentifier: 
-  upgradeName: Barbed Bullets
-  upgradeDescription: Bullets +20% chance of being piercing
-  upgrade: 3
+  upgradeName: Arrows
+  upgradeDescription: Bullets +40% chance of being piercing
+  upgrade: 25
   upgradeChildren: []
-  characterSpecific: 0
-  character: 0
+  characterSpecific: 1
+  character: 1

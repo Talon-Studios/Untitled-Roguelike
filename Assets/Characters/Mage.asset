@@ -21,3 +21,4 @@ MonoBehaviour:
   upgrades:
   - {fileID: 11400000, guid: cbab8e2e115821a4b9d4439683fb3b7d, type: 2}
   - {fileID: 11400000, guid: 3a4b7fcd50d9aef4a845396376bbfc8f, type: 2}
+  - {fileID: 11400000, guid: 000650b434d5db74f87092dbb49ceff3, type: 2}
