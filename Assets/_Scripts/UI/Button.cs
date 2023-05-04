@@ -12,6 +12,7 @@ public class Button : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     [SerializeField] private TMP_Text text;
     [SerializeField] private Image button;
     [SerializeField] private Color textHoverColor = Color.white;
+    [SerializeField] private bool sceneChangeButton = false;
     [SerializeField] private UnityEvent onClick;
 
     private bool hovering = false;
@@ -45,6 +46,14 @@ public class Button : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     }
 
     public void OnPointerClick(PointerEventData eventData) {
+        if (sceneChangeButton)
+        {
+            if (text != null) text.color = textOriginalColor;
+            if (button != null) button.color = buttonOriginalColor;
+
+            hovering = false;
+        }
+        
         onClick.Invoke();
     }
 
