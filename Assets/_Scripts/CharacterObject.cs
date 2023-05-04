@@ -5,10 +5,10 @@ using UnityEngine;
 public enum Character
 {
     Rogue,
-    Ninja,
+    Ranger,
     Fighter,
     Mage,
-    Engineer
+    Artificer
 }
 
 [CreateAssetMenu(menuName = "Character", fileName = "New Character")]
