@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383519b62e426ae4a9349660e2b46e07, type: 3}
   m_Name: Fighter
   m_EditorClassIdentifier: 
-  characterName: Fighter
+  characterName: The Fighter
   characterDescription: A powerful warrior
   model: {fileID: 499605171543494371, guid: a6c69bbc36f9de244b84d2ee45435dc4, type: 3}
   colorTheme: {r: 1, g: 0.49019608, b: 0, a: 1}
   gun: {fileID: 11400000, guid: 9a6f80003963d6c41a59ea82d4a6c41d, type: 2}
   ability: 0
   upgrades:
-  - {fileID: 11400000, guid: f8ce0b055d8a3f74cab5a62eabdaf0d6, type: 2}
   - {fileID: 11400000, guid: 28feeb6e2ec81644782975c197ca90be, type: 2}
   - {fileID: 11400000, guid: 29aca72bcb3962e4db7627732301e083, type: 2}

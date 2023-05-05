@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383519b62e426ae4a9349660e2b46e07, type: 3}
   m_Name: Artificer
   m_EditorClassIdentifier: 
-  characterName: Artificer
+  characterName: The Artificer
   characterDescription: A clever inventor
   model: {fileID: 499605171543494371, guid: 066190b0baf05fe45a1c4cb446f1bba3, type: 3}
   colorTheme: {r: 0.18431373, g: 0.42745098, b: 0.99607843, a: 1}
