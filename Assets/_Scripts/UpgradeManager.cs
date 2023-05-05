@@ -49,7 +49,6 @@ public class UpgradeManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TMP_Text levelCounterText;
     [SerializeField] private GameObject upgradesPanel;
-    // [SerializeField] private UpgradeCard[] upgradeCards;
 
     #region Singleton
     
@@ -245,7 +244,6 @@ public class UpgradeManager : MonoBehaviour
             case Upgrades.RangerDoublePiercingBullets: {
                 print("Ranger double piercing bullets");
                 PlayerShooting.Instance.rangerDoublePiercingBullets++;
-                PlayerShooting.Instance.spread = 30;
                 break;
             }
             case Upgrades.RangerMorePiercingChance: {

@@ -128,11 +128,16 @@ public class PlayerShooting : MonoBehaviour
             bulletPrefab = piercingBulletPrefab;
             if (rangerDoublePiercingBullets > 0)
             {
+                spread = 30;
                 fireProjectiles += rangerDoublePiercingBullets;
             }
         } else
         {
             bulletPrefab = gun.bulletPrefab;
+            if (rangerDoublePiercingBullets > 0)
+            {
+                spread = 0;
+            }
         }
 
         float step = spread / (float)fireProjectiles;
