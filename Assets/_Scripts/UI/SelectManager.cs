@@ -91,7 +91,7 @@ public class SelectManager : MonoBehaviour
     }
 
     public void Go() {
-        SceneManager.LoadScene("Game");
+        SceneLoader.Instance.LoadGame();
     }
 
     void OnUIMovement(InputValue value) {
@@ -99,7 +99,7 @@ public class SelectManager : MonoBehaviour
     }
 
     public void Back() {
-        SceneManager.LoadScene("Start");
+        SceneLoader.Instance.LoadStart();
     }
 
     void OnUISelect() {

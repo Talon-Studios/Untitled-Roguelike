@@ -34,7 +34,7 @@ public class StartSceneManager : MonoBehaviour
     }
 
     public void Play() {
-        SceneManager.LoadScene("Select");
+        SceneLoader.Instance.LoadSelect();
     }
 
     public void Settings() {

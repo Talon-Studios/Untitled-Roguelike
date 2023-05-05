@@ -47,7 +47,7 @@ public class DeathSceneManager : MonoBehaviour
     }
 
     public void PlayAgain() {
-        SceneManager.LoadScene("Select");
+        SceneLoader.Instance.LoadSelect();
     }
 
 }

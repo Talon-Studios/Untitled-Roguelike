@@ -101,7 +101,7 @@ public class PlayerHealth : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(deathDelay);
 
-        SceneManager.LoadScene("Die");
+        SceneLoader.Instance.LoadDie();
     }
 
     private void RemoveHeart() {
