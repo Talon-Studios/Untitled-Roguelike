@@ -28,6 +28,7 @@ public class SceneLoader : MonoBehaviour
     }
 
     private void LoadScene(string sceneName) {
+        Music.Instance.ChangeMusic(sceneName);
         StartCoroutine(LoadSceneRoutine(sceneName));
     }
 

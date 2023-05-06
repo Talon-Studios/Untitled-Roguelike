@@ -27,10 +27,13 @@ public class XP : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
             yield return null;
         }
-
-        XPManager.Instance.GainXP(xpAmount);
-        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.xp);
-        Destroy(gameObject);
+        
+        if (!PlayerHealth.Instance.isDead)
+        {
+            XPManager.Instance.GainXP(xpAmount);
+            AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.xp);
+            Destroy(gameObject);
+        }
     }
 
 }

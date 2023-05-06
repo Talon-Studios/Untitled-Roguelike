@@ -794,9 +794,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002057613
-    width: 0.99999994
-    height: 0.9958847
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -2480,6 +2480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933548785}
   - component: {fileID: 1933548784}
+  - component: {fileID: 1933548786}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -2497,7 +2498,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7413858929838435703, guid: ba5f107f2fe26384aaf90bd9e79cd43a, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 75f31a6b8c890034a9ddd0ba03a33681, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2598,6 +2599,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1933548786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933548783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9afa723800b7e1642b22886b8459f7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectMusic: {fileID: 8300000, guid: 9f747badb7693704cb3df6ca6d32327a, type: 3}
+  gameMusic: {fileID: 8300000, guid: 590515248657b9e448d3c68ea90a4ce8, type: 3}
+  deathMusic: {fileID: 8300000, guid: deab800487b99364ab64165e5855f810, type: 3}
 --- !u!1 &2143696150
 GameObject:
   m_ObjectHideFlags: 0

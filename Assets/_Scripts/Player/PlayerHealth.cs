@@ -91,6 +91,7 @@ public class PlayerHealth : MonoBehaviour
         print("YOU DIEEEEED!!!!!");
         isDead = true;
         PlayerMovement.Instance.canMove = false;
+        PlayerShooting.Instance.canShoot = false;
         graphics.gameObject.SetActive(false);
         FollowCam.Instance.targetCameraSize = cameraZoom;
         Time.timeScale = deathSlowmo;
