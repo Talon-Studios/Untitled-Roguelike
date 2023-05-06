@@ -5,15 +5,19 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
+    [SerializeField] private AudioSource randomPitchsource;
+    [SerializeField] private AudioSource source;
+
     [Header("Sounds")]
     public AudioClip xp;
     public AudioClip fire;
     public AudioClip enemyHurt;
     public AudioClip explosion;
     public AudioClip playerHurt;
-
-    [SerializeField] private AudioSource randomPitchsource;
-    [SerializeField] private AudioSource source;
+    public AudioClip hover;
+    public AudioClip select;
+    public AudioClip playerDie;
+    public AudioClip dash;
 
     #region Singleton
     

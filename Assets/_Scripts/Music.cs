@@ -50,4 +50,8 @@ public class Music : MonoBehaviour
         }
     }
 
+    public void StopMusic() {
+        source.Stop();
+    }
+
 }

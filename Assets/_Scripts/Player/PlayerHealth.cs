@@ -89,6 +89,8 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator Die() {
         print("YOU DIEEEEED!!!!!");
+        AudioManager.Instance.Play(AudioManager.Instance.playerDie);
+        Music.Instance.StopMusic();
         isDead = true;
         PlayerMovement.Instance.canMove = false;
         PlayerShooting.Instance.canShoot = false;

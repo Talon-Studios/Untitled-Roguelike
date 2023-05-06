@@ -32,6 +32,7 @@ public class DashAbility : MonoBehaviour
     }
 
     private IEnumerator Dash() {
+        AudioManager.Instance.Play(AudioManager.Instance.dash);
         FollowCam.Instance.Hitstop(0.1f);
         
         playerHealth.invincible = true;

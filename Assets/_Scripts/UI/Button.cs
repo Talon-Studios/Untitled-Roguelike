@@ -32,6 +32,8 @@ public class Button : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
+        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.hover);
+
         if (text != null) text.color = textHoverColor;
         if (button != null) button.color = DynamicColorManager.Instance.Color;
 
@@ -46,6 +48,8 @@ public class Button : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     }
 
     public void OnPointerClick(PointerEventData eventData) {
+        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.select);
+
         if (sceneChangeButton)
         {
             if (text != null) text.color = textOriginalColor;

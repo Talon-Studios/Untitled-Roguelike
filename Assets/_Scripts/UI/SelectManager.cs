@@ -94,15 +94,17 @@ public class SelectManager : MonoBehaviour
         SceneLoader.Instance.LoadGame();
     }
 
-    void OnUIMovement(InputValue value) {
-        NextPage((int)value.Get<float>());
-    }
-
     public void Back() {
         SceneLoader.Instance.LoadStart();
     }
 
+    void OnUIMovement(InputValue value) {
+        if (value.Get<float>() != 0) AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.hover);
+        NextPage((int)value.Get<float>());
+    }
+
     void OnUISelect() {
+        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.select);
         Go();
     }
 
