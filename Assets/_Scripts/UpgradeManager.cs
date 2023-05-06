@@ -20,18 +20,16 @@ public enum Upgrades
     Rotating,
     MageAddProjectile,
     MageIncreaseSpread,
-    MageHeal,
+    MageBlackMagic,
     RogueQuickDraw,
     RogueDashFarther,
-    ArtificerMoreBombs,
     ArtificerIncreaseBombSpread,
-    FighterStompRange,
-    FighterMorePower,
     FighterFury,
-    FighterIncreaseFuryTime,
+    FighterTank,
     RangerPiercingDamage,
     RangerDoublePiercingBullets,
-    RangerMorePiercingChance
+    RangerMorePiercingChance,
+    ArtificerBombDash
 }
 
 public class UpgradeManager : MonoBehaviour
@@ -198,37 +196,24 @@ public class UpgradeManager : MonoBehaviour
                 PlayerShooting.Instance.QuickDraw(20, 20);
                 break;
             }
-            case Upgrades.ArtificerMoreBombs: {
-                print("Artificer another bomb");
-                BombsAbility.Instance.MoreBombs();
-                break;
-            }
             case Upgrades.ArtificerIncreaseBombSpread: {
                 BombsAbility.Instance.bombPrefab.startForceMin += 5;
                 BombsAbility.Instance.bombPrefab.startForceMax += 5;
                 break;
             }
-            case Upgrades.FighterStompRange: {
-                StompAbility.Instance.BiggerRange();
-                break;
-            }
-            case Upgrades.FighterMorePower: {
-                StompAbility.Instance.MorePower();
-                break;
-            }
             case Upgrades.FighterFury: {
                 print("Fighter fury");
-                PlayerShooting.Instance.SetFury(10);
+                PlayerShooting.Instance.Fury(50);
                 break;
             }
-            case Upgrades.FighterIncreaseFuryTime: {
-                print("Fighter increase fury time");
-                PlayerShooting.Instance.SetFury(PlayerShooting.Instance.furiousTime * 2);
+            case Upgrades.FighterTank: {
+                print("Fighter tank");
+                PlayerShooting.Instance.Tank(25, 20);
                 break;
             }
-            case Upgrades.MageHeal: {
-                print("Mage heal");
-                PlayerHealth.Instance.Heal();
+            case Upgrades.MageBlackMagic: {
+                print("Mage black magic");
+                EnemyManager.Instance.enemyHealthAddon += -15;
                 break;
             }
             case Upgrades.RogueDashFarther: {
@@ -249,6 +234,11 @@ public class UpgradeManager : MonoBehaviour
             case Upgrades.RangerMorePiercingChance: {
                 print("Ranger more piercing chance");
                 PlayerShooting.Instance.PiercingBulletChanceIncrease(40);
+                break;
+            }
+            case Upgrades.ArtificerBombDash: {
+                print("Artificer bomb dash");
+                DashAbility.Instance.bombDash++;
                 break;
             }
         }

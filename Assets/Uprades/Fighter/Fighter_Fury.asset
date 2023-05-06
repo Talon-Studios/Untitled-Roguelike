@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
   m_Name: Fighter_Fury
   m_EditorClassIdentifier: 
-  upgradeName: Hit 'em back harder
-  upgradeDescription: Deal 2x damage and fire 2x faster for a short time after hit
-  upgrade: 19
-  upgradeChildren:
-  - {fileID: 11400000, guid: 93667d6df073fb04fb95eae3038713be, type: 2}
+  upgradeName: Rage
+  upgradeDescription: Deal +50% damage but lose one life
+  upgrade: 18
+  upgradeChildren: []
   characterSpecific: 1
   character: 2

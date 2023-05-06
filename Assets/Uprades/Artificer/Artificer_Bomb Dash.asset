@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
-  m_Name: Fighter_More Power
+  m_Name: Artificer_Bomb Dash
   m_EditorClassIdentifier: 
-  upgradeName: AHHHHH!!!
-  upgradeDescription: More damage, more enemy knockback
-  upgrade: 18
-  upgradeChildren: []
+  upgradeName: Bomb Dash
+  upgradeDescription: Deploy a bomb when you dash
+  upgrade: 22
+  upgradeChildren:
+  - {fileID: 11400000, guid: 231620ac4034d8043b888dd87987609a, type: 2}
   characterSpecific: 1
-  character: 2
+  character: 4

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Arrows
   upgradeDescription: Bullets +40% chance of being piercing
-  upgrade: 25
+  upgrade: 21
   upgradeChildren: []
   characterSpecific: 1
   character: 1

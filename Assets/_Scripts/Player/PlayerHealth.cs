@@ -51,18 +51,19 @@ public class PlayerHealth : MonoBehaviour
         for (int i = 0; i < health; i++) AddHeartContainer();
     }
 
-    private void GetHurt() {
+    public void GetHurt(bool flash = true) {
         health--;
 
         if (health <= 0) StartCoroutine(Die());
-
-        if (PlayerShooting.Instance.isFurious) PlayerShooting.Instance.StartFury();
         
-        FollowCam.Instance.ScreenShake(0.2f, 0.5f);
-        FollowCam.Instance.Hitstop(0.2f);
-        AudioManager.Instance.Play(AudioManager.Instance.playerHurt);
+        if (flash)
+        {
+            FollowCam.Instance.ScreenShake(0.2f, 0.5f);
+            FollowCam.Instance.Hitstop(0.2f);
+            AudioManager.Instance.Play(AudioManager.Instance.playerHurt);
+            StartCoroutine(Invincible());
+        }
         
-        StartCoroutine(Invincible());
         RemoveHeart();
     }
 

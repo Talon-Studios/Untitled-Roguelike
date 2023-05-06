@@ -175,31 +175,14 @@ public class PlayerShooting : MonoBehaviour
         reloadTime -= reloadTime / 100 * reloadTimePercentage;
     }
 
-    public void SetFury(float time) {
-        furiousTime = time;
-        isFurious = true;
+    public void Fury(float damageMultiplier) {
+        damage += damage / 100 * damageMultiplier;
+        PlayerHealth.Instance.GetHurt(false);
     }
 
-    public void ActivateFury(bool fury, float damageMultiplier, float fireRateMultiplier) {
-        if (fury)
-        {
-            damage *= damageMultiplier;
-            fireRate *= fireRateMultiplier;
-        } else
-        {
-            damage /= damageMultiplier;
-            fireRate /= fireRateMultiplier;
-        }
-    }
-
-    public IEnumerator Fury() {
-        ActivateFury(true, 2, 2);
-        yield return new WaitForSeconds(furiousTime);
-        ActivateFury(false, 2, 2);
-    }
-
-    public void StartFury() {
-        StartCoroutine(Fury());
+    public void Tank(float fireRateMultiplier, float speedMultiplier) {
+        fireRate += fireRate / 100 * fireRateMultiplier;
+        PlayerMovement.Instance.speed -= PlayerMovement.Instance.speed / 100 * speedMultiplier;
     }
 
     private IEnumerator Reload() {

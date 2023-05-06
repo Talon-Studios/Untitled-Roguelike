@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
-  m_Name: Fighter_Increase Fury Time
+  m_Name: Mage_Black Magic
   m_EditorClassIdentifier: 
-  upgradeName: Hit 'em back so hard
-  upgradeDescription: Longer duration where 2x damage and 2x fire rate after hit
-  upgrade: 20
+  upgradeName: Black Magic
+  upgradeDescription: All enemies have 15% less health
+  upgrade: 14
   upgradeChildren: []
   characterSpecific: 1
-  character: 2
+  character: 3

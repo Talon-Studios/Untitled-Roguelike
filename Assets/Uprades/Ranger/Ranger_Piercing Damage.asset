@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Enhanced Arrows
   upgradeDescription: Piercing bullets do 2x damage
-  upgrade: 23
+  upgrade: 19
   upgradeChildren: []
   characterSpecific: 1
   character: 1

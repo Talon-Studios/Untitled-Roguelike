@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private float spawnRateIncrement;
 
     public float enemySpeed = 5;
+    public float enemyHealthAddon = 0;
     
     [Tooltip("How much enemy speed increases per upgrade")]
     [SerializeField] private float enemySpeedIncrement;
@@ -70,7 +71,9 @@ public class EnemyManager : MonoBehaviour
         }
 
         GetRandomPosition(out float x, out float y);
-        Instantiate(randomEnemy.prefab, new Vector2(x, y), Quaternion.identity);
+        GameObject newEnemy = Instantiate(randomEnemy.prefab, new Vector2(x, y), Quaternion.identity);
+        Enemy enemyScript = newEnemy.GetComponent<Enemy>();
+        enemyScript.health += enemyScript.health / 100 * enemyHealthAddon;
     }
 
     public void EnemyBuff() {

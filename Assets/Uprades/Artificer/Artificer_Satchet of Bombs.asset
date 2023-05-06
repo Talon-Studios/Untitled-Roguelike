@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f77eab5ada74544899099dda07c579, type: 3}
-  m_Name: Artificer_More Bombs
+  m_Name: Artificer_Satchet of Bombs
   m_EditorClassIdentifier: 
   upgradeName: Satchet of Bombs
-  upgradeDescription: +1 bomb to artificers ability
-  upgrade: 17
+  upgradeDescription: +1 bomb to bomb dash
+  upgrade: 22
   upgradeChildren: []
   characterSpecific: 1
   character: 4

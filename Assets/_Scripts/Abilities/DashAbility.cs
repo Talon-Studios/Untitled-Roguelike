@@ -6,10 +6,13 @@ using UnityEngine.InputSystem;
 public class DashAbility : MonoBehaviour
 {
 
+    public int bombDash = 0;
+
     [SerializeField] private float force = 100;
     [SerializeField] private float invincibleTime = 0.5f;
     [SerializeField] private ParticleSystem dustParticles;
     [SerializeField] private ParticleSystem dashParticles;
+    [SerializeField] private Bomb bombPrefab;
 
     Rigidbody2D playerBody;
     PlayerMovement playerMovement;
@@ -40,6 +43,11 @@ public class DashAbility : MonoBehaviour
         
         dustParticles.Stop();
         dashParticles.Play();
+
+        for (int i = 0; i < bombDash; i++)
+        {
+            Instantiate(bombPrefab, transform.position, Quaternion.identity);
+        }
 
         yield return new WaitForSeconds(invincibleTime);
 
