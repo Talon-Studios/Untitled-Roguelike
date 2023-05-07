@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startObject: {fileID: 11400000, guid: d596bf0646f8a6e4badcde151f283942, type: 2}
-  cooldown: 5
+  cooldown: 3
   dustParticles: {fileID: 282373421}
   dashAbility: {fileID: 21466124}
   stompAbility: {fileID: 21466125}
@@ -6833,7 +6833,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 243.1}
-  m_SizeDelta: {x: 973.9, y: 8.84}
+  m_SizeDelta: {x: 985, y: 8.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655066516
 MonoBehaviour:
@@ -6860,7 +6860,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.15
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
@@ -7215,7 +7215,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 486.95, y: 0}
-  m_SizeDelta: {x: 486.95, y: 8.84}
+  m_SizeDelta: {x: 495, y: 8.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754014461
 MonoBehaviour:
@@ -7242,7 +7242,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.15
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
@@ -7476,7 +7476,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -486.95, y: 0}
-  m_SizeDelta: {x: 486.95, y: 8.84}
+  m_SizeDelta: {x: 495, y: 8.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885222617
 MonoBehaviour:
@@ -7503,7 +7503,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.15
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
@@ -7643,7 +7643,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 243.1}
-  m_SizeDelta: {x: 973.9, y: 8.84}
+  m_SizeDelta: {x: 985, y: 8.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931473973
 MonoBehaviour:
@@ -7670,7 +7670,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.15
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
@@ -8421,7 +8421,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -243.1}
-  m_SizeDelta: {x: 973.9, y: 8.84}
+  m_SizeDelta: {x: 985, y: 8.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1154021766
 MonoBehaviour:
@@ -8448,7 +8448,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.15
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
@@ -13322,7 +13322,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -243.1}
-  m_SizeDelta: {x: 973.9, y: 8.84}
+  m_SizeDelta: {x: 985, y: 8.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274019671
 MonoBehaviour:
@@ -13349,7 +13349,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.15
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
@@ -14623,7 +14623,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -486.95, y: 0}
-  m_SizeDelta: {x: 486.95, y: 8.84}
+  m_SizeDelta: {x: 495, y: 8.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995232876
 MonoBehaviour:
@@ -14650,7 +14650,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.15
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
@@ -14830,7 +14830,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 486.95, y: 0}
-  m_SizeDelta: {x: 486.95, y: 8.84}
+  m_SizeDelta: {x: 495, y: 8.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126447420
 MonoBehaviour:
@@ -14857,7 +14857,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.15
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
