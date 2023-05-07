@@ -11,6 +11,8 @@ public class SelectManager : MonoBehaviour
 
     [SerializeField] private StartObject startObject;
     [SerializeField] private Material accentColorMaterial;
+    [SerializeField] private GameObject lockModel;
+    [SerializeField] private TMP_Text levelsText;
 
     [Header("Characters")]
     [SerializeField] private CharacterObject[] characters;
@@ -23,6 +25,8 @@ public class SelectManager : MonoBehaviour
     [SerializeField] private WeaponCell[] weaponCells;
 
     private int page = 0;
+    private int level = 0;
+    private bool selectedCharacter = false;
 
     #region Singleton
     
@@ -35,20 +39,10 @@ public class SelectManager : MonoBehaviour
     #endregion
 
     void Start() {
-        if (startObject.character != null)
-        {
-            page = System.Array.IndexOf(characters, startObject.character);
-        } else
-        {
-            page = 0;
-        }
+        page = 0;
 
+        SetLevel();
         SetCharacter(characters[page]);
-
-        // weaponCells[0].selected = !weaponCells[0].selected;
-        // weaponCells[0].border.color = weaponCells[0].hoverColor;
-
-        // SetWeapon(weaponCells[0]);
     }
 
     public void NextPage(int direction) {
@@ -65,11 +59,20 @@ public class SelectManager : MonoBehaviour
     }
 
     public void SetCharacter(CharacterObject characterObject) {
-        characterName.text = characterObject.characterName;
-        characterDescription.text = "\"" + characterObject.characterDescription + "\"";
-
         Destroy(model.gameObject);
-        model = Instantiate(characterObject.model, model.position, model.rotation).transform;
+        GameObject characterModel;
+        if (level >= characterObject.unlockLevel)
+        {
+            characterName.text = characterObject.characterName;
+            characterDescription.text = "\"" + characterObject.characterDescription + "\"";
+            characterModel = characterObject.model;
+        } else
+        {
+            characterName.text = "Locked";
+            characterDescription.text = "Get to level " + characterObject.unlockLevel + " to unlock";
+            characterModel = lockModel;
+        }
+        model = Instantiate(characterModel, model.position, model.rotation).transform;
 
         startObject.character = characters[page];
 
@@ -90,8 +93,22 @@ public class SelectManager : MonoBehaviour
         weaponCell.border.color = weaponCell.hoverColor;
     }
 
+    private void SetLevel() {
+        level = PlayerPrefs.GetInt("Levels", 0);
+        levelsText.text = level.ToString();
+    }
+
     public void Go() {
-        SceneLoader.Instance.LoadGame();
+        if (level >= characters[page].unlockLevel)
+        {
+            selectedCharacter = true;
+            AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.select);
+            SceneLoader.Instance.LoadGame();
+        } else
+        {
+            AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.locked);
+            FollowCam.Instance.ScreenShake(0.1f, 0.3f);
+        }
     }
 
     public void Back() {
@@ -99,12 +116,14 @@ public class SelectManager : MonoBehaviour
     }
 
     void OnUIMovement(InputValue value) {
-        if (value.Get<float>() != 0) AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.hover);
-        NextPage((int)value.Get<float>());
+        if (!selectedCharacter)
+        {
+            if (value.Get<float>() != 0) AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.hover);
+            NextPage((int)value.Get<float>());
+        }
     }
 
     void OnUISelect() {
-        AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.select);
         Go();
     }
 

@@ -15,6 +15,8 @@ MonoBehaviour:
   upgradeName: Arrows
   upgradeDescription: Bullets +40% chance of being piercing
   upgrade: 22
-  upgradeChildren: []
+  upgradeChildren:
+  - {fileID: 11400000, guid: f9931b2cf4416b147bb78419c18cb001, type: 2}
+  - {fileID: 11400000, guid: 69fc0167f8041e64ca50503424738126, type: 2}
   characterSpecific: 1
   character: 1

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Music : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class Music : MonoBehaviour
 
     void Start() {
         source = GetComponent<AudioSource>();
-        ChangeMusic("Start");
+        ChangeMusic(SceneManager.GetActiveScene().name);
     }
 
     public void ChangeMusic(string sceneName) {
@@ -46,7 +47,8 @@ public class Music : MonoBehaviour
         {
             currentClip = clip;
             source.Stop();
-            source.PlayOneShot(clip);
+            source.clip = clip;
+            source.Play();
         }
     }
 

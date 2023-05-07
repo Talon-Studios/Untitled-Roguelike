@@ -249,3 +249,6 @@ MonoBehaviour:
   select: {fileID: 8300000, guid: 19548b1767e33a2438e3f7d1b4b0227a, type: 3}
   playerDie: {fileID: 8300000, guid: e16bdf16bb7e4414d8459e6f79829886, type: 3}
   dash: {fileID: 8300000, guid: 33dd76ae609a7af4995000190c98dc35, type: 3}
+  locked: {fileID: 8300000, guid: c6ac3e5b38165f54b951228aefd62685, type: 3}
+  upgrade: {fileID: 8300000, guid: 330719fdd66931e44adf1eb0134b6514, type: 3}
+  activateUpgrade: {fileID: 8300000, guid: 1e7d6bbb56a1efb419cc0fa70bf1cd00, type: 3}

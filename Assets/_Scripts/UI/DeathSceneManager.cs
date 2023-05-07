@@ -30,6 +30,8 @@ public class DeathSceneManager : MonoBehaviour
         levelNumText.text = "-" + endObject.level.ToString() + "-";
         characterText.text = startObject.character.characterName;
 
+        PlayerPrefs.SetInt("Levels", PlayerPrefs.GetInt("Levels", 0) + endObject.level);
+
         StartCoroutine(ShowInfoRoutine());
     }
 

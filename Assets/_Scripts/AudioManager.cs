@@ -18,6 +18,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip select;
     public AudioClip playerDie;
     public AudioClip dash;
+    public AudioClip locked;
+    public AudioClip upgrade;
+    public AudioClip activateUpgrade;
 
     #region Singleton
     
@@ -30,12 +33,18 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     public void PlayRandomPitch(AudioClip sound, float min = 0.8f, float max = 1.2f) {
-        randomPitchsource.pitch = Random.Range(min, max);
-        randomPitchsource.PlayOneShot(sound);
+        if (sound != null)
+        {
+            randomPitchsource.pitch = Random.Range(min, max);
+            randomPitchsource.PlayOneShot(sound);
+        }
     }
 
     public void Play(AudioClip sound) {
-        source.PlayOneShot(sound);
+        if (sound != null)
+        {
+            source.PlayOneShot(sound);
+        }
     }
 
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Audio;
 
 public enum Upgrades
 {
@@ -37,9 +38,11 @@ public class UpgradeManager : MonoBehaviour
 
     public int level = 1;
     [SerializeField] private StartObject startObject;
+    [SerializeField] private AudioMixer mixer;
     [SerializeField] private Transform upgradeCardParent;
     [SerializeField] private UpgradeCard upgradeCardPrefab;
     [SerializeField] private UpgradeCard characterUpgradeCardPrefab;
+    [SerializeField] private float highpassCutoffSpeed = 10;
 
     [SerializeField] private List<UpgradeObject> upgrades = new List<UpgradeObject>();
     [SerializeField] private List<UpgradeObject> onlyUpgrades = new List<UpgradeObject>();
@@ -47,6 +50,8 @@ public class UpgradeManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TMP_Text levelCounterText;
     [SerializeField] private GameObject upgradesPanel;
+
+    private float targetCutoff = 10;
 
     #region Singleton
     
@@ -65,7 +70,15 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    void Update() {
+        mixer.GetFloat("HighpassCutoffFreq", out float cutoff);
+        mixer.SetFloat("HighpassCutoffFreq", Mathf.MoveTowards(cutoff, targetCutoff, highpassCutoffSpeed * Time.unscaledDeltaTime));
+    }
+
     public IEnumerator SetupUpgradesPanel() {
+        AudioManager.Instance.Play(AudioManager.Instance.upgrade);
+        targetCutoff = 1865;
+
         Time.timeScale = 0;
 
         yield return null;
@@ -91,6 +104,8 @@ public class UpgradeManager : MonoBehaviour
     }
 
     public void CloseUpgradesPanel() {
+        targetCutoff = 10;
+
         upgradesPanel.SetActive(false);
         Time.timeScale = 1;
         
@@ -101,6 +116,8 @@ public class UpgradeManager : MonoBehaviour
     }
 
     public void ActivateUpgrade(UpgradeObject upgradeObject) {
+        AudioManager.Instance.Play(AudioManager.Instance.activateUpgrade);
+
         if (upgradeObject.upgradeChildren.Length > 0)
         {
             bool isOnlyUpgrade = false;
