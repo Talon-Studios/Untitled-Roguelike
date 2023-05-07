@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682208371623947806}
   - component: {fileID: 7644891471492168166}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Scene Loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 4806375619238306431}
   - component: {fileID: 2956266760504308843}
   - component: {fileID: 8512470162527311330}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8946262709124592555}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9}
+  m_LocalPosition: {x: 0, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -107,7 +107,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 1655878625
-  m_SortingOrder: 10
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!114 &2956266760504308843
 MonoBehaviour:
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 9087033811814702260}
   - component: {fileID: 9054684157193482285}
   - component: {fileID: 5039412072128326369}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
