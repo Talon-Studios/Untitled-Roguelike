@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Double the Trouble
   upgradeDescription: Piercing bullets are shot twice
-  upgrade: 20
+  upgrade: 21
   upgradeChildren:
   - {fileID: 11400000, guid: cca5c3dc50afd2743a6bfa5d0fa5d908, type: 2}
   characterSpecific: 1

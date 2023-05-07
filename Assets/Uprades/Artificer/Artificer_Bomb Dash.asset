@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Bomb Dash
   upgradeDescription: Deploy a bomb when you dash
-  upgrade: 22
+  upgrade: 23
   upgradeChildren:
   - {fileID: 11400000, guid: 231620ac4034d8043b888dd87987609a, type: 2}
   characterSpecific: 1

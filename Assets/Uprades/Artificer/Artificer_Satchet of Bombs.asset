@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Satchet of Bombs
   upgradeDescription: +1 bomb to bomb dash
-  upgrade: 22
+  upgrade: 23
   upgradeChildren: []
   characterSpecific: 1
   character: 4

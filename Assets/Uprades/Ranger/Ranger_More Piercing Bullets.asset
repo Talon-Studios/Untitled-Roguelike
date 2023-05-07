@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Spiky Arrow
   upgradeDescription: Piercing bullets +1 projectile
-  upgrade: 20
+  upgrade: 21
   upgradeChildren: []
   characterSpecific: 1
   character: 1
