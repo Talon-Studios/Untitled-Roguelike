@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d4d0e6442dc5849afc072d7bff4464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 5
   deathSlowmo: 0.2
   deathDelay: 3
   cameraZoom: 18
@@ -5893,7 +5893,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 12.1
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -6238,7 +6238,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 12.1
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
