@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "UI Select",
+                    "type": "Button",
+                    "id": "edc283ed-f3d3-41c5-a810-cd95ce30dbf6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Shoot",
                     "type": "Value",
                     "id": "da2bc71d-d845-41ac-a1c2-46c57b37a069",
@@ -108,6 +117,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Ability",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9e1703a-c55f-4d39-9181-054c93d4e4e7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: -3085821404854815735}
   - component: {fileID: -7605729265763434721}
   - component: {fileID: 1416997363640998502}
+  - component: {fileID: 680337956009250078}
   m_Layer: 5
   m_Name: Upgrade Card
   m_TagString: Untagged
@@ -486,6 +487,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 2
   rotationMagnitude: 3
+--- !u!114 &680337956009250078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814158070250896309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8342770b32077489e6a5c009289b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  button: {fileID: 0}
+  textHoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sceneChangeButton: 0
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8129744726860995906
 GameObject:
   m_ObjectHideFlags: 0

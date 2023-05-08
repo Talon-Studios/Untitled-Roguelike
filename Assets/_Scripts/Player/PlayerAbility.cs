@@ -77,7 +77,14 @@ public class PlayerAbility : MonoBehaviour
     }
 
     void OnAbility() {
-        ActivateAbility();
+        if (Time.timeScale > 0)
+        {
+            ActivateAbility();
+        }
+    }
+
+    void OnUISelect() {
+        UpgradeManager.Instance.SelectUpgrade();
     }
 
 }

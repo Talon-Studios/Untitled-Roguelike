@@ -304,9 +304,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Default
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!61 &21466119
@@ -7498,6 +7498,7 @@ MonoBehaviour:
   onlyUpgrades: []
   levelCounterText: {fileID: 1995014674}
   upgradesPanel: {fileID: 951222675}
+  upgradeCardBorderPrefab: {fileID: 3786119720962282726, guid: d83a57a32fdda4449a4d58fe8456ebb8, type: 3}
 --- !u!1 &931473971
 GameObject:
   m_ObjectHideFlags: 0

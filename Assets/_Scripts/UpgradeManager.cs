@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 
 public enum Upgrades
 {
@@ -50,8 +51,11 @@ public class UpgradeManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TMP_Text levelCounterText;
     [SerializeField] private GameObject upgradesPanel;
+    [SerializeField] private Image upgradeCardBorderPrefab;
 
     private float targetCutoff = 10;
+    private UpgradeCard selectedUpgradeCard;
+    private Transform border = null;
 
     #region Singleton
     
@@ -73,6 +77,21 @@ public class UpgradeManager : MonoBehaviour
     void Update() {
         mixer.GetFloat("HighpassCutoffFreq", out float cutoff);
         mixer.SetFloat("HighpassCutoffFreq", Mathf.MoveTowards(cutoff, targetCutoff, highpassCutoffSpeed * Time.unscaledDeltaTime));
+    }
+
+    public void SelectUpgradeCard(UpgradeCard card) {
+        selectedUpgradeCard = card;
+        if (border != null)
+        {
+            border.transform.position = card.transform.position;
+        } else
+        {
+            border = Instantiate(upgradeCardBorderPrefab.gameObject, card.transform.position, Quaternion.identity, card.transform).transform;
+        }
+
+        border.SetParent(card.transform, true);
+        border.rotation = card.transform.rotation;
+
     }
 
     public IEnumerator SetupUpgradesPanel() {
@@ -106,6 +125,9 @@ public class UpgradeManager : MonoBehaviour
     public void CloseUpgradesPanel() {
         targetCutoff = 10;
 
+        Destroy(border.gameObject);
+        border = null;
+
         upgradesPanel.SetActive(false);
         Time.timeScale = 1;
         
@@ -115,6 +137,7 @@ public class UpgradeManager : MonoBehaviour
         
         EnemyManager.Instance.CheckEnemyTypes();
         EnemyManager.Instance.SpawnBosses();
+        EnemyManager.Instance.EnemyBuff();
     }
 
     public void ActivateUpgrade(UpgradeObject upgradeObject) {
@@ -282,6 +305,14 @@ public class UpgradeManager : MonoBehaviour
         }
 
         return upgradeResults;
+    }
+
+    public void SelectUpgrade() {
+        if (selectedUpgradeCard != null)
+        {
+            ActivateUpgrade(selectedUpgradeCard.upgrade);
+            CloseUpgradesPanel();
+        }
     }
 
 }
