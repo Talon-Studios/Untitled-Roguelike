@@ -20,7 +20,7 @@ MonoBehaviour:
   spread: 5
   damage: 10
   reloadTime: 1
-  maxMagazine: 20
+  maxMagazine: 10
   enemyKnockback: 20
   projectiles: 1
   knockback: 10

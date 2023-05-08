@@ -112,7 +112,9 @@ public class UpgradeManager : MonoBehaviour
         MousePointer.Instance.SetMouseState(MouseState.Aiming);
         XPManager.Instance.ResetXP();
         NextLevel();
+        
         EnemyManager.Instance.CheckEnemyTypes();
+        EnemyManager.Instance.SpawnBosses();
     }
 
     public void ActivateUpgrade(UpgradeObject upgradeObject) {
@@ -230,7 +232,7 @@ public class UpgradeManager : MonoBehaviour
             }
             case Upgrades.MageBlackMagic: {
                 print("Mage black magic");
-                EnemyManager.Instance.enemyHealthAddon += -15;
+                EnemyManager.Instance.enemyHealthAddon += -25;
                 break;
             }
             case Upgrades.RogueDashFarther: {
@@ -255,7 +257,7 @@ public class UpgradeManager : MonoBehaviour
             }
             case Upgrades.ArtificerBombDash: {
                 print("Artificer bomb dash");
-                DashAbility.Instance.bombDash++;
+                DashAbility.Instance.bombDash += 2;
                 break;
             }
         }

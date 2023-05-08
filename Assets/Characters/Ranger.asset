@@ -20,6 +20,4 @@ MonoBehaviour:
   ability: 0
   unlockLevel: 30
   upgrades:
-  - {fileID: 11400000, guid: 69fc0167f8041e64ca50503424738126, type: 2}
-  - {fileID: 11400000, guid: f9931b2cf4416b147bb78419c18cb001, type: 2}
   - {fileID: 11400000, guid: ba32bd31466533b46b610bc3bf6e9cff, type: 2}

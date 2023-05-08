@@ -19,6 +19,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private float enemySpeedIncrement;
     
     [SerializeField] private EnemyObject[] enemyTypes;
+    [SerializeField] private BossObject[] bossTypes;
 
     private float nextTimeToSpawn;
     private float spawnRate;
@@ -87,6 +88,18 @@ public class EnemyManager : MonoBehaviour
             if (UpgradeManager.Instance.level >= enemy.level && !enemies.Contains(enemy))
             {
                 enemies.Add(enemy);
+            }
+        }
+    }
+
+    public void SpawnBosses() {
+        print(UpgradeManager.Instance.level);
+        foreach (BossObject boss in bossTypes)
+        {
+            if (UpgradeManager.Instance.level % boss.level == 0)
+            {
+                GetRandomPosition(out float x, out float y);
+                GameObject newBoss = Instantiate(boss.prefab, new Vector2(x, y), Quaternion.identity);
             }
         }
     }

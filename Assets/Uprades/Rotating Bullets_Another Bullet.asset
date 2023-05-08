@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Rotating Bullets_Another Bullet
   m_EditorClassIdentifier: 
   upgradeName: Merry-Go-Round
-  upgradeDescription: Summon an extra bullet
+  upgradeDescription: Summon an extra bullet that spins around you
   upgrade: 11
   upgradeChildren: []
+  characterSpecific: 0
+  character: 0

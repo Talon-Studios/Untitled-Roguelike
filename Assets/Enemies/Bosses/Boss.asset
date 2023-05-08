@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2716ab30795c66c48adc396554ad0f88, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7762370618698933290, guid: ecc51db119733834fa64743f5252e9d5, type: 3}
+  level: 5

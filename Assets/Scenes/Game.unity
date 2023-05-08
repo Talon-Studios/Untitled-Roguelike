@@ -5886,14 +5886,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002057613
-    width: 0.99999994
-    height: 0.9958847
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 12.1
+  orthographic size: 12
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -6231,14 +6231,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002057613
-    width: 0.99999994
-    height: 0.9958847
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 12.1
+  orthographic size: 12
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -7978,6 +7978,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1c7cf426a9a13641883259d0344ce6d, type: 2}
   - {fileID: 11400000, guid: 21b9fc8298ecabd43919482523bf1693, type: 2}
   - {fileID: 11400000, guid: c3d1710a56bcfe64cb07dafed2a47ccf, type: 2}
+  bossTypes:
+  - {fileID: 11400000, guid: 2acd703f04fb0c94bb5b1eacde7c88ab, type: 2}
 --- !u!61 &1050262949
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14377,7 +14379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingUpgradeXP: 4
   upgradeXPIncrement: 4
-  xpStartForce: 10
+  xpStartForceMin: 0
+  xpStartForceMax: 20
   xpPrefab: {fileID: 4214348150177475379, guid: f36194f4aa938a64d937304dac7cd755, type: 3}
   xpBarsParent: {fileID: 672961199}
   barFillSmoothing: 0.2

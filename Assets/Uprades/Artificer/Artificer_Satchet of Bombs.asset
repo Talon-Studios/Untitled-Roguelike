@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Artificer_Satchet of Bombs
   m_EditorClassIdentifier: 
   upgradeName: Satchet of Bombs
-  upgradeDescription: +1 bomb to bomb dash
+  upgradeDescription: +2 bomb to bomb dash
   upgrade: 23
   upgradeChildren: []
   characterSpecific: 1

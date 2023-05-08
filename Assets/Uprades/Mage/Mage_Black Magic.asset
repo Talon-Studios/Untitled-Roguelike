@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mage_Black Magic
   m_EditorClassIdentifier: 
   upgradeName: Black Magic
-  upgradeDescription: All enemies have 15% less health
+  upgradeDescription: All enemies have 25% less health
   upgrade: 14
   upgradeChildren: []
   characterSpecific: 1

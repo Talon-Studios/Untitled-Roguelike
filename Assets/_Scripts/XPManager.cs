@@ -13,7 +13,8 @@ public class XPManager : MonoBehaviour
     [SerializeField] private int upgradeXPIncrement = 10;
 
     [Tooltip("How much force the XP has at the start to seperate it")]
-    [SerializeField] private float xpStartForce = 5;
+    [SerializeField] private float xpStartForceMin = 5;
+    [SerializeField] private float xpStartForceMax = 10;
 
     [SerializeField] private Rigidbody2D xpPrefab;
 
@@ -62,7 +63,8 @@ public class XPManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             Rigidbody2D xpBody = Instantiate(xpPrefab, position, Quaternion.identity);
-            xpBody.AddForce(xpStartForce * Random.insideUnitCircle.normalized, ForceMode2D.Impulse);
+            float randomForce = Random.Range(xpStartForceMin, xpStartForceMax);
+            xpBody.AddForce(randomForce * Random.insideUnitCircle.normalized, ForceMode2D.Impulse);
         }
     }
 

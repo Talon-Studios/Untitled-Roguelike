@@ -16,3 +16,5 @@ MonoBehaviour:
   upgradeDescription: +15% more damage from laser
   upgrade: 7
   upgradeChildren: []
+  characterSpecific: 0
+  character: 0
