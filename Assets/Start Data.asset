@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Start Data
   m_EditorClassIdentifier: 
   gun: {fileID: 11400000, guid: 66965d885aab550408b403b6031b29db, type: 2}
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 6cfb3a81a0d71a74db3e138875ab78e1, type: 2}

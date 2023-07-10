@@ -19,13 +19,14 @@ public class Bullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D trigger) {
-        if (trigger.CompareTag("Bullet Bounds") && bulletBounds)
-        {
-            Destroy(gameObject);
-        } else if (!isPiercing && trigger.CompareTag("Enemy"))
+        if (!isPiercing && trigger.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnBecameInvisible() {
+        if (bulletBounds) Destroy(gameObject);
     }
 
 }
