@@ -211,7 +211,7 @@ public class PlayerShooting : MonoBehaviour
     }
 
     void OnShoot(InputValue value) {
-        shootInput = value.Get<float>() > 0 ? true : false;
+        shootInput = value.Get<float>() > 0;
     }
 
 }
