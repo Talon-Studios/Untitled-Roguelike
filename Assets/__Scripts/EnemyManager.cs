@@ -50,6 +50,7 @@ public class EnemyManager : MonoBehaviour
             SpawnRandomEnemy();
             nextTimeToSpawn = Time.time + 1 / spawnRate;
         }
+        spawnRate = (spawnRate/enemies.Count);
     }
 
     private void SpawnRandomEnemy() {

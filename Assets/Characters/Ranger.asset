@@ -18,6 +18,6 @@ MonoBehaviour:
   colorTheme: {r: 0, g: 1, b: 0.39541388, a: 1}
   gun: {fileID: 11400000, guid: 77ccfebf9be0b8d44b44882efb013226, type: 2}
   ability: 0
-  unlockLevel: 30
+  unlockLevel: 15
   upgrades:
   - {fileID: 11400000, guid: ba32bd31466533b46b610bc3bf6e9cff, type: 2}

@@ -7,10 +7,10 @@ public class XPManager : MonoBehaviour
 {
 
     [Tooltip("How much XP you have to collect before getting an upgrade at the start of the game")]
-    [SerializeField] private int startingUpgradeXP = 10;
+    [SerializeField] private int startingUpgradeXP = 8;
 
     [Tooltip("How much more XP do you have to collect every upgrade")]
-    [SerializeField] private int upgradeXPIncrement = 10;
+    [SerializeField] private int upgradeXPIncrement = 5;
 
     [Tooltip("How much force the XP has at the start to seperate it")]
     [SerializeField] private float xpStartForceMin = 5;

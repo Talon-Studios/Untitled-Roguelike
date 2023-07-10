@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Fighter
   m_EditorClassIdentifier: 
   characterName: The Fighter
-  characterDescription: A powerful warrior
+  characterDescription: A powerful fighter
   model: {fileID: 499605171543494371, guid: a6c69bbc36f9de244b84d2ee45435dc4, type: 3}
   colorTheme: {r: 1, g: 0.49019608, b: 0, a: 1}
   gun: {fileID: 11400000, guid: 9a6f80003963d6c41a59ea82d4a6c41d, type: 2}
   ability: 0
-  unlockLevel: 10
+  unlockLevel: 5
   upgrades:
   - {fileID: 11400000, guid: 29aca72bcb3962e4db7627732301e083, type: 2}
   - {fileID: 11400000, guid: 77a2c62b955a21142bbbfeb8cfc212ac, type: 2}

@@ -16,16 +16,16 @@ MonoBehaviour:
   weaponDescription: OH WOW ACCURACY WOW
   bulletPrefab: {fileID: 3065601766979065598, guid: 24ed38eec52fa4842afc81e1355b9de9, type: 3}
   isAutomatic: 1
-  fireRate: 5
+  fireRate: 2
   spread: 0
-  damage: 10
-  reloadTime: 1
+  damage: 20
+  reloadTime: 1.4
   maxMagazine: 3
-  enemyKnockback: 30
+  enemyKnockback: 50
   projectiles: 1
-  knockback: 30
-  gunKickRotation: 50
+  knockback: 45
+  gunKickRotation: 70
   gunRotationSpeed: 200
-  screenShakeMagnitude: 0.1
+  screenShakeMagnitude: 0.15
   screenShakeDuration: 0.3
   graphics: {fileID: 2800000, guid: 1a1db111c0395844fa52e326d38acfa9, type: 3}

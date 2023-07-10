@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5258355577677769141}
   - component: {fileID: 3065601766979065598}
   m_Layer: 6
-  m_Name: Chunky Bullet
+  m_Name: Shotgun Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5258355577677769162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.72, y: 0.72, z: 0.72}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.8}
+  m_Size: {x: 0.88, y: 1.45}
   m_EdgeRadius: 0.1
 --- !u!50 &5258355577677769141
 Rigidbody2D:
