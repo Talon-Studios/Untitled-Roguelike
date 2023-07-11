@@ -10,29 +10,29 @@ public class XP : MonoBehaviour
 
     Transform player;
 
+    private bool moveToPlayer = false;
+
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    void Update() {
+        if (!moveToPlayer) return;
+
+        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+        if (!PlayerHealth.Instance.isDead && transform.position == player.position)
+        {
+            XPManager.Instance.GainXP(xpAmount);
+            AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.xp);
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D trigger) {
         if (trigger.CompareTag("Player"))
         {
-            StartCoroutine(MoveToPlayer());
-        }
-    }
-
-    private IEnumerator MoveToPlayer() {
-        while (transform.position != player.position)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-            yield return null;
-        }
-        
-        if (!PlayerHealth.Instance.isDead)
-        {
-            XPManager.Instance.GainXP(xpAmount);
-            AudioManager.Instance.PlayRandomPitch(AudioManager.Instance.xp);
-            Destroy(gameObject);
+            moveToPlayer = true;
         }
     }
 
