@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -9,15 +7,18 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("The number of enemies to spawn per second")]
     [SerializeField] private float startingSpawnRate = 1;
 
+    [Tooltip("The maximum number of enemies on screen at once")]
+    [SerializeField] private float maxEnemyCount = 30;
+
     [Tooltip("How much the spawn rate increases per upgrade")]
     [SerializeField] private float spawnRateIncrement;
 
     public float enemySpeed = 5;
     public float enemyHealthAddon = 0;
-    
+
     [Tooltip("How much enemy speed increases per upgrade")]
     [SerializeField] private float enemySpeedIncrement;
-    
+
     [SerializeField] private EnemyObject[] enemyTypes;
     [SerializeField] private BossObject[] bossTypes;
 
@@ -26,15 +27,15 @@ public class EnemyManager : MonoBehaviour
     private List<EnemyObject> enemies = new List<EnemyObject>();
 
     BoxCollider2D box;
-    
+
     #region Singleton
-    
+
     static public EnemyManager Instance = null;
     void Awake() {
         if (Instance == null) Instance = this;
         else if (Instance != this) Destroy(gameObject);
     }
-    
+
     #endregion
 
     void Start() {
@@ -53,6 +54,8 @@ public class EnemyManager : MonoBehaviour
     }
 
     private void SpawnRandomEnemy() {
+        if (GetEnemyCount() > maxEnemyCount) return;
+
         float totalChance = 0;
         foreach (EnemyObject enemy in enemies) totalChance += enemy.chance;
 
@@ -75,6 +78,10 @@ public class EnemyManager : MonoBehaviour
         GameObject newEnemy = Instantiate(randomEnemy.prefab, new Vector2(x, y), Quaternion.identity);
         Enemy enemyScript = newEnemy.GetComponent<Enemy>();
         enemyScript.health += enemyScript.health / 100 * enemyHealthAddon;
+    }
+
+    private int GetEnemyCount() {
+        return GameObject.FindObjectsOfType<Enemy>().Length;
     }
 
     public void EnemyBuff() {
@@ -109,13 +116,13 @@ public class EnemyManager : MonoBehaviour
         {
             y = Random.Range(box.bounds.min.y, box.bounds.max.y);
 
-            if (Random.value > 0.5f) x = box.bounds.min.x;    
+            if (Random.value > 0.5f) x = box.bounds.min.x;
             else x = box.bounds.max.x;
         } else
         {
             x = Random.Range(box.bounds.min.x, box.bounds.max.x);
 
-            if (Random.value > 0.5f) y = box.bounds.min.y;    
+            if (Random.value > 0.5f) y = box.bounds.min.y;
             else y = box.bounds.max.y;
         }
     }

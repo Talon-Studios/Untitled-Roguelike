@@ -16,13 +16,13 @@ MonoBehaviour:
   weaponDescription: OMG SO POWER
   bulletPrefab: {fileID: 3065601766979065598, guid: aed64b9bb56e4b241b62495f21d34c54, type: 3}
   isAutomatic: 1
-  fireRate: 1
+  fireRate: 5
   spread: 70
-  damage: 15
+  damage: 7
   reloadTime: 2
-  maxMagazine: 1
-  enemyKnockback: 40
-  projectiles: 5
+  maxMagazine: 2
+  enemyKnockback: 20
+  projectiles: 7
   knockback: 40
   gunKickRotation: 50
   gunRotationSpeed: 200
