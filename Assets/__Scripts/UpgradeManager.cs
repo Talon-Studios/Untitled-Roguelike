@@ -308,7 +308,7 @@ public class UpgradeManager : MonoBehaviour
     }
 
     public void SelectUpgrade() {
-        if (selectedUpgradeCard != null)
+        if (selectedUpgradeCard != null && upgradesPanel.activeInHierarchy)
         {
             ActivateUpgrade(selectedUpgradeCard.upgrade);
             CloseUpgradesPanel();
